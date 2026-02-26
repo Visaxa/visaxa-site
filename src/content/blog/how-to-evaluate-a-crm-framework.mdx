@@ -16,14 +16,6 @@ What actually matters is **architectural alignment** between the CRM and the ope
 
 This article introduces a structured framework to evaluate CRM systems beyond marketing claims.
 
-<ArticleImage
-  src="/blog/placeholder.svg"
-  alt="Placeholder visual for CRM evaluation framework"
-  caption="Tip: put real images under /public/blog/how-to-evaluate-a-crm-framework/..."
-  width={1200}
-  height={630}
-/>
-
 <Callout type="info" title="Quick mental model">
 You’re not picking a “tool”. You’re picking a long-term operational constraint system. Evaluate architecture first, then features.
 </Callout>
@@ -183,14 +175,12 @@ Most CRM tools fall into one of four categories:
 
 Understanding category type helps avoid mismatched expectations.
 
-```ts
-type Evaluation = {
-  workflowDepth: "shallow" | "deep"
-  multiLocation: "single" | "network"
-  roles: "coarse" | "granular"
-  dataPortability: "unclear" | "clear"
-}
-```
+### Evaluation variables
+
+- **Workflow depth** — shallow vs deep process modeling  
+- **Multi-location** — single site vs network architecture  
+- **Roles** — coarse vs granular permissions  
+- **Data portability** — unclear vs structured/exportable  
 
 ---
 
