@@ -65,6 +65,6 @@
 
   <!-- title -->
   <text class="label" x="110" y="40" style="font-size:22px; font-weight:700;">Architecture map (conceptual)</text>
-  <text class="muted" x="510" y="40">Not to scale  for evaluation framing</text>
+  <text class="muted" x="510" y="40">Not to scale — for evaluation framing</text>
 </svg>
 
