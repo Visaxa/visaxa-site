@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { MDXRemote } from "next-mdx-remote/rsc"
+import remarkGfm from "remark-gfm"
 
 import ArticleLayout from "@/components/blog/ArticleLayout"
 import { mdxComponents } from "@/components/mdx/mdx-components"
@@ -55,7 +56,11 @@ export default async function BlogPostPage({
       readingTimeText={post.readingTimeText}
       tags={post.tags}
     >
-      <MDXRemote source={post.content} components={mdxComponents} />
+      <MDXRemote
+        source={post.content}
+        components={mdxComponents}
+        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+      />
     </ArticleLayout>
   )
 }

@@ -16,6 +16,26 @@ What actually matters is **architectural alignment** between the CRM and the ope
 
 This article introduces a structured framework to evaluate CRM systems beyond marketing claims.
 
+<ArticleImage
+  src="/blog/placeholder.svg"
+  alt="Placeholder visual for CRM evaluation framework"
+  caption="Tip: put real images under /public/blog/how-to-evaluate-a-crm-framework/..."
+  width={1200}
+  height={630}
+/>
+
+<Callout type="info" title="Quick mental model">
+You’re not picking a “tool”. You’re picking a long-term operational constraint system. Evaluate architecture first, then features.
+</Callout>
+
+<Mermaid
+  chart={`flowchart TD
+  A[Your workflow reality] --> B[Constraints]
+  B --> C[Evaluate system architecture]
+  C --> D[Cost structure + ops impact]
+  D --> E[Decision you can live with at scale]`}
+/>
+
 ---
 
 ## The 7-Dimension CRM Evaluation Framework
@@ -162,6 +182,15 @@ Most CRM tools fall into one of four categories:
 | Vertical SaaS platforms | Industry alignment | Varies by vendor maturity |
 
 Understanding category type helps avoid mismatched expectations.
+
+```ts
+type Evaluation = {
+  workflowDepth: "shallow" | "deep"
+  multiLocation: "single" | "network"
+  roles: "coarse" | "granular"
+  dataPortability: "unclear" | "clear"
+}
+```
 
 ---
 

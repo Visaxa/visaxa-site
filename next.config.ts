@@ -9,7 +9,7 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     // Turbopack requires serializable loader options (no function refs).
-    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"],
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
   },
 })
 

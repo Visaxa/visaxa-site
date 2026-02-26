@@ -5,7 +5,12 @@ import type { ReactNode } from "react"
 import { AlertTriangle, CheckCircle2, Info, Quote } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { Mermaid } from "@/components/mdx/Mermaid"
 
+/**
+ * Use images from `public/blog/<slug>/...` and reference as:
+ * `<ArticleImage src="/blog/<slug>/hero.png" alt="..." caption="..." />`
+ */
 function ArticleImage({
   src,
   alt,
@@ -37,6 +42,81 @@ function ArticleImage({
         </figcaption>
       ) : null}
     </figure>
+  )
+}
+
+function ChartImage(
+  props: Omit<React.ComponentProps<typeof ArticleImage>, "width" | "height">
+) {
+  return <ArticleImage width={1200} height={600} {...props} />
+}
+
+function Table({ className, ...props }: React.ComponentProps<"table">) {
+  return (
+    <div className="my-8 overflow-x-auto rounded-xl border">
+      <table
+        className={cn(
+          "min-w-[720px] w-full border-separate border-spacing-0 text-sm",
+          className
+        )}
+        {...props}
+      />
+    </div>
+  )
+}
+
+function Thead({ className, ...props }: React.ComponentProps<"thead">) {
+  return <thead className={cn("border-b", className)} {...props} />
+}
+
+function Tbody({ className, ...props }: React.ComponentProps<"tbody">) {
+  return (
+    <tbody
+      className={cn("[&_tr:nth-child(even)]:bg-muted/20", className)}
+      {...props}
+    />
+  )
+}
+
+function Tr({ className, ...props }: React.ComponentProps<"tr">) {
+  return <tr className={cn("border-border", className)} {...props} />
+}
+
+function Th({ className, ...props }: React.ComponentProps<"th">) {
+  return (
+    <th
+      className={cn(
+        "border-b bg-muted/20 px-4 py-3 text-left text-sm font-semibold",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function Td({ className, ...props }: React.ComponentProps<"td">) {
+  return (
+    <td
+      className={cn(
+        "border-b border-border/60 px-4 py-3 text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function Img(props: React.ComponentProps<"img">) {
+  const { src, alt = "", title } = props
+  const safeSrc = typeof src === "string" ? src : ""
+  return (
+    <ArticleImage
+      src={safeSrc}
+      alt={alt}
+      caption={title}
+      width={1200}
+      height={630}
+    />
   )
 }
 
@@ -173,11 +253,131 @@ function MdxLink({ href = "", className, ...props }: React.ComponentProps<"a">) 
   )
 }
 
+function H1({ className, ...props }: React.ComponentProps<"h1">) {
+  return (
+    <h1
+      className={cn(
+        "mt-10 scroll-mt-24 text-3xl font-semibold tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function H2({ className, ...props }: React.ComponentProps<"h2">) {
+  return (
+    <h2
+      className={cn(
+        "mt-10 scroll-mt-24 border-b pb-2 text-2xl font-semibold tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function H3({ className, ...props }: React.ComponentProps<"h3">) {
+  return (
+    <h3
+      className={cn(
+        "mt-8 scroll-mt-24 text-xl font-semibold tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function P({ className, ...props }: React.ComponentProps<"p">) {
+  return (
+    <p className={cn("mt-5 leading-8 text-muted-foreground", className)} {...props} />
+  )
+}
+
+function Ul({ className, ...props }: React.ComponentProps<"ul">) {
+  return (
+    <ul className={cn("mt-5 list-disc pl-6 text-muted-foreground", className)} {...props} />
+  )
+}
+
+function Ol({ className, ...props }: React.ComponentProps<"ol">) {
+  return (
+    <ol
+      className={cn("mt-5 list-decimal pl-6 text-muted-foreground", className)}
+      {...props}
+    />
+  )
+}
+
+function Li({ className, ...props }: React.ComponentProps<"li">) {
+  return <li className={cn("mt-2", className)} {...props} />
+}
+
+function Blockquote({ className, ...props }: React.ComponentProps<"blockquote">) {
+  return (
+    <blockquote
+      className={cn(
+        "my-8 border-l-2 border-border pl-6 italic text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function Pre({ className, ...props }: React.ComponentProps<"pre">) {
+  return (
+    <pre
+      className={cn(
+        "my-8 overflow-x-auto rounded-xl border bg-muted/40 p-4 text-sm leading-6",
+        "[&_code]:bg-transparent [&_code]:p-0 [&_code]:text-inherit",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function Code({ className, ...props }: React.ComponentProps<"code">) {
+  const isBlock = typeof className === "string" && className.includes("language-")
+  return (
+    <code
+      className={cn(
+        isBlock
+          ? "font-mono"
+          : "rounded-md border bg-muted px-1.5 py-0.5 font-mono text-[0.9em]",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
 export const mdxComponents: MDXComponents = {
   a: MdxLink,
+  img: Img,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  p: P,
+  ul: Ul,
+  ol: Ol,
+  li: Li,
+  blockquote: Blockquote,
+  pre: Pre,
+  code: Code,
+  table: Table,
+  thead: Thead,
+  tbody: Tbody,
+  tr: Tr,
+  th: Th,
+  td: Td,
   ArticleImage,
+  ChartImage,
   Callout,
   KeyTakeaway,
   ComparisonTable,
   QuoteBlock,
+  Mermaid,
 }
