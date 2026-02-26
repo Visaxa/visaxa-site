@@ -10,23 +10,41 @@ tags: ["CRM", "Business Systems", "Operations", "SaaS"]
 
 Most CRM comparison articles focus on features: booking, payments, marketing tools, loyalty programs.  
 
+Most businesses don't outgrow their CRM because of missing features.  
+They outgrow it because the underlying model doesn't match how they actually operate.
+
 Feature lists are easy to compare — but they rarely determine long-term success.
 
 What actually matters is **architectural alignment** between the CRM and the operational reality of the business.
 
 This article introduces a structured framework to evaluate CRM systems beyond marketing claims.
 
+### CRM selection logic (simplified)
+
+<Mermaid chart={`
+flowchart TD
+  A[Business Model] --> B{Single location?}
+  B -- Yes --> C[Booking-first tools may fit]
+  B -- No --> D[Need deeper architecture]
+  D --> E{Shared data model?}
+  E -- Yes --> F[Vertical SaaS / structured systems]
+  E -- No --> G[Expect operational friction]
+`} />
+
+### Where most decisions go wrong
+
+### The illusion of fast setup
+
+### Architecture debt
+
 <Callout type="info" title="Quick mental model">
 You’re not picking a “tool”. You’re picking a long-term operational constraint system. Evaluate architecture first, then features.
 </Callout>
 
-<Mermaid
-  chart={`flowchart TD
-  A[Your workflow reality] --> B[Constraints]
-  B --> C[Evaluate system architecture]
-  C --> D[Cost structure + ops impact]
-  D --> E[Decision you can live with at scale]`}
-/>
+<Callout type="neutral" title="A quiet warning">
+The easier a CRM feels on day one,  
+the more important it is to examine what it hides structurally.
+</Callout>
 
 ---
 
@@ -174,6 +192,12 @@ Most CRM tools fall into one of four categories:
 | Vertical SaaS platforms | Industry alignment | Varies by vendor maturity |
 
 Understanding category type helps avoid mismatched expectations.
+
+<ArticleImage
+  src="/blog/how-to-evaluate-a-crm-framework/architecture-map.svg"
+  alt="CRM architecture positioning map"
+  caption="Most tools optimize for one axis. Few optimize for both."
+/>
 
 ### Evaluation variables
 

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .axis { stroke: rgba(0,0,0,0.18); stroke-width: 2; }
+      .grid { stroke: rgba(0,0,0,0.08); stroke-width: 1; }
+      .label { fill: rgba(0,0,0,0.72); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; font-size: 18px; }
+      .muted { fill: rgba(0,0,0,0.5); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; font-size: 16px; }
+      .dot { fill: rgba(0,0,0,0.55); }
+      .tag { fill: rgba(0,0,0,0.64); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; font-size: 16px; font-weight: 600; }
+      .pill { fill: rgba(0,0,0,0.03); stroke: rgba(0,0,0,0.10); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="600"/>
+
+  <!-- plot area -->
+  <rect x="110" y="70" width="980" height="440" rx="18" fill="rgba(0,0,0,0.02)" stroke="rgba(0,0,0,0.08)"/>
+
+  <!-- grid -->
+  <line class="grid" x1="110" y1="180" x2="1090" y2="180"/>
+  <line class="grid" x1="110" y1="290" x2="1090" y2="290"/>
+  <line class="grid" x1="110" y1="400" x2="1090" y2="400"/>
+  <line class="grid" x1="355" y1="70" x2="355" y2="510"/>
+  <line class="grid" x1="600" y1="70" x2="600" y2="510"/>
+  <line class="grid" x1="845" y1="70" x2="845" y2="510"/>
+
+  <!-- axes -->
+  <line class="axis" x1="110" y1="510" x2="1090" y2="510"/>
+  <line class="axis" x1="110" y1="510" x2="110" y2="70"/>
+
+  <!-- axis labels -->
+  <text class="label" x="110" y="555">Simplicity</text>
+  <text class="label" x="1015" y="555">Structural depth</text>
+
+  <text class="label" x="28" y="90" transform="rotate(-90 28 90)">Setup speed</text>
+  <text class="label" x="28" y="490" transform="rotate(-90 28 490)">Operational control</text>
+
+  <!-- quadrant hints -->
+  <text class="muted" x="140" y="105">Fast setup</text>
+  <text class="muted" x="925" y="105">Structured</text>
+  <text class="muted" x="140" y="500">Lightweight</text>
+  <text class="muted" x="905" y="500">Control-first</text>
+
+  <!-- points (generic categories, no vendor names) -->
+  <!-- booking-first tools -->
+  <circle class="dot" cx="260" cy="150" r="6"/>
+  <rect class="pill" x="285" y="132" width="170" height="34" rx="17"/>
+  <text class="tag" x="300" y="155">Booking-first tools</text>
+
+  <!-- marketing-driven CRM -->
+  <circle class="dot" cx="390" cy="230" r="6"/>
+  <rect class="pill" x="415" y="212" width="190" height="34" rx="17"/>
+  <text class="tag" x="430" y="235">Marketing-driven CRM</text>
+
+  <!-- vertical SaaS -->
+  <circle class="dot" cx="760" cy="280" r="6"/>
+  <rect class="pill" x="785" y="262" width="150" height="34" rx="17"/>
+  <text class="tag" x="800" y="285">Vertical SaaS</text>
+
+  <!-- enterprise systems -->
+  <circle class="dot" cx="890" cy="430" r="6"/>
+  <rect class="pill" x="915" y="412" width="180" height="34" rx="17"/>
+  <text class="tag" x="930" y="435">Enterprise systems</text>
+
+  <!-- title -->
+  <text class="label" x="110" y="40" style="font-size:22px; font-weight:700;">Architecture map (conceptual)</text>
+  <text class="muted" x="510" y="40">Not to scale  for evaluation framing</text>
+</svg>
+
