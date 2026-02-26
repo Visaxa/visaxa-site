@@ -23,7 +23,7 @@ export default function ArticleLayout({
 }) {
   return (
     <main className="px-4 pb-16 pt-10">
-      <article className="mx-auto max-w-3xl">
+      <article className="mx-auto max-w-[750px]">
         <header>
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             {date ? <time dateTime={date}>{date}</time> : null}
@@ -65,10 +65,20 @@ export default function ArticleLayout({
           className={cn(
             "prose prose-neutral mt-8 max-w-none",
             "prose-headings:scroll-mt-24",
+            "prose-p:leading-8",
+            "prose-h2:mt-10 prose-h3:mt-8",
             "prose-a:font-medium prose-a:underline prose-a:underline-offset-4",
             "prose-strong:text-foreground",
             "prose-blockquote:border-l-2 prose-blockquote:border-border prose-blockquote:text-muted-foreground",
-            "prose-hr:border-border"
+            "prose-hr:border-border",
+            // Tables: subtle borders + responsive overflow.
+            "prose-table:my-8 prose-table:block prose-table:w-full prose-table:overflow-x-auto prose-table:rounded-xl prose-table:border prose-table:border-border",
+            "prose-table:text-sm prose-table:leading-6 prose-table:min-w-[720px]",
+            "prose-thead:border-b prose-thead:border-border",
+            "prose-th:border-b prose-th:border-border prose-th:bg-muted/20 prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:font-semibold",
+            "prose-td:border-b prose-td:border-border/60 prose-td:px-4 prose-td:py-3",
+            "prose-tr:border-border",
+            "[&_tbody_tr:nth-child(even)]:bg-muted/20"
           )}
         >
           {children}

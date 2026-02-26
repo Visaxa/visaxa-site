@@ -21,6 +21,8 @@ export async function generateMetadata({
   const post = await getPostBySlug(params.slug)
   if (!post) return {}
 
+  const url = `https://visaxa.app/blog/${params.slug}`
+
   return {
     title: post.title,
     description: post.description,
@@ -29,6 +31,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       type: "article",
+      url,
     },
   }
 }
