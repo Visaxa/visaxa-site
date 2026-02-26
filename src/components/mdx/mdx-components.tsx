@@ -24,17 +24,31 @@ function ArticleImage({
   width?: number
   height?: number
 }) {
+  const isSvg = typeof src === "string" && src.toLowerCase().endsWith(".svg")
+
   return (
     <figure className="my-8">
       <div className="mx-auto overflow-hidden rounded-xl border bg-muted/20 shadow-sm">
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          sizes="(max-width: 768px) 100vw, 768px"
-          className="h-auto w-full"
-        />
+        {isSvg ? (
+          // Avoid Next Image optimizer for SVG.
+          <img
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className="h-auto w-full"
+            loading="lazy"
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="h-auto w-full"
+          />
+        )}
       </div>
       {caption ? (
         <figcaption className="mt-3 text-center text-sm text-muted-foreground">

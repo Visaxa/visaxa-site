@@ -3,27 +3,45 @@
 import * as React from "react"
 import mermaid from "mermaid"
 
+let initialized = false
+
 export function Mermaid({
   chart,
   className,
 }: {
-  chart: string
+  chart?: string
   className?: string
 }) {
   const id = React.useId().replaceAll(":", "")
   const [svg, setSvg] = React.useState<string>("")
+  const normalized = React.useMemo(() => {
+    const raw = typeof chart === "string" ? chart : ""
+    return raw.replaceAll("\r\n", "\n").trim()
+  }, [chart])
 
   React.useEffect(() => {
-    mermaid.initialize({
-      startOnLoad: false,
-      securityLevel: "strict",
-      theme: "neutral",
-    })
+    if (!initialized) {
+      mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "strict",
+        theme: "base",
+        themeVariables: {
+          fontFamily:
+            "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+          primaryColor: "#f5f5f5",
+          primaryTextColor: "#111827",
+          lineColor: "#4b5563",
+          secondaryColor: "#ffffff",
+          tertiaryColor: "#ffffff",
+        },
+      })
+      initialized = true
+    }
 
     let cancelled = false
 
     mermaid
-      .render(`m-${id}`, chart)
+      .render(`m-${id}`, normalized)
       .then((result) => {
         if (!cancelled) setSvg(result.svg)
       })
@@ -40,14 +58,14 @@ export function Mermaid({
     <div className={className}>
       {svg ? (
         <div
-          className="my-8 overflow-x-auto rounded-xl border bg-background p-4 [&_svg]:mx-auto"
+          className="my-8 overflow-x-auto rounded-xl border bg-muted/20 p-4 [&_svg]:mx-auto"
           dangerouslySetInnerHTML={{ __html: svg }}
         />
-      ) : (
-        <pre className="my-8 overflow-x-auto rounded-xl border bg-muted p-4 text-sm">
-          {chart}
+      ) : normalized ? (
+        <pre className="my-8 overflow-x-auto rounded-xl border bg-muted/40 p-4 text-sm text-foreground">
+          {normalized}
         </pre>
-      )}
+      ) : null}
     </div>
   )
 }
