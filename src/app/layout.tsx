@@ -18,10 +18,13 @@ const geistMono = Geist_Mono({
   display: "swap",
 })
 
-const siteUrl = new URL("https://visaxa.app")
+const siteUrl = new URL("https://www.visaxa.app")
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Visaxa — Salon CRM built for networks",
     template: "Visaxa — %s",

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { getAllPosts } from "@/lib/blog"
 
-const baseUrl = "https://visaxa.app"
+const baseUrl = "https://www.visaxa.app"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts()
@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${baseUrl}/blog/${p.slug}`,
-    lastModified: new Date(p.date ?? Date.now()),
+    lastModified: new Date(p.date),
     changeFrequency: "monthly",
     priority: 0.6,
   }))
