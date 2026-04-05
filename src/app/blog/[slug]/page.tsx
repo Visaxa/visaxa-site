@@ -28,6 +28,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: url,
+    },
     robots: { index: true, follow: true },
     openGraph: {
       title: post.title,

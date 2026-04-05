@@ -3,6 +3,16 @@ import createMDX from "@next/mdx"
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "visaxa.app" }],
+        destination: "https://www.visaxa.app/:path*",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({
