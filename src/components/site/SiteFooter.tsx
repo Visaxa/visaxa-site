@@ -14,6 +14,7 @@ const productLinks = [
 const companyLinks = [
   { href: "/contact", label: "Request demo" },
   { href: "/blog", label: "Updates" },
+  { href: "/what-is-visaxa", label: "What is Visaxa" },
 ] as const
 
 const legalLinks = [

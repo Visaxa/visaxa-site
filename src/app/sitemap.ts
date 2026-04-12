@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/pricing`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/compare`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${baseUrl}/what-is-visaxa`, changeFrequency: "monthly", priority: 0.6 },
 
     // planned compare routes
     { url: `${baseUrl}/compare/square-vs-fresha-vs-mindbody`, changeFrequency: "monthly", priority: 0.6 },
