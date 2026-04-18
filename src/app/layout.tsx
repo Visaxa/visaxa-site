@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site/SiteFooter"
 import { SiteHeader } from "@/components/site/SiteHeader"
 
 import "./globals.css"
+import "@/styles/globals.css"
 
 const inter = Inter({
   variable: "--font-inter",
