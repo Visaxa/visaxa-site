@@ -12,6 +12,8 @@ export const metadata = {
 
 export default async function BlogIndexPage() {
   const posts = await getAllPosts()
+  const featured = posts.slice(0, 2)
+  const all = posts
 
   return (
     <main className="px-4 pb-16 pt-10">
@@ -26,7 +28,7 @@ export default async function BlogIndexPage() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4">
+        <div className="mt-8">
           {posts.length === 0 ? (
             <div className="rounded-2xl border bg-muted/20 p-6">
               <div className="text-base font-semibold">No posts yet</div>
@@ -35,52 +37,71 @@ export default async function BlogIndexPage() {
               </p>
             </div>
           ) : (
-            posts.map((p) => (
-              <article
-                key={p.slug}
-                className="rounded-2xl border bg-background p-6 shadow-sm"
-              >
-                <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                  <time dateTime={p.date}>{p.date}</time>
-                  <span>•</span>
-                  <span>{p.readingTimeText}</span>
-                </div>
+            <>
+              <h2 className="text-sm font-medium text-muted-foreground">
+                Featured
+              </h2>
 
-                <h2 className="mt-2 text-xl font-semibold">
-                  <Link href={`/blog/${p.slug}`} className="hover:underline">
-                    {p.title}
-                  </Link>
-                </h2>
+              <div className="mt-4 grid gap-4">
+                {featured.map((p) => (
+                  <article
+                    key={p.slug}
+                    className="group rounded-2xl border bg-background p-6 shadow-sm transition hover:bg-muted/10"
+                  >
+                    <Link href={`/blog/${p.slug}`} className="block">
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                        <time dateTime={p.date}>{p.date}</time>
+                        <span>•</span>
+                        <span>{p.readingTimeText}</span>
+                      </div>
 
-                {p.subtitle ? (
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {p.subtitle}
-                  </p>
-                ) : null}
+                      <h3 className="mt-2 text-xl font-semibold tracking-tight group-hover:underline">
+                        {p.title}
+                      </h3>
 
-                {p.description ? (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {p.description}
-                  </p>
-                ) : null}
+                      {p.description ? (
+                        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+                          {p.description}
+                        </p>
+                      ) : null}
 
-                {p.tags?.length ? (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <Badge key={t} variant="secondary">
-                        {t}
-                      </Badge>
-                    ))}
-                  </div>
-                ) : null}
+                      {p.tags?.length ? (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {p.tags.map((t) => (
+                            <Badge key={t} variant="secondary">
+                              {t}
+                            </Badge>
+                          ))}
+                        </div>
+                      ) : null}
 
-                <div className="mt-5">
-                  <Button asChild variant="outline">
-                    <Link href={`/blog/${p.slug}`}>Read</Link>
-                  </Button>
-                </div>
-              </article>
-            ))
+                      <div className="mt-5">
+                        <Button asChild variant="outline">
+                          <span>Read</span>
+                        </Button>
+                      </div>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+
+              <h3 className="mt-10 text-sm text-muted-foreground">
+                All research notes
+              </h3>
+
+              <ul className="mt-4 space-y-2">
+                {all.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="text-sm text-muted-foreground transition hover:text-foreground"
+                    >
+                      {p.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
         </div>
       </div>
