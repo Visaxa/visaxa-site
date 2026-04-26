@@ -25,16 +25,36 @@ export async function generateMetadata({
 
   const url = `https://www.visaxa.app/blog/${slug}`
 
+  const overrides: Record<
+    string,
+    { title: string; description?: string; openGraphTitle?: string }
+  > = {
+    "how-to-evaluate-a-crm-framework": {
+      title: "How to Evaluate a CRM System | Visaxa Research",
+      description:
+        "A practical way to evaluate CRM systems beyond features and marketing claims.",
+    },
+    "why-appointment-scheduling-systems-fail-service-businesses": {
+      title: "Why Scheduling Systems Fail in Service Businesses | Visaxa",
+      description:
+        "Why scheduling systems fail in real service businesses and what breaks as they grow.",
+    },
+  }
+
+  const o = overrides[slug]
+  const title = o?.title ?? post.title
+  const description = o?.description ?? post.description
+
   return {
-    title: post.title,
-    description: post.description,
+    title: { absolute: title },
+    description,
     alternates: {
       canonical: url,
     },
     robots: { index: true, follow: true },
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title: o?.openGraphTitle ?? title,
+      description,
       type: "article",
       url,
     },
