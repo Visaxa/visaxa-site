@@ -85,7 +85,7 @@ export default async function BlogIndexPage() {
                 ))}
               </div>
 
-              <h3 className="mt-10 text-sm text-muted-foreground">
+              <h3 className="mt-10 text-xs text-muted-foreground">
                 All research notes
               </h3>
 
@@ -94,7 +94,7 @@ export default async function BlogIndexPage() {
                   <li key={p.slug}>
                     <Link
                       href={`/blog/${p.slug}`}
-                      className="text-sm text-muted-foreground transition hover:text-foreground"
+                      className="text-xs text-muted-foreground/80 transition hover:text-foreground"
                     >
                       {p.title}
                     </Link>
