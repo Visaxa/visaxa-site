@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { ResearchAuthor } from "@/components/blog/ResearchAuthor"
 
 export default function ArticleLayout({
   title,
@@ -99,6 +100,8 @@ export default function ArticleLayout({
             </Button>
           </div>
         </div>
+
+        <ResearchAuthor />
       </article>
     </main>
   )

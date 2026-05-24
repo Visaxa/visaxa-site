@@ -63,11 +63,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Visaxa",
+    url: "https://www.visaxa.app",
+  } as const
+
   return (
     <html lang="en">
       <body
         className={`${inter.variable} ${geistMono.variable} min-h-dvh bg-background font-sans text-foreground antialiased`}
       >
+        <script
+          type="application/ld+json"
+          // Intentionally inline: stable entity signal for crawlers.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <div className="flex min-h-dvh flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

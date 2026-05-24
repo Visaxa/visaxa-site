@@ -30,7 +30,7 @@ export async function generateMetadata({
     { title: string; description?: string; openGraphTitle?: string }
   > = {
     "how-to-evaluate-a-crm-framework": {
-      title: "How to Evaluate a CRM System | Visaxa Research",
+      title: "How to Evaluate a CRM: What Actually Matters for Service Businesses",
       description:
         "A practical way to evaluate CRM systems beyond features and marketing claims.",
     },
@@ -70,20 +70,51 @@ export default async function BlogPostPage({
   const post = await getPostBySlug(slug)
   if (!post) notFound()
 
+  const authorUrl = "https://www.visaxa.app/research"
+  const pageUrl = `https://www.visaxa.app/blog/${slug}`
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    author: {
+      "@type": "Organization",
+      name: "Visaxa Research",
+      url: authorUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Visaxa",
+      url: "https://www.visaxa.app",
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": pageUrl,
+    },
+  } as const
+
   return (
-    <ArticleLayout
-      title={post.title}
-      subtitle={post.subtitle}
-      description={post.description}
-      date={post.date}
-      readingTimeText={post.readingTimeText}
-      tags={post.tags}
-    >
-      <MDXRemote
-        source={post.content}
-        components={mdxComponents}
-        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </ArticleLayout>
+      <ArticleLayout
+        title={post.title}
+        subtitle={post.subtitle}
+        description={post.description}
+        date={post.date}
+        readingTimeText={post.readingTimeText}
+        tags={post.tags}
+      >
+        <MDXRemote
+          source={post.content}
+          components={mdxComponents}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
+      </ArticleLayout>
+    </>
   )
 }
