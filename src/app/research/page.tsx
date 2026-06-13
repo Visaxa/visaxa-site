@@ -37,6 +37,15 @@ export default async function ResearchPage() {
           mistakes, retention failures, and scaling problems.
         </p>
 
+        <div className="mt-6">
+          <Link
+            href="/research/about"
+            className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
+          >
+            About This Research
+          </Link>
+        </div>
+
         <section className="mt-12">
           <h2 className="text-xl font-semibold text-foreground">
             What we research
