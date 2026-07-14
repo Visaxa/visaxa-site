@@ -1,3 +1,5 @@
+> Content inventory only. Canonical research architecture: [Visaxa Decision Framework SOT](master/00_VISAXA_DECISION_FRAMEWORK_SOT.md).
+
 # Research / Blog content map (current state)
 
 Generated from:
