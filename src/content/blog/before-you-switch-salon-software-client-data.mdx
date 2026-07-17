@@ -1,0 +1,226 @@
+---
+title: "Before You Switch Salon Software, Find Out What Happens to Your Client Data"
+subtitle: "A client list is only the beginning. The real question is whether the records that keep your salon running can leave with it."
+description: "A practical exit inventory for salon owners who want to understand what client and business data they may need before changing software."
+date: "2026-07-17"
+tags: ["Salon Software", "Data Portability", "Migration", "Client Data"]
+draft: false
+---
+
+I thought the first thing I needed was a client export.
+
+That sounded reasonable. If I could leave with every client's name, phone number, and email address, then surely I still had the part of the system that mattered most.
+
+Then I started listing what the salon would need on the morning after a switch. Who was booked. Which staff member they expected. What had already been paid. Whether a package still had sessions left. Which notes belonged to which visit. Whether a client had opted out of messages.
+
+The client list was still important. It just was not the whole business.
+
+<KeyTakeaway>
+Before switching salon software, inventory five things for every important record: whether it exists, whether it is exportable, whether it can be interpreted, where it will go, and whether its relationships can be preserved.
+</KeyTakeaway>
+
+The question I ended up copying into my notes was:
+
+> If I leave my salon software, what client and business data do I need to make sure I can take with me?
+
+## I had a list. What I needed was a map.
+
+I began with the obvious columns: client name, mobile number, email, birthday, and address. Official help pages made that part look reassuringly concrete. Fresha, for example, documents a client-list export in Excel or CSV, while Vagaro documents an owner-only customer-list export in Excel or PDF. Both are evidence that a list can leave those systems. Neither page, on its own, proves that every record connected to a client is inside that file. ([Fresha client-list export](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list); [Vagaro customer-list export](https://support.vagaro.com/hc/en-us/articles/360006371094-Export-Your-Customer-List), accessed July 17, 2026.)
+
+That distinction became harder to ignore when I looked at how the same products describe the rest of a client profile. Vagaro documents separate areas for appointments, notes, forms, files, gift cards, packages, memberships, invoices, and balances. Fresha tells users to export appointments from an appointments list rather than from the client-list instructions. ([Vagaro customer profile](https://support.vagaro.com/hc/en-us/articles/115004392674-Customer-Profile-Overview); [Fresha client-list export](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list), accessed July 17, 2026.)
+
+So the better picture was not a spreadsheet with more columns. It was a client identity connected to other records.
+
+<ArticleImage
+  src="/blog/before-you-switch-salon-software-client-data/client-list-connected-business.svg"
+  alt="Diagram showing a client identity connected to appointments, staff relationships, notes and files, packages and balances, payments, and communication consent"
+  caption="A client list preserves contacts. Business continuity depends on the records connected to them."
+/>
+
+Once I saw that map, a more uncomfortable question appeared: which of those connections would still make sense outside the old system?
+
+## An export button answered only one of five questions
+
+At first I treated “exportable” as a yes-or-no property. Then I noticed that I was combining several different questions.
+
+### 1. Exists
+
+Can I see the record in the current system? A form, note, balance, or future appointment may clearly exist in the interface.
+
+### 2. Exportable
+
+Can an authorized person retrieve it in a file or through a documented interface? This is already a separate test. Fresha documents a distinct permission for downloading clients, and Vagaro limits its customer-list export to the business owner. ([Fresha client-list export](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list); [Vagaro customer-list export](https://support.vagaro.com/hc/en-us/articles/360006371094-Export-Your-Customer-List), accessed July 17, 2026.)
+
+### 3. Interpretable
+
+If the file contains a status code, an old client identifier, or a balance, will I know what it means six months later? A file can open correctly and still leave that question unanswered.
+
+### 4. Destination identified
+
+Does the record have somewhere to go? That might be the new system, an accounting archive, a document store, or a controlled record the salon retains for a defined reason. “We downloaded it” is not yet a destination plan.
+
+### 5. Relationships preserved
+
+If the new system can accept the pieces, will it still know which appointment belonged to which client, staff member, service, payment, and note? Official API and data-table documentation shows why identifiers matter: Square documents customer links across services, and Fresha's Data Connector describes tables joined through identifiers such as client, appointment, and sale IDs. Those documents describe current structures; they do not prove that a standard export will preserve them or that another product can import them. ([Square customer integrations](https://developer.squareup.com/docs/customers-api/use-the-api/integrate-with-other-services); [Fresha Data Connector tables](https://www.fresha.com/help-center/knowledge-base/reports/101734-data-connector-tables), accessed July 17, 2026.)
+
+<ArticleImage
+  src="/blog/before-you-switch-salon-software-client-data/five-portability-states.svg"
+  alt="Five-stage portability model: Exists, Exportable, Interpretable, Destination identified, and Relationships preserved"
+  caption="A file is only one stage of portability."
+/>
+
+This changed the job. I was no longer asking for one export. I was building an exit inventory.
+
+## Identity came before contact details
+
+I had assumed a person's email address was their identity. Then I thought about the duplicate profiles we had all seen: a married name and an old name, a second email address, a typo at reception, an online booking that created another record.
+
+Fresha's current documentation says it can identify potential duplicates using an email address or phone number and that merging profiles combines details, sales, and appointments. Square's customer documentation also describes duplicate and merged-profile complications around customer identifiers. That was enough to show why identity rules matter. It was not evidence that either product includes merge history or previous identifiers in a normal export. ([Fresha profile merging](https://www.fresha.com/help-center/knowledge-base/clients/57-merge-client-profiles); [Square Customers API](https://developer.squareup.com/docs/customers-api/what-it-does), accessed July 17, 2026.)
+
+My inventory therefore needed two separate questions:
+
+- What identifies the client now?
+- If records were merged, can I retrieve enough information to understand what happened?
+
+The first is supported by current documentation. The second remains something I would have to verify with an actual export.
+
+## A phone number was not the same thing as permission
+
+Next I put phone numbers and email addresses into the inventory. Then I caught myself treating the presence of a contact field as permission to use it in the same way after the move.
+
+That assumption was too broad. Square's data-processing agreement separates the seller's responsibility for lawful basis, notices, and necessary consent from the mere processing of personal data. U.S. Federal Trade Commission guidance requires commercial-email opt-outs to be honored, while UK Information Commissioner's Office guidance warns businesses not to assume that possession of contact details creates marketing permission. The precise rule depends on jurisdiction, channel, and circumstances. ([Square Data Processing Agreement](https://squareup.com/us/en/legal/general/data-processing); [FTC CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business); [ICO marketing-list guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/using-marketing-lists/), accessed July 17, 2026.)
+
+So I added consent source, consent date where relevant, communication channel, opt-out state, and suppression records to the questions I would take to a vendor or privacy adviser. I did not assume that consent automatically transferred with the contact row.
+
+## Notes and files lost meaning when I separated them from their context
+
+I used to think of notes as text and photos as files. That sounded portable enough.
+
+Then I asked what would make either one useful. Which client did it belong to? Was it a general profile note or an appointment note? When was it added? Did it relate to a particular service? Was there a form version, signature, filename, or author that mattered?
+
+Vagaro's documentation distinguishes customer notes from appointment-specific notes and documents separate profile areas for forms and files. That supports the need to inventory these categories and their context. It does not establish that notes, forms, waivers, attachments, photos, authorship, or relationship metadata appear in its customer-list export. ([Vagaro customer notes](https://support.vagaro.com/hc/en-us/articles/360007906613-Manage-Customer-Notes); [Vagaro customer profile](https://support.vagaro.com/hc/en-us/articles/115004392674-Customer-Profile-Overview), accessed July 17, 2026.)
+
+For now, the evidence-safe question is not “Can I download files?” It is “Can I retrieve the record together with the context that lets me identify and use it?”
+
+## An appointment was more than a date and time
+
+Past appointments looked easy until I opened one. It had a client, service, status, provider, price, location, notes, and sometimes a related payment. Future appointments added another risk: they were promises the salon still had to keep.
+
+Vagaro documents appointment-history fields including status, time, service provider, service, price, and location. Square's Booking object similarly links a booking to customer, location, and service-team segments. These sources support the idea that an appointment is a connected record. They do not prove that future appointments, recurring-series identifiers, or all of those relationships are present in a standard export. ([Vagaro appointment history](https://support.vagaro.com/hc/en-us/articles/360021380053-View-a-Customer-s-Appointment-History); [Square Booking object](https://developer.squareup.com/reference/square/objects/Booking), accessed July 17, 2026.)
+
+That left me with three different inventory lines: appointment history, future appointments, and recurring appointments. I would want each one tested separately rather than covered by a single promise to “move the calendar.”
+
+## A staff name did not preserve a staff relationship
+
+The same thing happened with staff. A list of names seemed sufficient until I considered what the salon actually needed to reconstruct: which provider delivered a service, which future clients expected that person, which location they worked at, and what they were allowed to see or change.
+
+Official documentation supports the existence of provider relationships and separate export permissions. It does not show that staff assignments, roles, or permissions will survive a migration. I kept those items in the inventory, but not as a promise of portability.
+
+## A package balance was an obligation, not just a number
+
+Packages, memberships, gift cards, credits, and balances felt like client attributes when I first wrote them down. Then I realised that the number represented something the business still owed: sessions, value, access, or credit.
+
+Vagaro documents separate profile areas for gift cards, packages, memberships, invoices, and balances. Fresha's report documentation separately lists liability, deposit, and gift-card reporting. That establishes that these records exist as distinct business concerns. It does not prove that a client-list export includes them or that another system can import and reconcile them. ([Vagaro customer profile](https://support.vagaro.com/hc/en-us/articles/115004392674-Customer-Profile-Overview); [Fresha report exports](https://www.fresha.com/help-center/knowledge-base/reports/191-export-reports), accessed July 17, 2026.)
+
+I stopped writing “balance” as one line. I began writing what created it, what remained, what terms governed it, and what record would be used to reconcile it after a move.
+
+## Payment history was a sequence, not a total
+
+Revenue totals were comforting because they looked definitive. But a total did not tell me whether a deposit became a charge, whether a charge was refunded, whether a credit remained, or whether a transaction was disputed.
+
+Fresha's documented Data Connector tables distinguish payment records, refunds, appointment fees, gift-card activity, and deposit activity. That is enough to support inventorying those states separately. It is not a sample export, so it does not establish that their identifiers and relationships would survive a migration. ([Fresha Data Connector tables](https://www.fresha.com/help-center/knowledge-base/reports/101734-data-connector-tables), accessed July 17, 2026.)
+
+I could safely ask for the sequence. I could not safely assume the export would reconstruct it.
+
+## A report was a view, not automatically the underlying record
+
+At the end of my first list I had written “export reports.” That sounded like a useful safety net.
+
+Then I noticed how official help pages describe reports. Fresha allows reports to be customized and exported one at a time. Vagaro's customer-list report changes with date ranges and defines some fields through specific business rules. Square notes that report exports depend on the report, filters, and selected columns, and that some reports cannot be exported. ([Fresha report exports](https://www.fresha.com/help-center/knowledge-base/reports/191-export-reports); [Vagaro customer-list report](https://support.vagaro.com/hc/en-us/articles/115004772554-Customer-List-Report); [Square report exports](https://squareup.com/help/us/en/article/8362-print-export-or-email-your-reports), accessed July 17, 2026.)
+
+A report could preserve a useful view while leaving out the definition, source records, accounting reference, or audit history needed to reproduce it. So I added those items separately. Current public evidence does not establish that audit logs or report definitions are available in a normal export; they remain questions, not claims.
+
+## The exit inventory I would build before buying
+
+By this point, “download the client list” had turned into eleven domains. I would not expect every destination to receive every record. I would expect a clear decision about what must move, what must be archived, what requires reconciliation, and what cannot yet be proven portable.
+
+### 1. Client identity
+
+Current identifiers, duplicate rules, merged records, and any previous identifiers needed to explain the profile.
+
+### 2. Contact information and communication permission
+
+Phone numbers, email and postal addresses, preferred channels, consent provenance where applicable, opt-outs, and suppression records.
+
+### 3. Notes, forms, waivers, attachments, and photos
+
+The content plus client relationship, appointment relationship, dates, authorship, file metadata, form version, and signature context where applicable.
+
+### 4. Appointment history and future appointments
+
+Client, date and time, status, service, staff member, location, price, notes, and related identifiers.
+
+### 5. Recurring appointments and staff relationships
+
+The series rule, exceptions, remaining occurrences, expected provider, and any location or resource relationship that matters.
+
+### 6. Services and catalogue definitions
+
+Service identity, duration, price reference, active status, and the definitions needed to understand historical appointments.
+
+### 7. Packages, memberships, gift cards, and balances
+
+What was purchased, what remains, applicable value or entitlement, expiration or terms, and the record used for reconciliation.
+
+### 8. Deposits, payments, refunds, disputes, and credits
+
+Each state, amount, date, processor or accounting reference, and the identifiers that connect the sequence.
+
+### 9. Staff assignments, roles, and permissions
+
+Who was connected to the work, which location or service applied, and what access must be recreated rather than blindly copied.
+
+### 10. Audit history
+
+Available change history, authorship, timestamps, and provenance. At present, the public sources reviewed do not establish that this is included in standard exports.
+
+### 11. Report definitions and accounting references
+
+Filters, date rules, status definitions, calculations, source fields, and external ledger or processor references needed to understand a saved result.
+
+For every domain, I would write the same five headings:
+
+1. **Exists** — can we see it now?
+2. **Exportable** — can an authorized person retrieve it?
+3. **Interpretable** — do we have identifiers and definitions that make it understandable?
+4. **Destination identified** — will it be imported, archived, reconciled, or retained elsewhere?
+5. **Relationships preserved** — can the destination reconstruct the connections the business relies on?
+
+## What the inventory still could not tell me
+
+The inventory gave me a better set of questions. It did not prove that a vendor's export was complete or that a destination could accept it.
+
+To answer that, I would need evidence that public help pages rarely provide: an anonymized sample export, a field-level data dictionary, stable identifiers, examples of linked records, and a source-to-target import report showing what was rejected, transformed, merged, or skipped.
+
+I would also check the applicable contract before cancelling. Vagaro currently tells business owners to export sales data, the customer list, and individual reports before closing an account. Square's US terms say account data may be deleted after termination, while its data-processing agreement contains return-or-delete obligations whose application depends on role, region, and law. These examples show why timing and contract scope matter; they do not promise a migration-ready format. ([Vagaro cancellation guidance](https://support.vagaro.com/hc/en-us/articles/204347110-Cancel-or-Pause-Your-Vagaro-Subscription); [Square General Terms](https://squareup.com/us/en/legal/general/ua); [Square Data Processing Agreement](https://squareup.com/us/en/legal/general/data-processing), accessed July 17, 2026.)
+
+I began with a reasonable question: can I export my client list?
+
+Now I would ask something more useful:
+
+> What would count as proof that an export is actually usable before I cancel the old system?
+
+That is the next decision. Until there is a published answer, it should remain a question rather than a link that leads nowhere.
+
+## Sources and limitations
+
+This article was checked against current official product documentation, API documentation, contract terms, and government guidance accessed July 17, 2026.
+
+- [Fresha client, merge, Data Connector, and report documentation](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list)
+- [Vagaro customer export, profile, appointment, notes, report, and cancellation documentation](https://support.vagaro.com/hc/en-us/articles/360006371094-Export-Your-Customer-List)
+- [Square Customers and Bookings API documentation](https://developer.squareup.com/docs/customers-api/what-it-does)
+- [Square Data Processing Agreement and General Terms](https://squareup.com/us/en/legal/general/data-processing)
+- [U.S. FTC commercial-email guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+- [UK ICO marketing-list guidance](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/using-marketing-lists/)
+
+The reviewed sources document intended behavior and selected schemas. They do not replace a real sample export, a source-to-target migration test, contract review for the applicable account, or jurisdiction-specific privacy advice. No conclusion here establishes that a named vendor provides complete portability or that relationships will survive migration.

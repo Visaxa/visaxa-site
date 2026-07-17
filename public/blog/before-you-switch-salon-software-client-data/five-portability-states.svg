@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 960" role="img" aria-labelledby="title desc">
+  <title id="title">Five portability states</title>
+  <desc id="desc">A sequence from data existing, to being exportable and interpretable, to having a destination identified, and finally to having relationships preserved.</desc>
+  <rect width="760" height="960" fill="#fafaf9"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="50" y="68" fill="#1c1917" font-size="30" font-weight="700">A file is not the finish line</text>
+    <text x="50" y="105" fill="#57534e" font-size="20">Each stage answers a different question.</text>
+
+    <g fill="#fafaf9" stroke="#1c1917" stroke-width="3">
+      <rect x="105" y="155" width="550" height="116" rx="10"/>
+      <rect x="105" y="315" width="550" height="116" rx="10"/>
+      <rect x="105" y="475" width="550" height="116" rx="10"/>
+      <rect x="105" y="635" width="550" height="116" rx="10"/>
+      <rect x="105" y="795" width="550" height="116" rx="10"/>
+    </g>
+
+    <g fill="none" stroke="#78716c" stroke-width="3">
+      <path d="M380 271 V315"/>
+      <path d="M380 431 V475"/>
+      <path d="M380 591 V635"/>
+      <path d="M380 751 V795"/>
+    </g>
+    <g fill="#78716c">
+      <path d="M380 315 l-10 -16 h20z"/>
+      <path d="M380 475 l-10 -16 h20z"/>
+      <path d="M380 635 l-10 -16 h20z"/>
+      <path d="M380 795 l-10 -16 h20z"/>
+    </g>
+
+    <g fill="#1c1917" text-anchor="middle">
+      <text x="380" y="207" font-size="29" font-weight="700">Exists</text>
+      <text x="380" y="240" font-size="19" fill="#57534e">Can we see it now?</text>
+      <text x="380" y="367" font-size="29" font-weight="700">Exportable</text>
+      <text x="380" y="400" font-size="19" fill="#57534e">Can an authorized person retrieve it?</text>
+      <text x="380" y="527" font-size="29" font-weight="700">Interpretable</text>
+      <text x="380" y="560" font-size="19" fill="#57534e">Will the identifiers and values make sense?</text>
+      <text x="380" y="687" font-size="29" font-weight="700">Destination identified</text>
+      <text x="380" y="720" font-size="19" fill="#57534e">Will it be imported, archived or reconciled?</text>
+      <text x="380" y="847" font-size="29" font-weight="700">Relationships preserved</text>
+      <text x="380" y="880" font-size="19" fill="#57534e">Can the destination reconstruct the connections?</text>
+    </g>
+  </g>
+</svg>
