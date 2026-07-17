@@ -240,6 +240,16 @@ Before drafting, answer:
 
 If these answers are absent, the article must not be written.
 
+Investigation narrative rule:
+
+- Every research article must read as an investigation rather than documentation.
+- The narrator begins with a reasonable assumption that the intended reader could plausibly hold.
+- During the investigation, evidence and operational consequences reveal that the situation is more complex than the opening assumption suggests.
+- Each section replaces one incomplete or incorrect mental model with a more accurate and useful one.
+- Do not teach from authority or present the completed framework as self-evident truth.
+- Let the reader feel that they are discovering the model alongside the narrator as the evidence accumulates.
+- The final conclusion must feel earned by the investigation, not announced in advance as a doctrine or product position.
+
 Additional gates:
 
 - A composite decision may require one flagship plus supporting concept notes.
