@@ -1,0 +1,205 @@
+---
+title: "Your Salon Software Has an Export Button. Does That Mean You Can Actually Leave?"
+subtitle: "Before cancelling, check what the export contains, what disappears with account access, and whether the business could still be reconstructed if the transition fails."
+description: "A salon-owner guide to checking export scope, cancellation terms, archive readiness, and recovery evidence before relying on salon software."
+date: "2026-07-17"
+tags: ["Salon Software", "Data Portability", "Migration", "Vendor Lock-In"]
+draft: false
+---
+
+There is an Export button, so leaving should be straightforward.
+
+That was my starting point. I pictured one download, a folder saved somewhere safe, and then the freedom to cancel whenever the salon was ready. The data was ours; the button was visible. I did not think there was much left to settle.
+
+Then I tried to write down what that button had actually proved.
+
+It proved that some export route existed. It did not yet tell me what was inside the files, which parts of the business required separate exports, whether the records would make sense after the account closed, or how much time I would have to discover a problem.
+
+<KeyTakeaway>
+An Export button proves only that some export route exists. A safe exit also needs evidence of the export's scope, understandable files, written cancellation and access terms, enough time to retrieve and check the records, a durable archive, and a recovery route if the transition fails. Public documentation can identify what to ask for, but it cannot replace inspecting the salon's actual export and governing account terms.
+</KeyTakeaway>
+
+The question in my notes changed from "Can I export?" to this:
+
+> How can I tell whether my salon software will actually let me leave without losing my client history?
+
+## The button answered a smaller question than I had asked
+
+I first looked for reassurance in official export instructions. Fresha documents a client-list export in Excel or CSV, subject to a download permission, and points to a separate route for exporting appointments. Vagaro documents an owner-only customer-list export in Excel or PDF. Those pages confirm that particular export actions exist. They do not, by themselves, show that one download contains the full operational history of a salon. ([Fresha client-list export](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list), accessed July 17, 2026; [Vagaro customer-list export](https://support.vagaro.com/hc/en-us/articles/360006371094-Export-Your-Customer-List), updated July 1, 2026 and accessed July 17, 2026.)
+
+That made the word "export" feel less like an answer and more like the name of an action. An action always has a scope: a particular screen, report, object, date range, role, or file format.
+
+Vagaro's cancellation guidance made that practical. It tells owners to export sales data, the customer list, and reports before cancellation, and says reports must be run and exported separately. That is useful evidence about the documented workflow. It is help-center guidance, not a contractual promise that the combined files include every record or relationship the business needs. ([Vagaro cancellation guidance](https://support.vagaro.com/hc/en-us/articles/204347110-Cancel-or-Pause-Your-Vagaro-Subscription), updated June 29, 2026 and accessed July 17, 2026.)
+
+So my first check became modest: does an export route exist, who can use it, and what exactly does that route claim to cover? Passing that check would not answer the rest.
+
+## The vendor's list and the salon's list were not the same list
+
+Once I stopped treating Export as a single package, I needed something to compare its scope against.
+
+That was the point of the salon's exit inventory. [The previous Research article defines the records, context, and relationships the business would need to preserve](/blog/before-you-switch-salon-software-client-data). I did not need to rebuild that inventory here. I needed to put its requirements on one side and the vendor's documented outputs on the other.
+
+A few selected examples were enough to expose the gap. A client export might cover contact fields while appointments use a different report. Financial reports might be filtered outputs. Attachments or notes might live only in a profile. Even when several files are available, the documentation may not say whether they form one coherent package.
+
+The comparison I wanted was no longer "Does the product export data?" It was:
+
+- Which required records are included?
+- Which require another export or service request?
+- Which are explicitly excluded?
+- Which remain unknown?
+
+Public instructions can help populate that map, but they cannot finish it. I did not obtain a real anonymized export package from Fresha, Vagaro, Square, or Mindbody. Without one, I could not inspect delivered fields, omissions, attachments, identifiers, or relationship keys. The missing sample was not a minor research inconvenience. It was exactly the artifact a salon should request before relying on the answer.
+
+## A file could open and still leave the business unexplained
+
+My next assumption was that usability would be obvious: download the file, open it, and see whether the rows were there.
+
+That test was too shallow. A date without its timezone can shift meaning. A status without a definition can be misread. A staff name without a stable identifier can refer to two people. A payment row without a link to its appointment, refund, or client can be accurate and still be difficult to use.
+
+Official technical documentation shows why these relationships matter, but it also marks an important boundary. Square's Customers API describes customer profiles and connections with other Square services, while Fresha's Data Connector describes multiple tables joined through identifiers. Mindbody's public API exposes multiple service areas and requires developer access, approval, and business activation. These sources show that business meaning can be distributed across objects and permissions. They do not prove that an owner-facing export includes those structures or that API access will remain available after cancellation. ([Square Customers API](https://developer.squareup.com/docs/customers-api/what-it-does); [Fresha Data Connector](https://www.fresha.com/help-center/knowledge-base/reports/432-data-connector-overview); [Mindbody Public API](https://developers.mindbodyonline.com/ui/documentation/public-api), accessed July 17, 2026.)
+
+I began separating four things that I had previously called "the export":
+
+1. the files;
+2. definitions for their fields and statuses;
+3. identifiers that connect one file to another;
+4. a manifest explaining the account, date range, filters, and omissions.
+
+An API document could help me understand a product's current data model. It could not stand in for the salon's actual files. A blank import template could show what a destination accepts. It could not show what the old system delivers. A CSV extension could describe a format. It could not prove completeness or importability.
+
+The better test became: could someone understand what the files say without reopening the old account for basic definitions?
+
+<ArticleImage
+  src="/blog/can-you-really-leave-your-salon-software/export-button-to-practical-exit.svg"
+  alt="Six-step sequence from an existing export route through documented scope, understandable files, known account terms, a ready archive, and a defined recovery path"
+  caption="An export route is the first gate. Practical exit depends on separate evidence at every gate that follows."
+/>
+
+## Cancelling and losing access were not one event
+
+At first I assumed I could sort out any missing export after giving notice. Then the official cancellation material showed why timing had to be checked before the account changed state.
+
+Vagaro's help page advises exporting before cancellation and says an owner who missed reports would need to reactivate and later deactivate again. Square's US deactivation guidance tells owners to export payment history, the Item Library, and Customer Directory before deactivation; it says the existing account cannot be reactivated and that payment and account information becomes inaccessible. Fresha's plan-management help says workspace access is removed at the end of the billing cycle and describes reactivation as the route back to full access. These are three documented product behaviors, not a ranking and not guarantees about future retention. The Fresha and Square pages did not display a publication date when inspected. ([Vagaro cancellation guidance](https://support.vagaro.com/hc/en-us/articles/204347110-Cancel-or-Pause-Your-Vagaro-Subscription), updated June 29, 2026; [Square deactivation guidance](https://squareup.com/help/us/en/article/3819-deactivate-your-account); [Fresha plan management](https://www.fresha.com/help-center/knowledge-base/billing-and-fees/574-manage-your-fresha-plan), accessed July 17, 2026.)
+
+The useful lesson was not that one route was good and another bad. It was that notice date, billing-cycle end, login access, self-service export, support access, and deletion could occur on different timelines. I needed those dates on one line before starting cancellation, not after.
+
+## Retained did not necessarily mean retrievable
+
+I had also been using "the vendor keeps the data" as a form of reassurance. If records still existed somewhere, I assumed the salon could get them back.
+
+The terms made that assumption unsafe. Square's US General Terms, last updated June 1, 2026 and effective for sellers July 1, say service rights cease on termination and Square may, but is not obligated to, delete account information. Square's Data Processing Agreement, last updated March 16, 2026, includes return-or-delete provisions in its processor context, subject to legal-retention conditions. Those documents address different roles and obligations. Neither one promises a salon a complete, migration-ready archive. ([Square General Terms](https://squareup.com/us/en/legal/general/ua); [Square Data Processing Agreement](https://squareup.com/us/en/legal/general/data-processing), accessed July 17, 2026.)
+
+UK Information Commissioner's Office guidance similarly says controller-processor contracts should address deletion or return of personal data at the end of services, while recognizing that backup deletion may not always be immediate. That guidance applies within the UK GDPR controller-processor context. It does not create a universal right for every salon to retrieve every operational or financial record. ([ICO controller-processor contract guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/contracts-and-liabilities-between-controllers-and-processors-multi/what-needs-to-be-included-in-the-contract/), accessed July 17, 2026.)
+
+I now had to ask two separate questions: what may remain in the vendor's systems, and what can the salon still retrieve through a documented process? Storage, legal retention, backup retention, login access, and owner retrieval were not synonyms.
+
+Privacy and archive requirements also depended on jurisdiction, the parties' roles, the type of data, and the circumstances. Nothing I had reviewed established that a particular archive would satisfy a salon's accounting, privacy, tax, or litigation obligations. That conclusion would need account-specific and jurisdiction-specific review.
+
+## Help could come with a clock, conditions, or a fee
+
+I had imagined export assistance as a fallback: if the self-service files were confusing, support would send what was needed.
+
+The written sources turned "support will help" into a list of conditions. Mindbody's public Terms, last updated March 20, 2026, describe a post-termination availability/request period of no more than 30 days for specified customer data, exclude certain categories from standard web-service availability, and allow an export service to depend on paid amounts, an agreed statement of work, and additional fees. That is a contractual example of conditions around retrieval. It is not a 30-day delivery guarantee, and the salon's executed Order Form, SOW, supplemental terms, product, and region may change the result. ([Mindbody Terms of Service](https://www.mindbodyonline.com/company/legal/terms-of-service), accessed July 17, 2026.)
+
+Fresha's public Partner Terms describe professional services and mutually agreed migration scope and pricing at purchase. Vagaro's import guidance describes a one-time premium import under stated conditions, later fees, typical processing time, and accepted input formats. Those documents concern assistance and inbound migration, not proof that an outgoing export is complete or that relationships survive. ([Fresha Partner Terms](https://terms.fresha.com/partner-terms), accessed July 17, 2026; [Vagaro import guidance](https://support.vagaro.com/hc/en-us/articles/204348170-Import-Contacts), updated June 29, 2026 and accessed July 17, 2026.)
+
+So I added practical questions alongside the file questions. Is the exit self-service or assisted? Who may request it? How long might preparation take? Is the service available after notice? Is it repeatable? What is excluded? What needs an SOW? What could cost extra?
+
+Public help pages and terms could show documented variation. Only the salon's current agreement and a written account-specific response could settle the conditions that applied to that salon.
+
+## A folder of downloads was not yet an archive
+
+Once the files existed, I assumed saving an untouched copy would be enough. It was better than having nothing, but I could see how quickly an unexplained folder would become fragile.
+
+If I returned to it two years later, I would want to know which account and location it covered, when each export was run, which filters were active, what the files were called before anyone renamed them, and what the vendor said was excluded. I would want field definitions, relationship keys, relevant terms, support correspondence, and a manifest of what had and had not arrived.
+
+That did not let me call the archive legally sufficient. No real export package had been inspected, and no jurisdiction-specific archive review had been performed. It did give me a more defensible working model: preserve the records together with enough scope, meaning, provenance, and limitations to explain the capture later.
+
+The archive was no longer just a backup copy. It was a record of what the salon had actually secured before access changed.
+
+> If your account disappeared the day after cancellation, could the files you downloaded explain and reconstruct the business without opening the old software?
+
+## Reactivation was not the same thing as rollback
+
+That question exposed another shortcut in my thinking. I had treated export, backup, archive, recovery, and rollback as different words for roughly the same safety net.
+
+Vagaro documents an account-reactivation route and says reactivation restores business data and the customer list, potentially with subscription or outstanding-balance charges. Its separate restoration guidance lists records that can and cannot be restored and describes fees for some restoration work. Fresha documents reactivation as a way to restore full workspace access. These pages establish documented procedures. They do not show that an attempted migration was reversed without loss, that work performed during the transition was reconciled, or that every prior record returned to a tested working state. ([Vagaro reactivation guidance](https://support.vagaro.com/hc/en-us/articles/20859790362779-Reactivate-Your-Vagaro-Account), page displaying an update date of March 11, 2025 when accessed July 17, 2026; [Vagaro restoration guidance](https://support.vagaro.com/hc/en-us/articles/35900291870747-Restore-Deleted-Information-and-Files), updated January 12, 2026; [Fresha plan management](https://www.fresha.com/help-center/knowledge-base/billing-and-fees/574-manage-your-fresha-plan), accessed July 17, 2026.)
+
+I had not inspected a real source-to-target migration report, exception log, cutover record, or rollback record. There was no evidence here about a last reversible point, changes written to two systems, recovery time, or post-restoration task checks. That meant I could ask for a rollback plan, but I could not claim that any vendor's rollback had been proven in practice.
+
+The distinctions became useful:
+
+- an **export** retrieves data;
+- an **archive** preserves records and their context;
+- **reactivation** restores some form of account access under documented conditions;
+- **rollback** returns an operation to a defined working state after a failed change.
+
+One could help another, but none automatically proved the next.
+
+## Lock-in could survive the download
+
+I used to picture vendor lock-in as a refusal to hand over data. The more subtle version was a folder full of files that still depended on the old system for meaning or operation.
+
+An attachment might remain vendor-hosted. A report definition might exist only in the account. A status code might lack a dictionary. A payment or communication history might be split across services. An integration credential might disappear on termination. A proprietary identifier might connect records inside the old system but mean nothing elsewhere.
+
+The existence of those possibilities did not prove that a named vendor had failed. The official documentation showed that exports, reports, APIs, permissions, contracts, and services can have different scopes. The salon's actual package and terms would have to show which dependencies remained.
+
+This gave me a less dramatic definition of lock-in: any material dependency that leaves the exit incomplete, delayed, costly, or operationally unsafe after the available evidence is considered.
+
+<ArticleImage
+  src="/blog/can-you-really-leave-your-salon-software/requirements-versus-evidence.svg"
+  alt="Comparison between salon exit-inventory requirements and vendor evidence, connected by checks for inclusion, meaning, timely access, archive quality, and recoverability"
+  caption="The salon defines what must survive. Exit readiness depends on matching each requirement to evidence the owner can inspect."
+/>
+
+## The exit check I would record before relying on the product
+
+By this point, a yes-or-no answer to "Can I export?" no longer captured the decision. I needed a sequence in which every step could fail independently.
+
+This is the version I would put in the salon's decision record:
+
+1. **An export route exists.** I can identify the route, authorized user, format, and conditions under which it runs.
+2. **The export scope is documented.** Required records are mapped as included, separate, excluded, or unknown.
+3. **A real sample has been inspected.** I have looked at account-generated files, not only screenshots, help text, an API description, or a blank import template.
+4. **The files are understandable.** Fields, identifiers, dates, statuses, definitions, attachments, and relationships can be interpreted outside the live account.
+5. **Every material exit-inventory requirement is accounted for.** The comparison uses what the salon needs, not only what the vendor chooses to label as exportable.
+6. **Cancellation, access, retention, and deletion terms are known.** Notice, service end, login loss, retrieval rights, retention, and deletion are separated on a timeline.
+7. **Timing, assistance, responsibilities, and fees are known.** The promised route fits inside the available window and does not depend on undefined help.
+8. **A durable archive exists.** Original files, scope, dates, definitions, provenance, and known omissions are preserved together.
+9. **A recovery or rollback path has been defined.** The owner, trigger, last reversible point, operating steps, and time limit are explicit—even if practical rollback is still unproven.
+10. **Unresolved dependencies and lock-in remain visible.** A critical unknown is recorded as a condition or failed gate, not softened by unrelated features.
+
+Passing one step would not imply passing the next. A vendor could document a route without documenting its scope. A sample could contain the expected fields without preserving relationships. A good archive could exist without any practical rollback route.
+
+For each step, I would record **VERIFIED**, **CONDITIONAL**, or **UNVERIFIED**, along with the source date, account or plan it applied to, contradiction, owner, and refresh trigger. "Support said it should be fine" would remain unverified until the promised artifact or term could be inspected.
+
+No vendor reviewed for this article has been verified as passing all ten gates. That is not a verdict that the vendors fail. It means the public evidence does not support a named-vendor pass, ranking, complete-export claim, importability claim, legally sufficient archive claim, or empirical rollback claim.
+
+## What I could decide—and what I still could not
+
+I began with the comfort of a visible button. I ended with a more useful form of confidence: not confidence that leaving would be easy, but a record of what had been proved, what depended on conditions, and what remained unknown before the salon gave up access or negotiating leverage.
+
+The official sources were enough to show that export routes, access windows, contract terms, assistance, reactivation, and deletion conditions can differ. They were enough to build a method for asking better questions. They were not enough to declare any named product exit-ready.
+
+The missing evidence was now part of the decision. I would ask for a real anonymized export, its schema or definitions, the governing Order Form and SOW, a written cancellation timeline, an archive manifest, and—if rollback mattered—a real operational recovery record. If those artifacts could not be produced before commitment, I would not convert reassurance into a verified result.
+
+For a salon still choosing software, the next question would be:
+
+> Which products pass all the decision gates we have already resolved?
+
+For a salon already moving, a different question would follow:
+
+> How will I prove that the migration preserved what mattered rather than merely reporting that an import finished?
+
+## Sources and limitations
+
+This article was checked against official vendor help documentation, public contracts and data-processing terms, official developer documentation, and UK/EU government or legislative guidance accessed July 17, 2026.
+
+- [Fresha client export documentation](https://www.fresha.com/help-center/knowledge-base/clients/58-export-your-client-list), [plan-management guidance](https://www.fresha.com/help-center/knowledge-base/billing-and-fees/574-manage-your-fresha-plan), [Data Connector documentation](https://www.fresha.com/help-center/knowledge-base/reports/432-data-connector-overview), and [Partner Terms](https://terms.fresha.com/partner-terms)
+- [Vagaro customer-export guidance](https://support.vagaro.com/hc/en-us/articles/360006371094-Export-Your-Customer-List), [cancellation guidance](https://support.vagaro.com/hc/en-us/articles/204347110-Cancel-or-Pause-Your-Vagaro-Subscription), [reactivation guidance](https://support.vagaro.com/hc/en-us/articles/20859790362779-Reactivate-Your-Vagaro-Account), [restoration guidance](https://support.vagaro.com/hc/en-us/articles/35900291870747-Restore-Deleted-Information-and-Files), and [import guidance](https://support.vagaro.com/hc/en-us/articles/204348170-Import-Contacts)
+- [Square deactivation guidance](https://squareup.com/help/us/en/article/3819-deactivate-your-account), [General Terms](https://squareup.com/us/en/legal/general/ua), [Data Processing Agreement](https://squareup.com/us/en/legal/general/data-processing), and [Customers API](https://developer.squareup.com/docs/customers-api/what-it-does)
+- [Mindbody Terms of Service](https://www.mindbodyonline.com/company/legal/terms-of-service) and [Public API](https://developers.mindbodyonline.com/ui/documentation/public-api)
+- [UK ICO controller-processor contract guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/contracts-and-liabilities-between-controllers-and-processors-multi/what-needs-to-be-included-in-the-contract/)
+- [EU GDPR Article 28](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679)
+
+No real anonymized sample export was inspected. No source-to-target migration report was inspected. No practical rollback record was inspected. No vendor is verified as passing every exit-readiness gate. Public terms do not replace the salon's executed Order Form, SOW, product-specific terms, or regional terms. Privacy duties and archive sufficiency depend on jurisdiction, role, data type, and circumstances; this article is not legal advice.

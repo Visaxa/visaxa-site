@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1210" role="img" aria-labelledby="title desc">
+  <title id="title">Export button to practical exit</title>
+  <desc id="desc">A vertical six-step sequence shows that an export route becomes practical exit evidence only after its scope, file meaning, account terms, archive readiness, and recovery path are separately verified.</desc>
+  <rect width="760" height="1210" fill="#fafaf9"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="48" y="70" fill="#1c1917" font-size="32" font-weight="700">Export button to practical exit</text>
+    <text x="48" y="108" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Each arrow means “requires separate evidence.”</text>
+    <line x1="48" y1="135" x2="712" y2="135" stroke="#1c1917" stroke-width="3"/>
+
+    <g fill="#fafaf9" stroke="#1c1917" stroke-width="3">
+      <rect x="105" y="175" width="550" height="116" rx="8"/>
+      <rect x="105" y="350" width="550" height="116" rx="8"/>
+      <rect x="105" y="525" width="550" height="116" rx="8"/>
+      <rect x="105" y="700" width="550" height="116" rx="8"/>
+      <rect x="105" y="875" width="550" height="116" rx="8"/>
+      <rect x="105" y="1050" width="550" height="116" rx="8"/>
+    </g>
+
+    <g fill="none" stroke="#78716c" stroke-width="3">
+      <path d="M380 291 V350"/>
+      <path d="M380 466 V525"/>
+      <path d="M380 641 V700"/>
+      <path d="M380 816 V875"/>
+      <path d="M380 991 V1050"/>
+    </g>
+    <g fill="#78716c">
+      <path d="M380 350 l-10 -17 h20z"/>
+      <path d="M380 525 l-10 -17 h20z"/>
+      <path d="M380 700 l-10 -17 h20z"/>
+      <path d="M380 875 l-10 -17 h20z"/>
+      <path d="M380 1050 l-10 -17 h20z"/>
+    </g>
+
+    <g fill="#1c1917" text-anchor="middle">
+      <text x="380" y="225" font-size="30" font-weight="700">Export exists</text>
+      <text x="380" y="260" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">A route is available to an authorized user</text>
+
+      <text x="380" y="400" font-size="30" font-weight="700">Scope documented</text>
+      <text x="380" y="435" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Included, separate, excluded, and unknown</text>
+
+      <text x="380" y="575" font-size="30" font-weight="700">Files understood</text>
+      <text x="380" y="610" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Fields, dates, identifiers, and relationships</text>
+
+      <text x="380" y="750" font-size="30" font-weight="700">Account terms known</text>
+      <text x="380" y="785" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Access, timing, retention, help, and fees</text>
+
+      <text x="380" y="925" font-size="30" font-weight="700">Archive ready</text>
+      <text x="380" y="960" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Records keep their scope, meaning, and provenance</text>
+
+      <text x="380" y="1100" font-size="30" font-weight="700">Recovery path defined</text>
+      <text x="380" y="1135" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Owner, trigger, reversible point, and time limit</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Requirements versus evidence</title>
+  <desc id="desc">The salon's required records, context, and relationships are matched to vendor-provided export, contract, recovery, and legal evidence through five checks: included, understandable, accessible in time, archivable, and recoverable.</desc>
+  <rect width="760" height="1080" fill="#fafaf9"/>
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="48" y="70" fill="#1c1917" font-size="32" font-weight="700">Requirements versus evidence</text>
+    <text x="48" y="108" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Safe exit requires a match, not an average score.</text>
+    <line x1="48" y1="135" x2="712" y2="135" stroke="#1c1917" stroke-width="3"/>
+
+    <rect x="48" y="175" width="664" height="220" rx="8" fill="#fafaf9" stroke="#1c1917" stroke-width="3"/>
+    <text x="80" y="220" fill="#1c1917" font-size="27" font-weight="700">The salon defines what must survive</text>
+    <text x="80" y="260" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="19">A17 Exit Inventory requirements</text>
+    <g fill="#1c1917" font-family="Arial, Helvetica, sans-serif" font-size="23">
+      <text x="100" y="310">• Records</text>
+      <text x="300" y="310">• Context</text>
+      <text x="490" y="310">• Relationships</text>
+    </g>
+    <text x="80" y="355" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="18">These requirements come from the business, not the export menu.</text>
+
+    <path d="M380 395 V450" fill="none" stroke="#78716c" stroke-width="3"/>
+    <path d="M380 450 l-11 -18 h22z" fill="#78716c"/>
+
+    <rect x="48" y="450" width="664" height="330" rx="8" fill="#f5f5f4" stroke="#1c1917" stroke-width="3"/>
+    <text x="80" y="500" fill="#1c1917" font-size="27" font-weight="700">Five matching questions</text>
+    <g font-family="Arial, Helvetica, sans-serif">
+      <g fill="#1c1917" font-size="23" font-weight="700">
+        <text x="90" y="555">1</text>
+        <text x="90" y="605">2</text>
+        <text x="90" y="655">3</text>
+        <text x="90" y="705">4</text>
+        <text x="90" y="755">5</text>
+      </g>
+      <g fill="#1c1917" font-size="23">
+        <text x="130" y="555">Is it included?</text>
+        <text x="130" y="605">Is it understandable?</text>
+        <text x="130" y="655">Is it accessible in time?</text>
+        <text x="130" y="705">Can it be archived with meaning?</text>
+        <text x="130" y="755">Is there a defined recovery path?</text>
+      </g>
+    </g>
+
+    <path d="M380 780 V835" fill="none" stroke="#78716c" stroke-width="3"/>
+    <path d="M380 835 l-11 -18 h22z" fill="#78716c"/>
+
+    <rect x="48" y="835" width="664" height="195" rx="8" fill="#fafaf9" stroke="#1c1917" stroke-width="3"/>
+    <text x="80" y="880" fill="#1c1917" font-size="27" font-weight="700">The vendor provides evidence</text>
+    <text x="80" y="920" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Export package • Exit terms • Recovery record</text>
+    <text x="80" y="955" fill="#57534e" font-family="Arial, Helvetica, sans-serif" font-size="20">Applicable legal or privacy authority</text>
+    <line x1="80" y1="980" x2="680" y2="980" stroke="#a8a29e" stroke-width="2"/>
+    <text x="80" y="1010" fill="#1c1917" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Unmatched material requirement = CONDITIONAL or UNVERIFIED</text>
+  </g>
+</svg>
