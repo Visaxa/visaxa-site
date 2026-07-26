@@ -1,72 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 680" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 1220" role="img" aria-labelledby="title desc">
   <title id="title">After the conditions changed</title>
-  <desc id="desc">An editorial field notebook records one salon handoff after the rule was clarified, staff practised it, configuration was checked, and the task was repeated. Below the notes, one result shows friction fading while another shows a software limitation remaining.</desc>
+  <desc id="desc">An editorial field notebook records one salon handoff after the rule was clarified, staff practised it, configuration was checked, and the task was repeated. Spacious stacked result cards show friction fading while a software limitation remains.</desc>
   <defs>
     <filter id="pageShadow" x="-20%" y="-20%" width="140%" height="150%">
       <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#2d2923" flood-opacity=".1"/>
     </filter>
-    <pattern id="rules" width="8" height="27" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="26.5" x2="8" y2="26.5" stroke="#ded7cc" stroke-width=".8"/>
+    <pattern id="rules" width="8" height="29" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="28.5" x2="8" y2="28.5" stroke="#ded7cc" stroke-width=".8"/>
     </pattern>
   </defs>
 
-  <rect width="375" height="680" fill="#eee9df"/>
-  <rect x="12" y="12" width="351" height="656" rx="3" fill="#f8f4ec" stroke="#d4cbbd"/>
+  <rect width="375" height="1220" fill="#eee9df"/>
+  <rect x="12" y="12" width="351" height="1196" rx="4" fill="#f8f4ec" stroke="#d4cbbd"/>
 
-  <text x="28" y="43" fill="#292722" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700">After the conditions changed</text>
-  <text x="28" y="65" fill="#6f685f" font-family="Arial, sans-serif" font-size="11" letter-spacing=".55">FIELD NOTES FROM ONE REPEATED HANDOFF</text>
+  <text x="30" y="52" fill="#292722" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700">
+    <tspan x="30" dy="0">After the conditions</tspan>
+    <tspan x="30" dy="28">changed</tspan>
+  </text>
+  <g transform="translate(0 40)">
+  <text x="30" y="80" fill="#6f685f" font-family="Arial, sans-serif" font-size="15" letter-spacing=".6">
+    <tspan x="30" dy="0">FIELD NOTES FROM ONE</tspan>
+    <tspan x="30" dy="21">REPEATED HANDOFF</tspan>
+  </text>
+  <line x1="30" y1="125" x2="345" y2="125" stroke="#c9c0b3"/>
 
+  <g transform="translate(0 26)">
   <g filter="url(#pageShadow)">
-    <rect x="28" y="91" width="319" height="385" rx="3" fill="#fffdf8" stroke="#d5ccbe"/>
+    <rect x="30" y="126" width="315" height="608" rx="4" fill="#fffdf8" stroke="#d5ccbe"/>
   </g>
-  <rect x="28" y="91" width="319" height="385" rx="3" fill="url(#rules)" opacity=".55"/>
-  <line x1="66" y1="91" x2="66" y2="476" stroke="#c98c76"/>
+  <rect x="30" y="126" width="315" height="608" rx="4" fill="url(#rules)" opacity=".45"/>
+  <line x1="72" y1="126" x2="72" y2="734" stroke="#c98c76"/>
 
-  <text x="45" y="132" fill="#9a5d45" font-family="Arial, sans-serif" font-size="10.5" letter-spacing="1" transform="rotate(-90 45 132)">ONE TASK</text>
-  <text x="81" y="124" fill="#292722" font-family="Georgia, serif" font-size="15">Client handoff · ordinary week</text>
-  <text x="81" y="144" fill="#7b746b" font-family="Arial, sans-serif" font-size="11.5">Outcome: the exception arrives in time</text>
+  <text x="51" y="176" fill="#9a5d45" font-family="Arial, sans-serif" font-size="14.5" letter-spacing=".7" transform="rotate(-90 51 176)">ONE TASK</text>
+  <text x="91" y="163" fill="#292722" font-family="Georgia, serif" font-size="20">Client handoff</text>
+  <text x="91" y="188" fill="#625c54" font-family="Arial, sans-serif" font-size="16">An ordinary week, one exception</text>
+  <text x="91" y="211" fill="#7b746b" font-family="Arial, sans-serif" font-size="15">
+    <tspan x="91" dy="0">Outcome: the exception</tspan>
+    <tspan x="91" dy="20">arrives in time</tspan>
+  </text>
+
+  <line x1="91" y1="253" x2="325" y2="253" stroke="#d5ccbe"/>
 
   <g>
-    <text x="43" y="190" fill="#9a9388" font-family="Arial, sans-serif" font-size="10.5">01</text>
-    <text x="81" y="184" fill="#292722" font-family="Georgia, serif" font-size="14">The rule was made explicit</text>
-    <text x="81" y="204" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">Owner, handoff, ordinary case, exception.</text>
+    <text x="48" y="279" fill="#8b8378" font-family="Arial, sans-serif" font-size="14">01</text>
+    <text x="91" y="274" fill="#292722" font-family="Georgia, serif" font-size="19">The rule was made explicit</text>
+    <text x="91" y="302" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="91" dy="0">Owner, handoff, ordinary case,</tspan>
+      <tspan x="91" dy="20">and exception were named.</tspan>
+    </text>
 
-    <text x="43" y="258" fill="#9a9388" font-family="Arial, sans-serif" font-size="10.5">02</text>
-    <text x="81" y="252" fill="#292722" font-family="Georgia, serif" font-size="14">Staff practised the real task</text>
-    <text x="81" y="272" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">Right role, device, time pressure, exception.</text>
+    <text x="48" y="392" fill="#8b8378" font-family="Arial, sans-serif" font-size="14">02</text>
+    <text x="91" y="387" fill="#292722" font-family="Georgia, serif" font-size="19">Staff practised the real task</text>
+    <text x="91" y="415" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="91" dy="0">Right role, device, time pressure,</tspan>
+      <tspan x="91" dy="20">and the exception.</tspan>
+    </text>
 
-    <text x="43" y="326" fill="#9a9388" font-family="Arial, sans-serif" font-size="10.5">03</text>
-    <text x="81" y="320" fill="#292722" font-family="Georgia, serif" font-size="14">Configuration was checked</text>
-    <text x="81" y="340" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">Current docs beside the configured account.</text>
+    <text x="48" y="505" fill="#8b8378" font-family="Arial, sans-serif" font-size="14">03</text>
+    <text x="91" y="500" fill="#292722" font-family="Georgia, serif" font-size="19">Configuration was checked</text>
+    <text x="91" y="528" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="91" dy="0">Current documentation was read</tspan>
+      <tspan x="91" dy="20">beside the configured account.</tspan>
+    </text>
 
-    <text x="43" y="394" fill="#9a9388" font-family="Arial, sans-serif" font-size="10.5">04</text>
-    <text x="81" y="388" fill="#292722" font-family="Georgia, serif" font-size="14">The handoff was repeated</text>
-    <text x="81" y="408" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">Normal variation plus the exception.</text>
+    <text x="48" y="618" fill="#8b8378" font-family="Arial, sans-serif" font-size="14">04</text>
+    <text x="91" y="613" fill="#292722" font-family="Georgia, serif" font-size="19">The handoff was repeated</text>
+    <text x="91" y="641" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="91" dy="0">Normal variation was tested</tspan>
+      <tspan x="91" dy="20">alongside the exception.</tspan>
+    </text>
   </g>
 
-  <path d="M81 443 C145 427 228 455 321 437" fill="none" stroke="#aaa297" stroke-width="1.1"/>
-  <circle cx="81" cy="443" r="2.5" fill="#777168"/>
-  <circle cx="321" cy="437" r="2.7" fill="#9a5d45"/>
-  <text x="81" y="463" fill="#817a71" font-family="Arial, sans-serif" font-size="10.5" letter-spacing=".65">WHAT CHANGED — AND WHAT DID NOT</text>
+  <path d="M91 697 C155 681 232 709 325 691" fill="none" stroke="#aaa297" stroke-width="1.1"/>
+  <circle cx="91" cy="697" r="2.5" fill="#777168"/>
+  <circle cx="325" cy="691" r="2.7" fill="#9a5d45"/>
+
+  <text x="30" y="775" fill="#817a70" font-family="Arial, sans-serif" font-size="15" letter-spacing=".65">WHAT CHANGED—AND WHAT DID NOT</text>
 
   <g>
-    <rect x="28" y="510" width="151" height="120" rx="3" fill="#e9e4da" stroke="#cec5b8"/>
-    <text x="42" y="537" fill="#777168" font-family="Arial, sans-serif" font-size="10.5" letter-spacing=".65">FRICTION THAT FADED</text>
-    <text x="42" y="565" fill="#292722" font-family="Georgia, serif" font-size="15">Duplicate notes</text>
-    <text x="42" y="588" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">A shared rule removed</text>
-    <text x="42" y="605" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">the second private</text>
-    <text x="42" y="622" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">record.</text>
+    <rect x="30" y="797" width="315" height="135" rx="4" fill="#e9e4da" stroke="#cec5b8"/>
+    <text x="50" y="827" fill="#777168" font-family="Arial, sans-serif" font-size="15" letter-spacing=".5">FRICTION THAT FADED</text>
+    <text x="50" y="860" fill="#292722" font-family="Georgia, serif" font-size="20">Duplicate notes</text>
+    <text x="50" y="888" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="50" dy="0">A shared rule removed</tspan>
+      <tspan x="50" dy="21">the private record.</tspan>
+    </text>
   </g>
 
   <g>
-    <rect x="196" y="510" width="151" height="120" rx="3" fill="#fffaf2" stroke="#9a5d45" stroke-width="1.2"/>
-    <rect x="196" y="510" width="5" height="120" fill="#9a5d45"/>
-    <text x="211" y="537" fill="#9a5d45" font-family="Arial, sans-serif" font-size="10.5" letter-spacing=".65">LIMIT THAT REMAINED</text>
-    <text x="211" y="565" fill="#292722" font-family="Georgia, serif" font-size="15">Exception not visible</text>
-    <text x="211" y="588" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">The supported path</text>
-    <text x="211" y="605" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">still could not carry</text>
-    <text x="211" y="622" fill="#6f685f" font-family="Arial, sans-serif" font-size="11.5">the handoff.</text>
+    <rect x="30" y="950" width="315" height="135" rx="4" fill="#fffaf2" stroke="#9a5d45" stroke-width="1.2"/>
+    <rect x="30" y="950" width="6" height="135" rx="3" fill="#9a5d45"/>
+    <text x="50" y="980" fill="#9a5d45" font-family="Arial, sans-serif" font-size="15" letter-spacing=".5">LIMIT THAT REMAINED</text>
+    <text x="50" y="1013" fill="#292722" font-family="Georgia, serif" font-size="20">Exception not visible</text>
+    <text x="50" y="1041" fill="#625c54" font-family="Arial, sans-serif" font-size="16">
+      <tspan x="50" dy="0">The supported path still could</tspan>
+      <tspan x="50" dy="21">not carry the exception.</tspan>
+    </text>
   </g>
 
-  <text x="28" y="654" fill="#6f685f" font-family="Georgia, serif" font-size="12.5" font-style="italic">The test makes the remaining boundary visible.</text>
+  <text x="30" y="1130" fill="#625c54" font-family="Georgia, serif" font-size="16" font-style="italic">The remaining boundary is now visible.</text>
+  </g>
+  </g>
 </svg>
