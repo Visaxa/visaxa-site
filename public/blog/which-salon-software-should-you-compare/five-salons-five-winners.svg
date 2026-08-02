@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 720" role="img" aria-labelledby="title desc">
+  <title id="title">The same five salons choose five different winners</title>
+  <desc id="desc">Five fictional salon notes show growth, multiple locations, staff flexibility, migration safety, and financial control as different priorities, making different candidates the rational winner.</desc>
+  <rect width="375" height="720" fill="#f5f0e7"/>
+  <text x="28" y="46" fill="#8d4b3f" font-family="Georgia,serif" font-size="12" letter-spacing="1.8">FIVE OWNER NOTES</text>
+  <text x="28" y="82" fill="#201f1c" font-family="Georgia,serif" font-size="25">The winner changes</text>
+  <text x="28" y="111" fill="#201f1c" font-family="Georgia,serif" font-size="25">with the requirement.</text>
+  <line x1="28" y1="137" x2="347" y2="137" stroke="#c9c0b2"/>
+  <g font-family="Arial,sans-serif">
+    <g transform="translate(28 166)">
+      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">01 · THE GROWING SALON</text>
+      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Will the next hire still fit?”</text>
+      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that clears the</text>
+      <text x="0" y="74" fill="#686159" font-size="13">next staffing and cost threshold.</text>
+    </g>
+    <g transform="translate(41 279)">
+      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">02 · THREE LOCATIONS</text>
+      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“What stays shared—and local?”</text>
+      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that preserves</text>
+      <text x="0" y="74" fill="#686159" font-size="13">the right operating boundaries.</text>
+    </g>
+    <g transform="translate(28 392)">
+      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">03 · FLEXIBLE TEAM</text>
+      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Can real shifts still work?”</text>
+      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that survives</text>
+      <text x="0" y="74" fill="#686159" font-size="13">the salon’s actual staff patterns.</text>
+    </g>
+    <g transform="translate(41 505)">
+      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">04 · CAREFUL SWITCHER</text>
+      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Could we leave with the business?”</text>
+      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate with an exit</text>
+      <text x="0" y="74" fill="#686159" font-size="13">route supported by evidence.</text>
+    </g>
+    <g transform="translate(28 618)">
+      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">05 · FINANCE-LED OWNER</text>
+      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Can I defend every number?”</text>
+      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate whose records</text>
+      <text x="0" y="74" fill="#686159" font-size="13">reconcile under the salon’s rules.</text>
+    </g>
+  </g>
+</svg>
