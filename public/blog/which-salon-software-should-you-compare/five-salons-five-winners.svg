@@ -1,41 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 720" role="img" aria-labelledby="title desc">
-  <title id="title">The same five salons choose five different winners</title>
-  <desc id="desc">Five fictional salon notes show growth, multiple locations, staff flexibility, migration safety, and financial control as different priorities, making different candidates the rational winner.</desc>
-  <rect width="375" height="720" fill="#f5f0e7"/>
-  <text x="28" y="46" fill="#8d4b3f" font-family="Georgia,serif" font-size="12" letter-spacing="1.8">FIVE OWNER NOTES</text>
-  <text x="28" y="82" fill="#201f1c" font-family="Georgia,serif" font-size="25">The winner changes</text>
-  <text x="28" y="111" fill="#201f1c" font-family="Georgia,serif" font-size="25">with the requirement.</text>
-  <line x1="28" y1="137" x2="347" y2="137" stroke="#c9c0b2"/>
-  <g font-family="Arial,sans-serif">
-    <g transform="translate(28 166)">
-      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">01 · THE GROWING SALON</text>
-      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Will the next hire still fit?”</text>
-      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that clears the</text>
-      <text x="0" y="74" fill="#686159" font-size="13">next staffing and cost threshold.</text>
-    </g>
-    <g transform="translate(41 279)">
-      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">02 · THREE LOCATIONS</text>
-      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“What stays shared—and local?”</text>
-      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that preserves</text>
-      <text x="0" y="74" fill="#686159" font-size="13">the right operating boundaries.</text>
-    </g>
-    <g transform="translate(28 392)">
-      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">03 · FLEXIBLE TEAM</text>
-      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Can real shifts still work?”</text>
-      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate that survives</text>
-      <text x="0" y="74" fill="#686159" font-size="13">the salon’s actual staff patterns.</text>
-    </g>
-    <g transform="translate(41 505)">
-      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">04 · CAREFUL SWITCHER</text>
-      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Could we leave with the business?”</text>
-      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate with an exit</text>
-      <text x="0" y="74" fill="#686159" font-size="13">route supported by evidence.</text>
-    </g>
-    <g transform="translate(28 618)">
-      <text x="0" y="0" fill="#8d4b3f" font-size="11" letter-spacing="1.2">05 · FINANCE-LED OWNER</text>
-      <text x="0" y="29" fill="#201f1c" font-family="Georgia,serif" font-size="18">“Can I defend every number?”</text>
-      <text x="0" y="55" fill="#686159" font-size="13">Winner: the candidate whose records</text>
-      <text x="0" y="74" fill="#686159" font-size="13">reconcile under the salon’s rules.</text>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 560" role="img" aria-labelledby="title desc">
+  <title id="title">The winner changes with the business requirement</title>
+  <desc id="desc">Five overlapping salon owner briefs each name a different priority and reveal a different fictional winning candidate, showing that no product wins independently of the business requirement.</desc>
+  <rect width="750" height="560" fill="#f3eee5"/>
+  <text x="44" y="48" fill="#934f42" font-family="Arial,sans-serif" font-size="13" letter-spacing="2.4">FIVE SALONS · ONE CANDIDATE FIELD</text>
+  <text x="44" y="91" fill="#201f1c" font-family="Georgia,serif" font-size="34">Change the brief.</text>
+  <text x="44" y="129" fill="#201f1c" font-family="Georgia,serif" font-size="34">Change the winner.</text>
+  <text x="515" y="95" fill="#6c655d" font-family="Arial,sans-serif" font-size="14">Same products.</text>
+  <text x="515" y="117" fill="#6c655d" font-family="Arial,sans-serif" font-size="14">Different business.</text>
+
+  <g transform="translate(43 177) rotate(-2 92 146)">
+    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
+    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 01</text>
+    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
+    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Growth</text>
+    <circle cx="71" cy="203" r="38" fill="#934f42"/>
+    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">A</text>
+    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
   </g>
+
+  <g transform="translate(174 164) rotate(1.2 71 153)">
+    <rect width="142" height="306" rx="3" fill="#faf6ef" stroke="#cfc5b8"/>
+    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 02</text>
+    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
+    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="23">Locations</text>
+    <circle cx="71" cy="210" r="38" fill="#6e7b75"/>
+    <text x="71" y="220" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">B</text>
+    <text x="71" y="269" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  </g>
+
+  <g transform="translate(305 176) rotate(-1 71 146)">
+    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
+    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 03</text>
+    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
+    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="22">Flexibility</text>
+    <circle cx="71" cy="203" r="38" fill="#b17c46"/>
+    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">C</text>
+    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  </g>
+
+  <g transform="translate(436 163) rotate(1.7 71 153)">
+    <rect width="142" height="306" rx="3" fill="#faf6ef" stroke="#cfc5b8"/>
+    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 04</text>
+    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
+    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Safe exit</text>
+    <circle cx="71" cy="210" r="38" fill="#596b7b"/>
+    <text x="71" y="220" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">D</text>
+    <text x="71" y="269" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  </g>
+
+  <g transform="translate(567 177) rotate(-1.5 71 146)">
+    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
+    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 05</text>
+    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
+    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Control</text>
+    <circle cx="71" cy="203" r="38" fill="#735f74"/>
+    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">E</text>
+    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  </g>
+
+  <text x="375" y="526" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">There is no winner before the owner’s brief.</text>
 </svg>

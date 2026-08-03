@@ -1,25 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 690" role="img" aria-labelledby="title desc">
-  <title id="title">The comparison field changes after every requirement</title>
-  <desc id="desc">A field of twelve candidate marks becomes seven, then four, then two as non-negotiable requirements are applied, showing that comparison begins after requirements eliminate unsuitable candidates.</desc>
-  <rect width="375" height="690" fill="#f5f0e7"/>
-  <text x="28" y="46" fill="#8d4b3f" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.7">THE VANISHING FIELD</text>
-  <text x="28" y="82" fill="#201f1c" font-family="Georgia,serif" font-size="24">Every honest requirement</text>
-  <text x="28" y="111" fill="#201f1c" font-family="Georgia,serif" font-size="24">makes the list smaller.</text>
-  <g font-family="Arial,sans-serif">
-    <text x="28" y="164" fill="#686159" font-size="11" letter-spacing="1.2">TWELVE NAMES</text>
-    <g fill="#d4ccc0">
-      <circle cx="42" cy="194" r="9"/><circle cx="72" cy="194" r="9"/><circle cx="102" cy="194" r="9"/><circle cx="132" cy="194" r="9"/><circle cx="162" cy="194" r="9"/><circle cx="192" cy="194" r="9"/><circle cx="222" cy="194" r="9"/><circle cx="252" cy="194" r="9"/><circle cx="282" cy="194" r="9"/><circle cx="312" cy="194" r="9"/><circle cx="42" cy="224" r="9"/><circle cx="72" cy="224" r="9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 560" role="img" aria-labelledby="title desc">
+  <title id="title">Honest requirements turn a crowded field into a meaningful shortlist</title>
+  <desc id="desc">Twelve fictional candidate cards lie on a research desk. Cards failing operating fit, evidence, exit, and real-cost requirements are crossed out, leaving two clear shortlist cards.</desc>
+  <rect width="750" height="560" fill="#f3eee5"/>
+  <text x="42" y="46" fill="#934f42" font-family="Arial,sans-serif" font-size="13" letter-spacing="2.3">ON THE OWNER’S DESK</text>
+  <text x="42" y="88" fill="#201f1c" font-family="Georgia,serif" font-size="32">Twelve names entered.</text>
+  <text x="42" y="124" fill="#201f1c" font-family="Georgia,serif" font-size="32">Only two requirements-led choices remained.</text>
+
+  <g transform="translate(40 161)">
+    <rect width="470" height="334" rx="4" fill="#e9e1d5" stroke="#d0c5b6"/>
+    <text x="20" y="29" fill="#6c655d" font-family="Arial,sans-serif" font-size="16" letter-spacing="1.5">12 CANDIDATES</text>
+    <g font-family="Georgia,serif" font-size="20" text-anchor="middle">
+      <g transform="translate(20 51) rotate(-2 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">A</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(131 48) rotate(1.5 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">B</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(242 53) rotate(-1 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">C</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(353 49) rotate(2 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">D</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(21 145) rotate(1 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">E</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(132 141) rotate(-1.7 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">F</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(243 146) rotate(1.2 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">G</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(354 142) rotate(-1 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">H</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(20 239) rotate(-1.2 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">I</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(131 236) rotate(2 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">J</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(242 240) rotate(-1 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">K</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
+      <g transform="translate(353 237) rotate(1.4 47 38)"><rect width="94" height="76" fill="#fffdfa" stroke="#c9bfb2"/><text x="47" y="46" fill="#77706a">L</text><path d="M14 15 L80 61 M80 15 L14 61" stroke="#a45a4c" stroke-width="3"/></g>
     </g>
-    <text x="28" y="276" fill="#8d4b3f" font-size="11" letter-spacing="1.2">AFTER OPERATING FIT</text>
-    <g fill="#b9afa2"><circle cx="42" cy="307" r="10"/><circle cx="78" cy="307" r="10"/><circle cx="114" cy="307" r="10"/><circle cx="150" cy="307" r="10"/><circle cx="186" cy="307" r="10"/><circle cx="222" cy="307" r="10"/><circle cx="258" cy="307" r="10"/></g>
-    <text x="28" y="366" fill="#8d4b3f" font-size="11" letter-spacing="1.2">AFTER EVIDENCE AND EXIT</text>
-    <g fill="#8d8175"><circle cx="42" cy="398" r="11"/><circle cx="84" cy="398" r="11"/><circle cx="126" cy="398" r="11"/><circle cx="168" cy="398" r="11"/></g>
-    <text x="28" y="462" fill="#8d4b3f" font-size="11" letter-spacing="1.2">AFTER THE REAL COST CASE</text>
-    <circle cx="43" cy="501" r="13" fill="#8d4b3f"/><circle cx="94" cy="501" r="13" fill="#8d4b3f"/>
+    <g fill="#934f42" font-family="Arial,sans-serif" font-size="15" letter-spacing=".8">
+      <text x="23" y="140">OPERATING FIT</text>
+      <text x="244" y="140">EVIDENCE</text>
+      <text x="23" y="234">SAFE EXIT</text>
+      <text x="244" y="234">REAL COST</text>
+    </g>
   </g>
-  <line x1="28" y1="558" x2="347" y2="558" stroke="#c9c0b2"/>
-  <line x1="28" y1="588" x2="28" y2="654" stroke="#8d4b3f" stroke-width="3"/>
-  <text x="48" y="600" fill="#201f1c" font-family="Georgia,serif" font-size="18">Now there is something</text>
-  <text x="48" y="624" fill="#201f1c" font-family="Georgia,serif" font-size="18">worth comparing.</text>
-  <text x="48" y="650" fill="#686159" font-family="Arial,sans-serif" font-size="12">Preferences decide only among survivors.</text>
+
+  <g transform="translate(548 171) rotate(1 81 151)">
+    <rect width="162" height="302" rx="4" fill="#fffdfa" stroke="#9f9182" stroke-width="1.5"/>
+    <text x="81" y="34" text-anchor="middle" fill="#934f42" font-family="Arial,sans-serif" font-size="16" letter-spacing="1.5">SHORTLIST</text>
+    <line x1="24" y1="50" x2="138" y2="50" stroke="#d8d0c5"/>
+    <rect x="27" y="78" width="108" height="72" rx="2" fill="#934f42"/>
+    <text x="81" y="123" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="27">M</text>
+    <rect x="27" y="172" width="108" height="72" rx="2" fill="#5e716b"/>
+    <text x="81" y="217" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="27">N</text>
+    <text x="81" y="270" text-anchor="middle" fill="#282622" font-family="Georgia,serif" font-size="17">Both pass every</text>
+    <text x="81" y="292" text-anchor="middle" fill="#282622" font-family="Georgia,serif" font-size="17">non-negotiable.</text>
+  </g>
+
+  <line x1="42" y1="522" x2="708" y2="522" stroke="#c9bfb2"/>
+  <text x="375" y="547" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="17">Comparison begins after the requirements have done their work.</text>
 </svg>
