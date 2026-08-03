@@ -1,62 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 560" role="img" aria-labelledby="title desc">
-  <title id="title">The winner changes with the business requirement</title>
-  <desc id="desc">Five overlapping salon owner briefs each name a different priority and reveal a different fictional winning candidate, showing that no product wins independently of the business requirement.</desc>
-  <rect width="750" height="560" fill="#f3eee5"/>
-  <text x="44" y="48" fill="#934f42" font-family="Arial,sans-serif" font-size="13" letter-spacing="2.4">FIVE SALONS · ONE CANDIDATE FIELD</text>
-  <text x="44" y="91" fill="#201f1c" font-family="Georgia,serif" font-size="34">Change the brief.</text>
-  <text x="44" y="129" fill="#201f1c" font-family="Georgia,serif" font-size="34">Change the winner.</text>
-  <text x="515" y="95" fill="#6c655d" font-family="Arial,sans-serif" font-size="14">Same products.</text>
-  <text x="515" y="117" fill="#6c655d" font-family="Arial,sans-serif" font-size="14">Different business.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" role="img" aria-labelledby="title desc">
+  <title id="title">The same CRM field produces different winners for different salon owners</title>
+  <desc id="desc">Five slightly overlapping owner worksheets show the same fictional CRM field but different business priorities. Each owner circles a different candidate, making the change in winner immediately visible.</desc>
+  <rect width="750" height="500" fill="#f2ede4"/>
 
-  <g transform="translate(43 177) rotate(-2 92 146)">
-    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
-    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 01</text>
-    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
-    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Growth</text>
-    <circle cx="71" cy="203" r="38" fill="#934f42"/>
-    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">A</text>
-    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  <text x="38" y="42" fill="#965244" font-family="Arial,sans-serif" font-size="13" letter-spacing="2.2">THE SAME CRM FIELD</text>
+  <text x="38" y="82" fill="#201f1c" font-family="Georgia,serif" font-size="32">Five owners. Five priorities.</text>
+  <text x="38" y="118" fill="#201f1c" font-family="Georgia,serif" font-size="32">Five different winners.</text>
+  <g transform="translate(527 52) rotate(2)">
+    <rect width="174" height="57" rx="2" fill="#fffdfa" stroke="#cabfb1"/>
+    <text x="87" y="23" text-anchor="middle" fill="#6b645c" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.2">OWNER’S NOTE</text>
+    <text x="87" y="43" text-anchor="middle" fill="#965244" font-family="Georgia,serif" font-size="16">“Best” moved again.</text>
   </g>
 
-  <g transform="translate(174 164) rotate(1.2 71 153)">
-    <rect width="142" height="306" rx="3" fill="#faf6ef" stroke="#cfc5b8"/>
-    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 02</text>
-    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
-    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="23">Locations</text>
-    <circle cx="71" cy="210" r="38" fill="#6e7b75"/>
-    <text x="71" y="220" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">B</text>
-    <text x="71" y="269" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  <g transform="translate(35 162) rotate(-2 70 132)">
+    <rect width="140" height="264" rx="3" fill="#fffdfa" stroke="#c9bfb1"/>
+    <path d="M31 -4 v18 M109 -4 v18" stroke="#8e8982" stroke-width="3"/>
+    <text x="17" y="35" fill="#6b645c" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.4">GROWTH</text>
+    <line x1="17" y1="49" x2="123" y2="49" stroke="#ddd5ca"/>
+    <text x="17" y="91" fill="#24221f" font-family="Georgia,serif" font-size="17">Next hire fits.</text>
+    <path d="M23 132 Q70 122 116 133" fill="none" stroke="#965244" stroke-width="2"/>
+    <text x="70" y="176" text-anchor="middle" fill="#24221f" font-family="Georgia,serif" font-size="25">Cedar</text>
+    <ellipse cx="70" cy="168" rx="48" ry="27" fill="none" stroke="#965244" stroke-width="3" transform="rotate(-4 70 168)"/>
+    <text x="70" y="230" text-anchor="middle" fill="#965244" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.3">MY WINNER</text>
   </g>
 
-  <g transform="translate(305 176) rotate(-1 71 146)">
-    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
-    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 03</text>
-    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
-    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="22">Flexibility</text>
-    <circle cx="71" cy="203" r="38" fill="#b17c46"/>
-    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">C</text>
-    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  <g transform="translate(169 151) rotate(1.4 70 139)">
+    <rect width="140" height="278" rx="3" fill="#faf6ef" stroke="#c9bfb1"/>
+    <path d="M31 -4 v18 M109 -4 v18" stroke="#8e8982" stroke-width="3"/>
+    <text x="17" y="35" fill="#6b645c" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.2">LOCATIONS</text>
+    <line x1="17" y1="49" x2="123" y2="49" stroke="#ddd5ca"/>
+    <text x="17" y="91" fill="#24221f" font-family="Georgia,serif" font-size="17">Shared + local.</text>
+    <path d="M23 132 Q70 122 116 133" fill="none" stroke="#60736d" stroke-width="2"/>
+    <text x="70" y="183" text-anchor="middle" fill="#24221f" font-family="Georgia,serif" font-size="25">North</text>
+    <ellipse cx="70" cy="175" rx="48" ry="27" fill="none" stroke="#60736d" stroke-width="3" transform="rotate(3 70 175)"/>
+    <text x="70" y="244" text-anchor="middle" fill="#60736d" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.3">MY WINNER</text>
   </g>
 
-  <g transform="translate(436 163) rotate(1.7 71 153)">
-    <rect width="142" height="306" rx="3" fill="#faf6ef" stroke="#cfc5b8"/>
-    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 04</text>
-    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
-    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Safe exit</text>
-    <circle cx="71" cy="210" r="38" fill="#596b7b"/>
-    <text x="71" y="220" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">D</text>
-    <text x="71" y="269" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  <g transform="translate(303 162) rotate(-1 70 132)">
+    <rect width="140" height="264" rx="3" fill="#fffdfa" stroke="#c9bfb1"/>
+    <path d="M31 -4 v18 M109 -4 v18" stroke="#8e8982" stroke-width="3"/>
+    <text x="17" y="35" fill="#6b645c" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.2">STAFF FIT</text>
+    <line x1="17" y1="49" x2="123" y2="49" stroke="#ddd5ca"/>
+    <text x="17" y="91" fill="#24221f" font-family="Georgia,serif" font-size="17">Real shifts fit.</text>
+    <path d="M23 132 Q70 122 116 133" fill="none" stroke="#b27d45" stroke-width="2"/>
+    <text x="70" y="176" text-anchor="middle" fill="#24221f" font-family="Georgia,serif" font-size="25">Field</text>
+    <ellipse cx="70" cy="168" rx="48" ry="27" fill="none" stroke="#b27d45" stroke-width="3" transform="rotate(-3 70 168)"/>
+    <text x="70" y="230" text-anchor="middle" fill="#b27d45" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.3">MY WINNER</text>
   </g>
 
-  <g transform="translate(567 177) rotate(-1.5 71 146)">
-    <rect width="142" height="292" rx="3" fill="#fffdfa" stroke="#cfc5b8"/>
-    <text x="18" y="30" fill="#934f42" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.2">SALON 05</text>
-    <line x1="18" y1="45" x2="124" y2="45" stroke="#d8d0c5"/>
-    <text x="18" y="86" fill="#282622" font-family="Georgia,serif" font-size="24">Control</text>
-    <circle cx="71" cy="203" r="38" fill="#735f74"/>
-    <text x="71" y="213" text-anchor="middle" fill="#fffdfa" font-family="Georgia,serif" font-size="30">E</text>
-    <text x="71" y="262" text-anchor="middle" fill="#282622" font-family="Arial,sans-serif" font-size="15" letter-spacing="1.4">WINNER</text>
+  <g transform="translate(437 151) rotate(1.7 70 139)">
+    <rect width="140" height="278" rx="3" fill="#faf6ef" stroke="#c9bfb1"/>
+    <path d="M31 -4 v18 M109 -4 v18" stroke="#8e8982" stroke-width="3"/>
+    <text x="17" y="35" fill="#6b645c" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.2">SAFE EXIT</text>
+    <line x1="17" y1="49" x2="123" y2="49" stroke="#ddd5ca"/>
+    <text x="17" y="91" fill="#24221f" font-family="Georgia,serif" font-size="17">Portable exit.</text>
+    <path d="M23 132 Q70 122 116 133" fill="none" stroke="#5d7181" stroke-width="2"/>
+    <text x="70" y="183" text-anchor="middle" fill="#24221f" font-family="Georgia,serif" font-size="25">Linen</text>
+    <ellipse cx="70" cy="175" rx="48" ry="27" fill="none" stroke="#5d7181" stroke-width="3" transform="rotate(4 70 175)"/>
+    <text x="70" y="244" text-anchor="middle" fill="#5d7181" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.3">MY WINNER</text>
   </g>
 
-  <text x="375" y="526" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">There is no winner before the owner’s brief.</text>
+  <g transform="translate(571 162) rotate(-1.5 70 132)">
+    <rect width="140" height="264" rx="3" fill="#fffdfa" stroke="#c9bfb1"/>
+    <path d="M31 -4 v18 M109 -4 v18" stroke="#8e8982" stroke-width="3"/>
+    <text x="17" y="35" fill="#6b645c" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.2">CONTROL</text>
+    <line x1="17" y1="49" x2="123" y2="49" stroke="#ddd5ca"/>
+    <text x="17" y="91" fill="#24221f" font-family="Georgia,serif" font-size="17">Numbers tie out.</text>
+    <path d="M23 132 Q70 122 116 133" fill="none" stroke="#776078" stroke-width="2"/>
+    <text x="70" y="176" text-anchor="middle" fill="#24221f" font-family="Georgia,serif" font-size="25">Morrow</text>
+    <ellipse cx="70" cy="168" rx="52" ry="27" fill="none" stroke="#776078" stroke-width="3" transform="rotate(-2 70 168)"/>
+    <text x="70" y="230" text-anchor="middle" fill="#776078" font-family="Arial,sans-serif" font-size="13" letter-spacing="1.3">MY WINNER</text>
+  </g>
+
+  <line x1="38" y1="461" x2="712" y2="461" stroke="#c8bdaf"/>
+  <text x="375" y="486" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">The products did not change. The owners’ requirements did.</text>
 </svg>
