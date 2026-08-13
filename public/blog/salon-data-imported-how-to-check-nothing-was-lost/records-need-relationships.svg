@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">Migration succeeds when the salon records reconnect around the right client</title>
+  <desc id="desc">A client folder moves from source to target. Five tabs for appointments, notes, staff and services, consent, and money must reconnect to the same client before the business record is complete.</desc>
+  <rect width="760" height="430" fill="#f3eee5"/>
+  <text x="38" y="43" fill="#965244" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">THE ROWS ARRIVED</text>
+  <text x="38" y="84" fill="#201f1c" font-family="Georgia,serif" font-size="31">Did the business reconnect?</text>
+  <g transform="translate(43 133) rotate(-1)">
+    <path d="M0 34 h83 l18 -22 h150 v218 h-251z" fill="#e7ddd0" stroke="#bfb2a3"/>
+    <text x="22" y="67" fill="#65726d" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.5">SOURCE CLIENT</text>
+    <text x="22" y="101" fill="#201f1c" font-family="Georgia,serif" font-size="24">Maria Chen</text>
+    <g font-family="Arial,sans-serif" font-size="14" fill="#514b44">
+      <text x="22" y="132">appointments</text><text x="22" y="157">notes</text><text x="22" y="182">staff + services</text><text x="22" y="207">consent</text><text x="22" y="232">money</text>
+    </g>
+  </g>
+  <g transform="translate(339 162) rotate(-3)">
+    <rect width="78" height="45" rx="2" fill="#fffdfa" stroke="#c3b7a8"/><text x="39" y="28" text-anchor="middle" fill="#965244" font-family="Georgia,serif" font-size="17">import</text>
+  </g>
+  <g transform="translate(463 126) rotate(1)">
+    <path d="M0 34 h83 l18 -22 h211 v235 h-312z" fill="#fffdfa" stroke="#9f9182" stroke-width="1.5"/>
+    <text x="22" y="67" fill="#965244" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.5">TARGET CLIENT</text>
+    <text x="22" y="101" fill="#201f1c" font-family="Georgia,serif" font-size="24">Maria Chen</text>
+    <g font-family="Arial,sans-serif" font-size="14">
+      <rect x="20" y="122" width="126" height="27" rx="2" fill="#dfe7e2"/><text x="30" y="141" fill="#405149">appointments ✓</text>
+      <rect x="154" y="122" width="126" height="27" rx="2" fill="#f1dfda"/><text x="164" y="141" fill="#7d4036">notes ?</text>
+      <rect x="20" y="158" width="126" height="27" rx="2" fill="#dfe7e2"/><text x="30" y="177" fill="#405149">staff + service ✓</text>
+      <rect x="154" y="158" width="126" height="27" rx="2" fill="#dfe7e2"/><text x="164" y="177" fill="#405149">consent ✓</text>
+      <rect x="20" y="194" width="260" height="27" rx="2" fill="#f1dfda"/><text x="30" y="213" fill="#7d4036">deposit exists — relationship unknown</text>
+    </g>
+    <text x="22" y="239" fill="#965244" font-family="Georgia,serif" font-size="16">Present is not the same as connected.</text>
+  </g>
+  <text x="380" y="408" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">Migration proof follows the links, not just the rows.</text>
+</svg>

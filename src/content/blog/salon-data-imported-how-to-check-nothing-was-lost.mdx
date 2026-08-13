@@ -1,0 +1,143 @@
+---
+title: "Your Salon Data Imported Successfully. How Do You Know Nothing Was Lost?"
+subtitle: "A completion message proves the file ran—not that client history, appointments, relationships, and balances survived correctly."
+description: "How salon owners can verify a software migration by reconciling clients, appointments, notes, consent, relationships, exceptions, and financial balances."
+date: "2026-08-13"
+tags: ["Salon Software", "CRM Migration", "Data Migration", "Data Integrity"]
+draft: false
+---
+
+The message said the import was successful.
+
+That was the moment I expected to relax. We had already done the difficult work of deciding what the salon required and [narrowing the software field to candidates that could pass those requirements](/blog/which-salon-software-should-you-compare). The files had been prepared. The progress bar had reached the end. The new system had accepted them.
+
+Then I searched for one regular client.
+
+Her profile was there twice. One copy held the phone number. The other held the appointment history. Neither looked obviously wrong until I knew what the complete client should have looked like.
+
+<KeyTakeaway>
+An import succeeds when a destination accepts data. A migration succeeds only when the salon can reconcile the expected records, identities, relationships, meanings, and money—and explain every exception. A completion message is evidence about the import process, not proof of business continuity.
+</KeyTakeaway>
+
+## “Complete” described the job, not the business
+
+I had treated the import message as a verdict. The official instructions made it look more like a status.
+
+Fresha’s client-import documentation describes column matching, ignored columns, invalid rows, and duplicate detection. Square’s customer-import guidance separates results into new profiles imported, rows matched to existing customers, and rows that failed. Those are useful controls. They also show that one import job can contain several different outcomes. ([Fresha client import](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list); [Square customer import](https://squareup.com/help/us/en/article/5498-manage-your-customer-directory-online), accessed August 13, 2026.)
+
+“The job finished” could therefore coexist with “some rows failed,” “some fields were ignored,” or “some people were matched to records already present.” None of those outcomes automatically meant disaster. They meant I needed the result report, not just the green message.
+
+My first question changed from “Did the import run?” to “What exactly happened to every expected record?”
+
+## The same total could hide a different client list
+
+The obvious check was a count. If the old system held 1,000 clients and the new one held 1,000, I thought the client migration had balanced.
+
+Then the duplicate made the weakness visible. One missing client and one duplicate still produced 1,000 rows.
+
+<ArticleImage
+  src="/blog/salon-data-imported-how-to-check-nothing-was-lost/same-count-different-list.svg"
+  alt="Two client ledgers both total one thousand records, but the target ledger contains one missing client and one duplicate"
+  caption="A matching total is useful, but it cannot distinguish complete continuity from an omission hidden by a duplicate."
+/>
+
+Square and Fresha both document duplicate-handling behavior in their current customer tools. Their rules are not identical, which was precisely the point: identity is a decision, not merely a row count. A shared phone number might indicate one person, a family contact, or a reused business number. A changed email might be the same client rather than a new one. ([Fresha duplicate handling](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list); [Square customer profiles](https://squareup.com/help/us/en/article/8401-edit-merge-or-delete-customer-profiles), accessed August 13, 2026.)
+
+I needed to compare stable identifiers where they existed, then review the ambiguous people separately. Counts became the opening check, not the acceptance decision.
+
+## A row could arrive without the relationship that made it useful
+
+Once the client list looked plausible, I opened appointments, notes, staff assignments, and services.
+
+That exposed a second assumption: if all the pieces were present, the business had survived.
+
+But an appointment is not just a date and time. It belongs to a client, a service, a staff member, often a location, and sometimes a deposit or payment. A note matters because it belongs to the right client or visit. A package balance matters because its owner and redemption history remain understandable.
+
+Fresha’s official Data Connector documentation illustrates this structure directly: booking records use identifiers that connect appointments with clients, locations, team members, and services. That documentation describes Fresha’s current analytical tables. It does not prove that a standard export or another product’s import preserves those relationships. It does show why checking isolated rows is too weak. ([Fresha Data Connector tables](https://www.fresha.com/help-center/knowledge-base/reports/101734-data-connector-tables), accessed August 13, 2026.)
+
+<ArticleImage
+  src="/blog/salon-data-imported-how-to-check-nothing-was-lost/records-need-relationships.svg"
+  alt="A salon client folder is rebuilt only when appointments, notes, staff, services, and money reconnect to the correct client"
+  caption="The records can all exist while the business context between them is still incomplete or wrong."
+/>
+
+This was why [the exit inventory had included connected records rather than only a client spreadsheet](/blog/before-you-switch-salon-software-client-data). During migration, that inventory became the expected population: the list of objects and relationships the new system had to account for.
+
+## Familiar values could return with different meanings
+
+The next checks were harder to see.
+
+A status labelled “cancelled” might include or exclude late cancellations. A future appointment might arrive in the correct month but the wrong timezone. A consent field might be present without the source, date, or scope that made it defensible. A blank value might mean “none,” “unknown,” or “not imported.”
+
+Official import documentation provides concrete warnings about transformation. Fresha says unmatched columns are ignored during its client import. Square warns that spreadsheet software can remove leading zeroes or convert identifiers into scientific notation, and its item-import documentation notes that some relationships and reporting settings require separate configuration. These are examples from specific workflows, not evidence that every migration behaves this way. They show why values must be checked for meaning as well as presence. ([Fresha client import](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list); [Square import troubleshooting](https://squareup.com/help/us/en/article/6172-import-item-library-troubleshooting); [Square bulk item import](https://squareup.com/help/us/en/article/5153-import-items-online), accessed August 13, 2026.)
+
+I began writing each important source state beside its target state. If one became another, the mapping needed an explanation. If no target state existed, the difference needed a disposition—not a guess.
+
+## Money refused to accept an approximate answer
+
+Client notes could be sampled. Money required a tie-out.
+
+Deposits, gift cards, package balances, credits, refunds, disputes, tips, and unpaid amounts were not interchangeable totals. Two systems could display the same overall balance while assigning it to different clients or states.
+
+I could not verify any real salon’s financial migration from public documentation, and this article does not claim to. The evidence would have to come from that salon’s source ledger, processor records, accounting references, target records, and exception report.
+
+The practical test became narrower and stronger:
+
+- reconcile totals by state, not only in aggregate;
+- trace selected balances to the correct client and originating transaction;
+- separate imported history from newly created activity;
+- explain every difference before treating it as accepted.
+
+That was the point where “close enough” stopped being a migration result.
+
+## The exception list became more important than the success message
+
+At first, errors felt like evidence that the project had failed. Then I noticed that a visible exception was safer than a silent transformation.
+
+Square documents partial item imports that can accept some entries and produce a downloadable error report for others. Fresha documents downloading invalid client rows, correcting them, and re-uploading the subset. Those mechanisms do not prove completeness, but they preserve something essential: an accountable list of what still needs attention. ([Square import troubleshooting](https://squareup.com/help/us/en/article/6172-import-item-library-troubleshooting); [Fresha client import](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list), accessed August 13, 2026.)
+
+I stopped trying to make the exception count reach zero by any means. Each difference needed one of three outcomes:
+
+- resolved and rechecked;
+- accepted deliberately, with an owner and deadline;
+- unresolved and therefore blocking migration completion.
+
+UNKNOWN could not quietly become PASS.
+
+## The proof was a small package of records
+
+By the end, the migration result was no longer a screenshot of a green banner. It was a compact evidence package:
+
+1. a dated source baseline;
+2. the target extracts taken after import;
+3. the import and invalid-row reports;
+4. identity and duplicate decisions;
+5. relationship and state checks;
+6. operational and financial reconciliations;
+7. an exception ledger showing what was resolved, accepted, or still blocked.
+
+The decision rule became simple:
+
+> Mark the migration VERIFIED only when the required records and relationships reconcile to the declared thresholds and every material exception has a disposition. Mark it CONDITIONAL when an accepted exception still has an owner and deadline. Otherwise, it is NOT VERIFIED.
+
+That rule did not make migration effortless. It made the conclusion inspectable.
+
+Here is the question I would now copy into a search or AI tool:
+
+> My salon software says the import succeeded. What source-to-target checks would prove that client identities, future appointments, notes, consent, deposits, credits, gift cards, and payment history survived correctly?
+
+One boundary remained. Verified data continuity did not prove that reception, stylists, managers, and clients could complete their real work in the configured system.
+
+So the next question was no longer about the files:
+
+> Before we sign off and go live, how do we prove that the configured salon operation actually works?
+
+## Sources
+
+- Fresha Help Center, [Import your existing client list](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list), accessed August 13, 2026.
+- Fresha Help Center, [Data Connector tables](https://www.fresha.com/help-center/knowledge-base/reports/101734-data-connector-tables), accessed August 13, 2026.
+- Square Support, [Add new customers to Customer Directory](https://squareup.com/help/us/en/article/5498-manage-your-customer-directory-online), accessed August 13, 2026.
+- Square Support, [Troubleshoot item library importing](https://squareup.com/help/us/en/article/6172-import-item-library-troubleshooting), accessed August 13, 2026.
+- Square Support, [Bulk import items](https://squareup.com/help/us/en/article/5153-import-items-online), accessed August 13, 2026.
+- Square Support, [Edit, merge, or delete customer profiles](https://squareup.com/help/us/en/article/8401-edit-merge-or-delete-customer-profiles), accessed August 13, 2026.
+

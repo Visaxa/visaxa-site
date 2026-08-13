@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">The same client count can hide a missing person and a duplicate</title>
+  <desc id="desc">Two salon client ledgers both total one thousand. The source ledger is complete; the target ledger contains one missing client and one duplicate, so equal totals do not prove continuity.</desc>
+  <rect width="760" height="430" fill="#f3eee5"/>
+  <text x="38" y="43" fill="#965244" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">TWO TOTALS · TWO DIFFERENT REALITIES</text>
+  <text x="38" y="85" fill="#201f1c" font-family="Georgia,serif" font-size="31">Both ledgers say 1,000.</text>
+  <text x="38" y="119" fill="#201f1c" font-family="Georgia,serif" font-size="31">Only one contains the right clients.</text>
+  <g transform="translate(46 157) rotate(-1)">
+    <rect width="298" height="216" rx="3" fill="#fffdfa" stroke="#c5b9aa"/>
+    <text x="22" y="34" fill="#65726d" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5">SOURCE LEDGER</text>
+    <text x="276" y="34" text-anchor="end" fill="#201f1c" font-family="Georgia,serif" font-size="25">1,000</text>
+    <line x1="22" y1="52" x2="276" y2="52" stroke="#d7cfc4"/>
+    <g font-family="Arial,sans-serif" font-size="15" fill="#37332e">
+      <text x="24" y="84">Maria Chen</text><text x="274" y="84" text-anchor="end">complete</text>
+      <text x="24" y="120">Aisha Grant</text><text x="274" y="120" text-anchor="end">complete</text>
+      <text x="24" y="156">Elena Ruiz</text><text x="274" y="156" text-anchor="end">complete</text>
+    </g>
+    <line x1="22" y1="96" x2="276" y2="96" stroke="#ebe5dd"/><line x1="22" y1="132" x2="276" y2="132" stroke="#ebe5dd"/>
+    <text x="22" y="194" fill="#65726d" font-family="Georgia,serif" font-size="16">One person. One history.</text>
+  </g>
+  <g transform="translate(413 151) rotate(1.2)">
+    <rect width="301" height="222" rx="3" fill="#fffdfa" stroke="#c5b9aa"/>
+    <text x="22" y="34" fill="#965244" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5">TARGET LEDGER</text>
+    <text x="279" y="34" text-anchor="end" fill="#201f1c" font-family="Georgia,serif" font-size="25">1,000</text>
+    <line x1="22" y1="52" x2="279" y2="52" stroke="#d7cfc4"/>
+    <g font-family="Arial,sans-serif" font-size="15" fill="#37332e">
+      <text x="24" y="84">Maria Chen</text><text x="277" y="84" text-anchor="end">profile 1</text>
+      <text x="24" y="120">Maria Chen</text><text x="277" y="120" text-anchor="end">profile 2</text>
+      <text x="24" y="156" fill="#965244">Aisha Grant</text><text x="277" y="156" text-anchor="end" fill="#965244">missing</text>
+    </g>
+    <line x1="22" y1="96" x2="279" y2="96" stroke="#ebe5dd"/><line x1="22" y1="132" x2="279" y2="132" stroke="#ebe5dd"/>
+    <path d="M20 139 L281 139" stroke="#965244" stroke-width="2"/>
+    <text x="22" y="198" fill="#965244" font-family="Georgia,serif" font-size="16">One duplicate hid one omission.</text>
+  </g>
+  <text x="380" y="409" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">Count first. Then prove identity.</text>
+</svg>
