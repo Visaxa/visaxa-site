@@ -12,13 +12,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/pricing`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/compare`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/blog`, changeFrequency: "weekly", priority: 0.6 },
-    { url: "https://visaxa.app/research", changeFrequency: "weekly", priority: 0.6 },
+    { url: `${baseUrl}/research`, changeFrequency: "weekly", priority: 0.6 },
     { url: `${baseUrl}/what-is-visaxa`, changeFrequency: "monthly", priority: 0.6 },
-
-    // planned compare routes
-    { url: `${baseUrl}/compare/square-vs-fresha-vs-mindbody`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/compare/financial-privacy-safe-mode`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/compare/multi-location-networks`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${baseUrl}/privacy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/terms`, changeFrequency: "yearly", priority: 0.3 },
   ]
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({

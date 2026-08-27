@@ -7,7 +7,15 @@ import { Button } from "@/components/ui/button"
 export const metadata = {
   title: "Research",
   description:
-    "Practical notes for owners and operators: comparisons, checklists, and privacy-first workflows.",
+    "Evidence-led research for salon owners making operational, software, and migration decisions.",
+  alternates: { canonical: "https://www.visaxa.app/blog" },
+  openGraph: {
+    type: "website",
+    url: "https://www.visaxa.app/blog",
+    title: "Visaxa Research",
+    description:
+      "Evidence-led research for salon owners making operational, software, and migration decisions.",
+  },
 }
 
 export default async function BlogIndexPage() {
@@ -23,8 +31,8 @@ export default async function BlogIndexPage() {
             Research
           </h1>
           <p className="max-w-2xl text-muted-foreground">
-            Practical comparisons and operational notes — focused on real trade-offs,
-            hidden friction, and long-term control.
+            Evidence-led investigations into operational problems, software
+            decisions, migration risk, and the conditions that make a comparison useful.
           </p>
         </div>
 
@@ -85,22 +93,26 @@ export default async function BlogIndexPage() {
                 ))}
               </div>
 
-              <h3 className="mt-10 text-xs text-muted-foreground">
-                All research notes
-              </h3>
+              {all.length > featured.length ? (
+                <>
+                  <h3 className="mt-10 text-sm font-medium text-muted-foreground">
+                    More research notes
+                  </h3>
 
-              <ul className="mt-4 space-y-2">
-                {all.map((p) => (
+                  <ul className="mt-4 divide-y border-y">
+                {all.slice(featured.length).map((p) => (
                   <li key={p.slug}>
                     <Link
                       href={`/blog/${p.slug}`}
-                      className="text-xs text-muted-foreground/80 transition hover:text-foreground"
+                      className="block py-4 text-sm text-muted-foreground transition hover:text-foreground"
                     >
                       {p.title}
                     </Link>
                   </li>
                 ))}
-              </ul>
+                  </ul>
+                </>
+              ) : null}
             </>
           )}
         </div>

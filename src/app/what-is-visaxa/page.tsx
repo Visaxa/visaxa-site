@@ -7,7 +7,8 @@ import { Badge } from "@/components/ui/badge"
 export const metadata: Metadata = {
   title: "What is Visaxa?",
   description:
-    "Visaxa is a CRM system in development for service-based businesses that depend on scheduling, operational control, and structured workflows.",
+    "Visaxa is salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
+  alternates: { canonical: "https://www.visaxa.app/what-is-visaxa" },
 }
 
 export default function WhatIsVisaxaPage() {
@@ -21,8 +22,9 @@ export default function WhatIsVisaxaPage() {
         </h1>
 
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
-          Visaxa is a CRM system currently in development for service-based businesses
-          that rely on scheduling, structured operations, and day-to-day workflow control.
+          Visaxa is salon operations software currently in development for beauty
+          salons that need the calendar, client record, visit, and checkout to
+          remain connected through the working day.
         </p>
 
         <div className="mt-10 space-y-8 text-base leading-8 text-muted-foreground">
@@ -31,9 +33,9 @@ export default function WhatIsVisaxaPage() {
               Current focus
             </h2>
             <p className="mt-3">
-              The product is being designed around practical operational constraints
-              commonly found in appointment-based businesses: service duration,
-              scheduling consistency, role separation, and workflow reliability.
+              The current product focuses on the daily path from appointment to
+              visit and checkout, with client context and operating controls kept
+              alongside that work.
             </p>
           </section>
 
@@ -42,14 +44,9 @@ export default function WhatIsVisaxaPage() {
               Who it is being built for
             </h2>
             <p className="mt-3">
-              Visaxa is primarily being developed with service businesses in mind,
-              especially businesses where scheduling accuracy and operational clarity
-              matter more than generic feature lists.
-            </p>
-            <p className="mt-3">
-              This includes businesses such as salons, clinics, studios, and other
-              small service teams that depend on organized appointments, staff
-              coordination, and consistent execution.
+              Visaxa is currently being developed around beauty-salon workflows.
+              Broader service-business or multi-location ambitions are not presented
+              here as current product readiness.
             </p>
           </section>
 
@@ -58,13 +55,12 @@ export default function WhatIsVisaxaPage() {
               What makes the concept different
             </h2>
             <p className="mt-3">
-              The working idea behind Visaxa is that software should reflect how
-              a business actually operates, not just how it looks in a demo.
+              The working idea behind Visaxa is that software should reflect how a
+              salon actually operates, not just how it looks in a demo.
             </p>
             <p className="mt-3">
-              Rather than starting from marketing features alone, the product is being
-              shaped around operational structure: time, services, constraints,
-              permissions, and the routines that make a service business run calmly.
+              Rather than starting from a feature count, the product follows the
+              records and decisions that staff need to carry through a real working day.
             </p>
           </section>
 
@@ -73,9 +69,10 @@ export default function WhatIsVisaxaPage() {
               Product status
             </h2>
             <p className="mt-3">
-              Visaxa is not yet publicly launched. The site currently serves as an
-              early foundation for product information, research notes, and structured
-              articles related to CRM selection, scheduling, and service business operations.
+              Visaxa is not yet publicly launched. Current core workflows exist,
+              while production deployment, external-pilot readiness, and several
+              supporting areas remain in validation. The public features page states
+              those boundaries directly.
             </p>
           </section>
 
@@ -107,19 +104,8 @@ export default function WhatIsVisaxaPage() {
             </div>
           </section>
 
-          <section>
-            <h2 className="text-xl font-semibold text-foreground">
-              Why this page exists
-            </h2>
-            <p className="mt-3">
-              This page exists to define Visaxa clearly as a distinct software project
-              and to provide a stable reference point for readers, search systems,
-              and AI tools that encounter the name for the first time.
-            </p>
-          </section>
         </div>
       </div>
     </Container>
   )
 }
-

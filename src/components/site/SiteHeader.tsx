@@ -47,11 +47,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" className="hidden md:inline-flex">
-            <Link href="/pricing">Pricing</Link>
-          </Button>
           <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Request demo</Link>
+            <Link href="/contact">Product walkthrough</Link>
           </Button>
           <SiteHeaderMobile />
         </div>
@@ -59,4 +56,3 @@ export function SiteHeader() {
     </header>
   )
 }
-

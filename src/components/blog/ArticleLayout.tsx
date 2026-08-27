@@ -86,14 +86,14 @@ export default function ArticleLayout({
         </div>
 
         <div className="mt-12 rounded-2xl border bg-muted/20 p-6">
-          <div className="text-base font-semibold">Want a practical answer?</div>
+          <div className="text-base font-semibold">Continue from the decision, not the feature list.</div>
           <p className="mt-2 text-sm text-muted-foreground">
-            We focus on operational reality: scheduling constraints, privacy on
-            shared screens, and long-term control.
+            Visaxa Research examines operating problems, evidence, failure
+            conditions, and the questions a salon should resolve before choosing software.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button asChild>
-              <Link href="/pricing">Request demo</Link>
+              <Link href="/compare">Follow the comparison path</Link>
             </Button>
             <Button asChild variant="outline">
               <Link href="/blog">Back to Research</Link>

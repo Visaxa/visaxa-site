@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-const baseUrl = "https://visaxa.app"
+const baseUrl = "https://www.visaxa.app"
 
 export default function robots(): MetadataRoute.Robots {
   return {

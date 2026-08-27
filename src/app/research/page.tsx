@@ -8,7 +8,7 @@ const pageTitle =
   "Visaxa Research — Operational Decisions Before Software Comparison"
 const pageDescription =
   "Visaxa Research examines the operational decisions, evidence, risks, and failure conditions that service businesses should understand before comparing software."
-const pageUrl = "https://visaxa.app/research"
+const pageUrl = "https://www.visaxa.app/research"
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +58,7 @@ export default async function ResearchPage() {
       parentOrganization: {
         "@type": "Organization",
         name: "Visaxa",
-        url: "https://visaxa.app",
+        url: "https://www.visaxa.app",
       },
     },
     author: {
@@ -70,7 +70,7 @@ export default async function ResearchPage() {
     publisher: {
       "@type": "Organization",
       name: "Visaxa",
-      url: "https://visaxa.app",
+      url: "https://www.visaxa.app",
     },
   } as const
 

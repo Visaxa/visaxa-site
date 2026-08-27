@@ -39,7 +39,7 @@ export function SiteHeaderMobile() {
             animate={reduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
             exit={reduced ? { opacity: 1 } : { opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="absolute left-0 right-0 top-16 border-b bg-background/95 backdrop-blur"
+            className="absolute left-0 right-0 top-16 border-b bg-background shadow-sm"
           >
             <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6">
               <div className="flex flex-col gap-2">
@@ -57,15 +57,10 @@ export function SiteHeaderMobile() {
 
               <Separator className="my-4" />
 
-              <div className="flex gap-2">
-                <Button asChild variant="outline" className="w-full">
-                  <Link href="/pricing" onClick={() => setOpen(false)}>
-                    Pricing
-                  </Link>
-                </Button>
+              <div>
                 <Button asChild className="w-full">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    Request demo
+                    Product walkthrough
                   </Link>
                 </Button>
               </div>
@@ -76,4 +71,3 @@ export function SiteHeaderMobile() {
     </div>
   )
 }
-

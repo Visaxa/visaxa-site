@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Visaxa — Salon CRM built for networks",
+    default: "Visaxa — Salon operations software",
     template: "Visaxa — %s",
   },
   description:
-    "Visaxa is a multi-tenant CRM for salons and networks: scheduling, inventory, and payments strategy — with Safe Mode PIN for financial privacy.",
+    "Visaxa is salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
   robots: {
     index: true,
     follow: true,
@@ -40,21 +40,18 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Visaxa",
-    title: "Visaxa — Salon CRM built for networks",
+    title: "Visaxa — Salon operations software",
     description:
-      "Multi-tenant salon CRM for networks: scheduling, inventory, payments strategy, and Safe Mode PIN financial privacy.",
+      "Salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
     locale: "en_US",
   },
   keywords: [
     "salon crm",
-    "multi-tenant",
     "salon software",
     "scheduling",
-    "inventory",
-    "payments",
-    "privacy",
-    "pin",
-    "networks",
+    "client records",
+    "salon operations",
+    "checkout",
   ],
 }
 
@@ -89,4 +86,3 @@ export default function RootLayout({
     </html>
   )
 }
-

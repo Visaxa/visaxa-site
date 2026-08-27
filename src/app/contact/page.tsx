@@ -1,79 +1,82 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Mail, ShieldCheck } from "lucide-react"
 
 import { Container } from "@/components/site/Container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { Mail } from "lucide-react"
+
+const pageUrl = "https://www.visaxa.app/contact"
 
 export const metadata: Metadata = {
-  title: "Request demo",
+  title: "Request a product walkthrough",
   description:
-    "Request a VisaxaCRM demo. Placeholder route — connect a real form handler later.",
+    "Contact Visaxa to discuss a private walkthrough of the current salon operations product and its present limits.",
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    type: "website",
+    url: pageUrl,
+    title: "Request a product walkthrough | Visaxa",
+    description:
+      "Discuss the current Visaxa product, the workflow you need to evaluate, and what is still in validation.",
+  },
 }
 
 export default function ContactPage() {
   return (
-    <Container className="py-14 sm:py-16">
-      <div className="space-y-4">
-        <Badge variant="secondary">Contact</Badge>
-        <h1 className="text-balance text-4xl font-semibold tracking-tight">
-          Request a demo
+    <Container className="py-14 sm:py-20">
+      <div className="mx-auto max-w-3xl">
+        <Badge variant="secondary">Product conversation</Badge>
+        <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+          Request a product walkthrough
         </h1>
-        <p className="max-w-2xl text-pretty text-muted-foreground">
-          For now this is a static placeholder. When you’re ready, wire it to an
-          email provider or form backend — no rewrite needed.
+        <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
+          Visaxa is not yet publicly launched. A walkthrough is a direct look at
+          the current product and its limits, centered on the daily salon
+          workflow you need to evaluate.
         </p>
-      </div>
 
-      <Separator className="my-10" />
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <Mail className="size-5 text-primary" aria-hidden="true" />
+              <CardTitle className="pt-2">Send a request by email</CardTitle>
+              <CardDescription className="leading-6">
+                The button opens your email application. This site does not send
+                a form or show an automated success message.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button asChild className="w-full sm:w-auto">
+                <a href="mailto:demo@visaxa.app?subject=Visaxa%20product%20walkthrough&body=Name%3A%0ASalon%3A%0ANumber%20of%20locations%3A%0ATeam%20size%3A%0AWorkflow%20I%20want%20to%20evaluate%3A%0A">
+                  <Mail className="size-4" aria-hidden="true" />
+                  Email demo@visaxa.app
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Email</CardTitle>
-            <CardDescription>
-              Use a mailto link for a minimal, production-safe baseline.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-3">
-            <Button asChild className="w-full sm:w-auto">
-              <a href="mailto:demo@visaxa.app?subject=Visaxa%20demo%20request">
-                <Mail className="size-4" />
-                Email demo@visaxa.app
-              </a>
-            </Button>
-            <div className="text-sm text-muted-foreground">
-              Include: number of locations, staff size, and current tools.
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Next step</CardTitle>
-            <CardDescription>
-              Add a real form when you’re ready (still static-friendly).
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm text-muted-foreground">
-            <div>Suggested fields: name, email, locations, staff, notes.</div>
-            <div>
-              Want to explore first?{" "}
-              <Link
-                href="/features"
-                className="font-medium text-foreground underline underline-offset-4"
-              >
-                See features
+          <Card>
+            <CardHeader>
+              <ShieldCheck className="size-5 text-primary" aria-hidden="true" />
+              <CardTitle className="pt-2">What to include</CardTitle>
+              <CardDescription className="leading-6">
+                Your salon, team size, number of locations, current system, and
+                the one workflow or problem you most need to test. Do not send
+                client records, payment details, passwords, or other sensitive data.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              Prefer to review first?{" "}
+              <Link href="/features" className="font-medium text-foreground underline underline-offset-4">
+                See current capabilities
               </Link>
               .
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </Container>
   )
 }
-
