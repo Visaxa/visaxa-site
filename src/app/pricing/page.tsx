@@ -12,14 +12,14 @@ const pageUrl = "https://www.visaxa.app/pricing"
 export const metadata: Metadata = {
   title: "Pricing and access",
   description:
-    "Visaxa has not published standard plans yet. Learn what can be confirmed during an early product conversation.",
+    "Visaxa has not published standard plans yet. Request a walkthrough while access remains limited.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
     title: "Pricing and access | Visaxa",
     description:
-      "An honest explanation of Visaxa pricing and access before public launch.",
+      "Visaxa pricing has not yet been published for broader access.",
   },
 }
 
@@ -32,26 +32,26 @@ export default function PricingPage() {
           Pricing and access
         </Badge>
         <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-          Public plans are not available yet.
+          Pricing for broader access has not been published yet.
         </h1>
         <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
-          Visaxa is still in active product validation. We have not published a
-          standard subscription price, trial, discount, or billing commitment.
-          We would rather leave those details open than publish terms that are
-          not ready to be relied on.
+          Visaxa is currently available for private walkthroughs while access
+          remains limited. Standard subscription pricing will be published
+          before broader availability. No public trial, discount, or billing
+          offer is being made on this site today.
         </p>
 
         <Card className="mt-10">
           <CardHeader>
-            <CardTitle>What a product conversation can establish</CardTitle>
+            <CardTitle>What we can discuss now</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-4 text-sm leading-6 text-muted-foreground">
               {[
-                "Whether the current product covers the daily workflow you need to evaluate.",
-                "Which capabilities are working today and which remain in validation.",
-                "Whether an early evaluation is appropriate for your salon at all.",
-                "What commercial terms would need to be agreed before any commitment.",
+                "How your team currently handles appointments, clients, visits, and checkout.",
+                "Which Visaxa workflows are relevant to the problems you want to solve.",
+                "Whether a closer evaluation makes sense for your salon.",
+                "Which commercial terms would need to be confirmed in writing before any commitment.",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
                   <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
@@ -64,10 +64,10 @@ export default function PricingPage() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg">
-            <Link href="/contact">Discuss an early evaluation</Link>
+            <Link href="/contact">Request a walkthrough</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="/features">Review current capabilities</Link>
+            <Link href="/features">See how Visaxa works</Link>
           </Button>
         </div>
       </div>

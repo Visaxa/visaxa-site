@@ -60,7 +60,7 @@ export function SiteHeaderMobile() {
               <div>
                 <Button asChild className="w-full">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    Product walkthrough
+                    Request a walkthrough
                   </Link>
                 </Button>
               </div>

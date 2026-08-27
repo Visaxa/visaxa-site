@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import {
+  BadgeDollarSign,
   CalendarDays,
-  CheckCircle2,
   ClipboardCheck,
   CreditCard,
   LockKeyhole,
@@ -19,16 +19,16 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 const pageUrl = "https://www.visaxa.app/features"
 
 export const metadata: Metadata = {
-  title: "Current product capabilities",
+  title: "Features for the salon working day",
   description:
-    "See the salon workflows that exist in Visaxa today and the areas still being validated before public launch.",
+    "See how Visaxa connects appointments, clients, visits, checkout, inventory, packages, payroll, and day-to-day controls.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Current product capabilities | Visaxa",
+    title: "Features for the salon working day | Visaxa",
     description:
-      "A reality-based view of the salon workflows currently available in Visaxa.",
+      "See how Visaxa helps a salon run the day, manage the business, and keep sensitive work controlled.",
   },
 }
 
@@ -53,29 +53,38 @@ const dailyWork = [
   },
 ] as const
 
-const validationAreas = [
+const businessWork = [
   {
     title: "Inventory and products",
     description:
-      "Product records, stock movements, receiving, adjustments, and checkout linkage exist. Production operator validation is still in progress.",
+      "Track products through receiving, stock changes, and sales at checkout so the shelf and the sale tell the same story.",
     icon: PackageCheck,
   },
   {
-    title: "Packages and payroll",
+    title: "Packages",
     description:
-      "Package sale and redemption foundations, payroll previews, payout batches, and statements exist. Edge cases and full operator workflows are still being closed.",
+      "Keep package sales, redemptions, and remaining value connected to the client and the visit where they matter.",
     icon: ClipboardCheck,
   },
   {
-    title: "Requests and messaging",
+    title: "Payroll review",
     description:
-      "Waitlist, booking-request, and message-workspace foundations exist. Public delivery and production SMS are not yet a current promise.",
+      "Review compensation before a payout is finalized and keep a clear statement of what each professional is being paid for.",
+    icon: BadgeDollarSign,
+  },
+] as const
+
+const controlledWork = [
+  {
+    title: "Requests, waitlist, and follow-up",
+    description:
+      "Keep booking requests, waitlist work, and communication history visible to the team so follow-up does not disappear between people.",
     icon: MessageSquareText,
   },
   {
-    title: "Roles and financial privacy",
+    title: "Team access and financial privacy",
     description:
-      "Role-based surfaces and PIN-protected finance areas exist. Identity and permission hardening continues before an external pilot.",
+      "Give each role a focused workspace and require a PIN before sensitive finance areas are shown on a shared screen.",
     icon: LockKeyhole,
   },
 ] as const
@@ -84,30 +93,25 @@ export default function FeaturesPage() {
   return (
     <Container className="py-14 sm:py-20">
       <div className="max-w-3xl space-y-5">
-        <Badge variant="secondary">Product reality</Badge>
+        <Badge variant="secondary">Features</Badge>
         <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
           Salon workflows that stay connected through the day.
         </h1>
         <p className="text-pretty text-lg leading-8 text-muted-foreground">
-          Visaxa is being built for beauty salons that need the calendar, client
-          record, visit, checkout, and operating controls to agree with one
-          another. It is in active development and is not yet publicly launched.
+          Visaxa is built for beauty salons that need the calendar, client
+          record, visit, checkout, and business controls to agree with one
+          another throughout the working day.
         </p>
       </div>
 
       <section className="mt-14" aria-labelledby="current-workflows">
         <div className="max-w-2xl space-y-3">
-          <div className="flex items-center gap-2 text-sm font-medium text-primary">
-            <CheckCircle2 className="size-4" aria-hidden="true" />
-            Current core workflows
-          </div>
           <h2 id="current-workflows" className="text-3xl font-semibold tracking-tight">
-            The operational path already in the product
+            Run the day without rebuilding the story at every step
           </h2>
           <p className="leading-7 text-muted-foreground">
-            These are working product areas, not roadmap headings. Final
-            production deployment and external-pilot acceptance remain separate
-            gates.
+            Follow an appointment from the calendar to the client record, the
+            visit, and checkout with the context needed for the next action.
           </p>
         </div>
 
@@ -124,21 +128,43 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="mt-16 border-t pt-12" aria-labelledby="validation-areas">
+      <section className="mt-16 border-t pt-12" aria-labelledby="business-work">
         <div className="max-w-2xl space-y-3">
-          <Badge variant="outline">In validation</Badge>
-          <h2 id="validation-areas" className="text-3xl font-semibold tracking-tight">
-            Useful foundations that still have limits
+          <h2 id="business-work" className="text-3xl font-semibold tracking-tight">
+            Run the business around the visit
           </h2>
           <p className="leading-7 text-muted-foreground">
-            These areas exist, but they are not presented as finished production
-            promises. A product walkthrough should confirm the exact workflow
-            and limits that matter to your salon.
+            Keep the products and prepaid services that affect the client
+            experience connected to the work that creates or uses them.
           </p>
         </div>
 
         <div className="mt-7 grid gap-4 md:grid-cols-2">
-          {validationAreas.map((item) => (
+          {businessWork.map((item) => (
+            <Card key={item.title}>
+              <CardHeader>
+                <item.icon className="size-5 text-primary" aria-hidden="true" />
+                <CardTitle className="pt-2 text-lg">{item.title}</CardTitle>
+                <CardDescription className="leading-6">{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-16 border-t pt-12" aria-labelledby="controlled-work">
+        <div className="max-w-2xl space-y-3">
+          <h2 id="controlled-work" className="text-3xl font-semibold tracking-tight">
+            Keep shared work visible without showing everything to everyone
+          </h2>
+          <p className="leading-7 text-muted-foreground">
+            Bring requests and follow-up into the team&apos;s view while keeping
+            sensitive financial information behind an intentional access step.
+          </p>
+        </div>
+
+        <div className="mt-7 grid gap-4 md:grid-cols-2">
+          {controlledWork.map((item) => (
             <Card key={item.title}>
               <CardHeader>
                 <item.icon className="size-5 text-primary" aria-hidden="true" />
@@ -154,15 +180,15 @@ export default function FeaturesPage() {
         <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div className="max-w-2xl space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">
-              See the current product, including its limits.
+              See how Visaxa would fit your salon&apos;s working day.
             </h2>
             <p className="leading-7 text-muted-foreground">
-              A walkthrough is a fit conversation, not a promise that every
-              workflow is ready for production use.
+              Start with the workflow your team repeats most often and look at
+              how Visaxa carries it from one step to the next.
             </p>
           </div>
           <Button asChild size="lg">
-            <Link href="/contact">Request a product walkthrough</Link>
+            <Link href="/contact">Request a walkthrough</Link>
           </Button>
         </div>
       </section>

@@ -48,7 +48,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Product walkthrough</Link>
+            <Link href="/contact">Request a walkthrough</Link>
           </Button>
           <SiteHeaderMobile />
         </div>

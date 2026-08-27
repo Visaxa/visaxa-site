@@ -10,16 +10,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const pageUrl = "https://www.visaxa.app/contact"
 
 export const metadata: Metadata = {
-  title: "Request a product walkthrough",
+  title: "Request a walkthrough",
   description:
-    "Contact Visaxa to discuss a private walkthrough of the current salon operations product and its present limits.",
+    "Request a private Visaxa walkthrough centered on the daily salon workflow you want to improve.",
   alternates: { canonical: pageUrl },
   openGraph: {
     type: "website",
     url: pageUrl,
-    title: "Request a product walkthrough | Visaxa",
+    title: "Request a walkthrough | Visaxa",
     description:
-      "Discuss the current Visaxa product, the workflow you need to evaluate, and what is still in validation.",
+      "See how Visaxa connects appointments, clients, visits, and checkout in a salon working day.",
   },
 }
 
@@ -27,14 +27,14 @@ export default function ContactPage() {
   return (
     <Container className="py-14 sm:py-20">
       <div className="mx-auto max-w-3xl">
-        <Badge variant="secondary">Product conversation</Badge>
+        <Badge variant="secondary">See Visaxa</Badge>
         <h1 className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-          Request a product walkthrough
+          Request a walkthrough
         </h1>
         <p className="mt-5 text-pretty text-lg leading-8 text-muted-foreground">
-          Visaxa is not yet publicly launched. A walkthrough is a direct look at
-          the current product and its limits, centered on the daily salon
-          workflow you need to evaluate.
+          Visaxa is currently available for private walkthroughs while broader
+          access remains limited. We will center the conversation on the daily
+          salon workflow you want to improve and show how Visaxa approaches it.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -43,8 +43,8 @@ export default function ContactPage() {
               <Mail className="size-5 text-primary" aria-hidden="true" />
               <CardTitle className="pt-2">Send a request by email</CardTitle>
               <CardDescription className="leading-6">
-                The button opens your email application. This site does not send
-                a form or show an automated success message.
+                Tell us about your salon and the workflow you would most like to
+                see. The button below opens your email application.
               </CardDescription>
             </CardHeader>
             <CardContent>

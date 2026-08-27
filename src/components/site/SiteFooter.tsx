@@ -12,7 +12,7 @@ const productLinks = [
 ] as const
 
 const companyLinks = [
-  { href: "/contact", label: "Product walkthrough" },
+  { href: "/contact", label: "Request a walkthrough" },
   { href: "/what-is-visaxa", label: "What is Visaxa" },
 ] as const
 
@@ -57,8 +57,8 @@ export function SiteFooter() {
               <span>Visaxa</span>
             </div>
             <p className="max-w-sm text-sm text-muted-foreground">
-              Salon operations software in active development, connecting the
-              calendar, client record, visit, and checkout.
+              Salon operations software connecting the calendar, client record,
+              visit, and checkout.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <div>© {new Date().getFullYear()} Visaxa. All rights reserved.</div>
-          <div className="text-xs">Product in active development.</div>
+          <div className="text-xs">For the work between booking and closing the day.</div>
         </div>
       </Container>
     </footer>

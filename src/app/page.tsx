@@ -51,21 +51,15 @@ export default function HomePage() {
                 so a salon can follow one operational story instead of repairing
                 gaps between separate screens.
               </p>
-              <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-                The product is in active development and is not yet publicly
-                launched. Private walkthroughs focus on what works now, what is
-                still being validated, and whether the current product fits the
-                salon workflow being considered.
-              </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
                   <Link href="/contact">
-                    Request a product walkthrough
+                    Request a walkthrough
                     <ChevronRight className="size-4" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/features">See current capabilities</Link>
+                  <Link href="/features">See how Visaxa works</Link>
                 </Button>
               </div>
             </div>
@@ -97,8 +91,7 @@ export default function HomePage() {
                 Follow the work, not a feature count.
               </h2>
               <p className="text-pretty leading-7 text-muted-foreground">
-                The current product starts with the operational chain a salon
-                repeats every day.
+                Visaxa starts with the operational chain a salon repeats every day.
               </p>
             </div>
           </Reveal>

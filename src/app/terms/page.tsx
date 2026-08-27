@@ -18,8 +18,8 @@ const sections = [
     body: "These terms apply only to the public information and research website at visaxa.app. The website does not currently sell a subscription, create a VisaxaCRM customer account, or publish product-service commercial terms.",
   },
   {
-    title: "Product status",
-    body: "Visaxa is in active development and is not yet publicly launched. Product descriptions distinguish current workflows from areas still being validated. Website content is not a promise that a capability, price, release date, or commercial arrangement will be available.",
+    title: "Product availability",
+    body: "Visaxa is currently available for private walkthroughs while broader access remains limited. Website content does not create a promise about general availability, pricing, a release date, or a commercial arrangement. Any product access and commercial terms must be confirmed separately in writing.",
   },
   {
     title: "Research content",

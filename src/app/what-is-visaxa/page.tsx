@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 export const metadata: Metadata = {
   title: "What is Visaxa?",
   description:
-    "Visaxa is salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
+    "Visaxa is salon operations software connecting the calendar, client record, visit, and checkout.",
   alternates: { canonical: "https://www.visaxa.app/what-is-visaxa" },
 }
 
@@ -33,7 +33,7 @@ export default function WhatIsVisaxaPage() {
               Current focus
             </h2>
             <p className="mt-3">
-              The current product focuses on the daily path from appointment to
+              Visaxa focuses on the daily path from appointment to
               visit and checkout, with client context and operating controls kept
               alongside that work.
             </p>
@@ -44,9 +44,9 @@ export default function WhatIsVisaxaPage() {
               Who it is being built for
             </h2>
             <p className="mt-3">
-              Visaxa is currently being developed around beauty-salon workflows.
-              Broader service-business or multi-location ambitions are not presented
-              here as current product readiness.
+              Visaxa is currently focused on beauty-salon workflows: the work
+              that reception, professionals, and owners need to carry from one
+              part of the day to the next.
             </p>
           </section>
 
@@ -66,13 +66,12 @@ export default function WhatIsVisaxaPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground">
-              Product status
+              Availability
             </h2>
             <p className="mt-3">
-              Visaxa is not yet publicly launched. Current core workflows exist,
-              while production deployment, external-pilot readiness, and several
-              supporting areas remain in validation. The public features page states
-              those boundaries directly.
+              Visaxa is currently available for private walkthroughs while
+              broader access remains limited. Public pricing and general
+              availability have not yet been announced.
             </p>
           </section>
 

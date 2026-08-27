@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "Visaxa — %s",
   },
   description:
-    "Visaxa is salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
+    "Visaxa is salon operations software connecting the calendar, client record, visit, and checkout.",
   robots: {
     index: true,
     follow: true,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Visaxa",
     title: "Visaxa — Salon operations software",
     description:
-      "Salon operations software in active development, connecting the calendar, client record, visit, and checkout.",
+      "Salon operations software connecting the calendar, client record, visit, and checkout.",
     locale: "en_US",
   },
   keywords: [

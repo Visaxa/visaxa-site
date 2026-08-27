@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: "Website access data",
-    body: "Like most hosted websites, the delivery infrastructure may process technical request data needed to serve and protect the site, such as an IP address, browser information, requested URL, timestamps, and security events. This page does not claim a retention period that has not been formally established.",
+    body: "The services that deliver and protect this website may process technical request data such as an IP address, browser information, requested URL, timestamps, and security events. Retention depends on the hosting and security services involved and any applicable obligations.",
   },
   {
     title: "External sources",
@@ -45,8 +45,9 @@ export default function PrivacyPage() {
         </h1>
         <p className="mt-4 text-sm text-muted-foreground">Effective August 26, 2026</p>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
-          This is a narrow notice for the website as it exists today. It is not a
-          privacy policy for a future production CRM service or a customer contract.
+          This notice covers information handled through the current public
+          website. Any future product service offered under a separate agreement
+          will have privacy terms appropriate to that service.
         </p>
 
         <div className="mt-12 divide-y border-y">
