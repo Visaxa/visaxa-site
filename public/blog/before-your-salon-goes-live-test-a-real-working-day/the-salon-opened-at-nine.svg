@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">The salon opened at nine and the setup met a real working hour</title>
+  <desc id="desc">A setup card marked complete sits beside a salon daybook. Real moments after opening test reception access, client booking, staff absence, payment correction, and closeout. The setup was complete, but one scenario fails.</desc>
+  <style>.mobile{display:none}@media(max-width:500px){.desktop{display:none}.mobile{display:inline}}</style>
+  <rect width="760" height="430" fill="#f3eee5"/>
+  <g class="desktop">
+    <text x="38" y="43" fill="#965244" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">THE SALON OPENED AT 9:00</text>
+    <text x="38" y="83" fill="#201f1c" font-family="Georgia,serif" font-size="30">The checklist ended. The evidence began.</text>
+    <g transform="translate(43 130) rotate(-2)">
+      <rect width="205" height="226" rx="3" fill="#fffdfa" stroke="#c5b9aa"/>
+      <text x="22" y="35" fill="#65726d" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.5">SETUP SUMMARY</text><line x1="22" y1="52" x2="183" y2="52" stroke="#d7cfc4"/>
+      <g font-family="Arial,sans-serif" font-size="14" fill="#37332e"><text x="22" y="82">Calendar</text><text x="180" y="82" text-anchor="end" fill="#52675e">✓</text><text x="22" y="116">Services</text><text x="180" y="116" text-anchor="end" fill="#52675e">✓</text><text x="22" y="150">Team logins</text><text x="180" y="150" text-anchor="end" fill="#52675e">✓</text><text x="22" y="184">Client records</text><text x="180" y="184" text-anchor="end" fill="#52675e">✓</text></g>
+      <text x="22" y="211" fill="#965244" font-family="Georgia,serif" font-size="16">Ready on paper.</text>
+    </g>
+    <g transform="translate(286 116)">
+      <text x="0" y="18" fill="#65726d" font-family="Arial,sans-serif" font-size="11" letter-spacing="1.5">THE FIRST 47 MINUTES</text><line x1="53" y1="42" x2="53" y2="259" stroke="#bcae9d" stroke-width="1.5"/>
+      <g font-family="Arial,sans-serif">
+        <g transform="translate(0 55)"><text x="0" y="5" fill="#65726d" font-size="12">9:00</text><circle cx="53" cy="0" r="5" fill="#52675e"/><text x="77" y="-3" fill="#201f1c" font-family="Georgia,serif" font-size="18">Reception opens the day</text><text x="77" y="17" fill="#65726d" font-size="13">right login · front-desk device</text><text x="428" y="5" text-anchor="end" fill="#52675e" font-size="12">PASS</text></g>
+        <g transform="translate(0 105)"><text x="0" y="5" fill="#65726d" font-size="12">9:08</text><circle cx="53" cy="0" r="5" fill="#52675e"/><text x="77" y="-3" fill="#201f1c" font-family="Georgia,serif" font-size="18">A client books online</text><text x="77" y="17" fill="#65726d" font-size="13">service · person · time · confirmation</text><text x="428" y="5" text-anchor="end" fill="#52675e" font-size="12">PASS</text></g>
+        <g transform="translate(0 155)"><text x="0" y="5" fill="#65726d" font-size="12">9:19</text><circle cx="53" cy="0" r="5" fill="#b98b4d"/><text x="77" y="-3" fill="#201f1c" font-family="Georgia,serif" font-size="18">A stylist calls out</text><text x="77" y="17" fill="#65726d" font-size="13">reassign · notify · preserve duration</text><text x="428" y="5" text-anchor="end" fill="#8b672f" font-size="12">CONDITIONAL</text></g>
+        <g transform="translate(0 205)"><text x="0" y="5" fill="#65726d" font-size="12">9:31</text><circle cx="53" cy="0" r="5" fill="#965244"/><text x="77" y="-3" fill="#201f1c" font-family="Georgia,serif" font-size="18">A payment needs correction</text><text x="77" y="17" fill="#65726d" font-size="13">refund · report · client record</text><text x="428" y="5" text-anchor="end" fill="#965244" font-size="12">FAIL</text></g>
+        <g transform="translate(0 255)"><text x="0" y="5" fill="#65726d" font-size="12">9:47</text><circle cx="53" cy="0" r="5" fill="#52675e"/><text x="77" y="-3" fill="#201f1c" font-family="Georgia,serif" font-size="18">The numbers are traced</text><text x="77" y="17" fill="#65726d" font-size="13">sale · tip · adjustment · closeout</text><text x="428" y="5" text-anchor="end" fill="#52675e" font-size="12">PASS</text></g>
+      </g>
+    </g>
+    <text x="380" y="409" text-anchor="middle" fill="#201f1c" font-family="Georgia,serif" font-size="18">Operational readiness appears when ordinary work stops being ordinary.</text>
+  </g>
+  <g class="mobile">
+    <text x="38" y="48" fill="#965244" font-family="Arial,sans-serif" font-size="22" letter-spacing="2">OPENING HOUR</text><text x="38" y="91" fill="#201f1c" font-family="Georgia,serif" font-size="32">Ready on paper.</text>
+    <g transform="translate(454 48) rotate(3)"><rect width="258" height="55" fill="#fffdfa" stroke="#c5b9aa"/><text x="129" y="36" text-anchor="middle" fill="#52675e" font-family="Arial,sans-serif" font-size="22">SETUP COMPLETE ✓</text></g>
+    <line x1="72" y1="133" x2="72" y2="336" stroke="#bcae9d" stroke-width="2"/>
+    <g font-family="Arial,sans-serif"><g transform="translate(38 157)"><text x="0" y="6" fill="#65726d" font-size="20">9:00</text><circle cx="34" cy="0" r="7" fill="#52675e"/><text x="68" y="-4" fill="#201f1c" font-family="Georgia,serif" font-size="27">Reception signs in</text><text x="642" y="3" text-anchor="end" fill="#52675e" font-size="20">PASS</text></g><g transform="translate(38 230)"><text x="0" y="6" fill="#65726d" font-size="20">9:19</text><circle cx="34" cy="0" r="7" fill="#b98b4d"/><text x="68" y="-4" fill="#201f1c" font-family="Georgia,serif" font-size="27">A stylist calls out</text><text x="642" y="3" text-anchor="end" fill="#8b672f" font-size="20">CONDITIONAL</text></g><g transform="translate(38 303)"><text x="0" y="6" fill="#65726d" font-size="20">9:31</text><circle cx="34" cy="0" r="7" fill="#965244"/><text x="68" y="-4" fill="#201f1c" font-family="Georgia,serif" font-size="27">A refund is needed</text><text x="642" y="3" text-anchor="end" fill="#965244" font-size="20">FAIL</text></g></g>
+    <text x="38" y="377" fill="#201f1c" font-family="Georgia,serif" font-size="28">The working day changed the answer.</text>
+  </g>
+</svg>

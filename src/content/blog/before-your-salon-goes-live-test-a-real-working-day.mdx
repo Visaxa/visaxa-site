@@ -1,0 +1,172 @@
+---
+title: "Before Your Salon Goes Live, Test a Real Working Day"
+subtitle: "Onboarding can be complete while the front desk, staff, clients, payments, and exceptions are still unproven."
+description: "A salon-owner method for testing real staff roles, client bookings, exceptions, payments, and closeout before accepting onboarding and going live."
+date: "2026-08-27"
+tags: ["Salon Software", "Software Onboarding", "Go-Live", "Operations"]
+draft: false
+---
+
+The calendar looked right. The services were configured. The team had logins. The client records had arrived.
+
+I was close to calling onboarding complete.
+
+That should have felt like the end of the decision. Instead, I pictured the salon at 9:00 on a Saturday: the phone ringing, a client at reception, a stylist asking why her next appointment was missing, and a card payment waiting at the desk.
+
+None of those things appeared on the setup checklist.
+
+We had already [checked that the migrated records and relationships survived the move](/blog/salon-data-imported-how-to-check-nothing-was-lost). That answered whether the business information arrived. It did not answer whether the configured salon could run.
+
+<KeyTakeaway>
+A salon is ready to go live only when the people who will use the system can complete ordinary and exception work under realistic conditions, the resulting records and money reconcile, and every unresolved result has an explicit owner and consequence. Configuration is the starting condition, not the acceptance result.
+</KeyTakeaway>
+
+## The setup screen could not show me a working day
+
+My first test was reassuring. I signed in as the owner, created a client, booked an appointment, and checked it out.
+
+Then I noticed how much help the test had received. I knew where every setting was. I had broad access. I chose the cleanest appointment. I used the laptop where the setup work had been done. Nothing interrupted me.
+
+That was evidence that the owner account could complete one prepared route. It was not evidence about reception, a service provider, a client booking online, or the device at the front desk.
+
+Official guidance on testing services gave me a better question. The GOV.UK Service Manual recommends watching actual or likely users attempt relevant, believable tasks, and testing normal as well as unusual conditions. It also notes that realistic data and personal devices can reveal contextual problems that dummy conditions miss. That guidance is not a certificate for salon software. It explained why my tidy owner test had been too easy. ([Moderated usability testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing); [quality assurance guidance](https://www.gov.uk/service-manual/technology/quality-assurance-testing-your-service-regularly), accessed August 27, 2026.)
+
+I stopped asking, “Is it configured?” and started asking, “Can this person finish this work here, without me translating the system for them?”
+
+## The same task changed when the login changed
+
+The receptionist signed in next.
+
+The appointment was visible, but one correction route was not. That did not immediately mean the product was broken. It could have been the intended permission. It could have been the wrong role assignment. It could have exposed a responsibility nobody had decided.
+
+Fresha’s current help documentation makes the dependency concrete: access is assigned through permission roles, changes apply to the team members holding that role, and a team member with no access cannot enter the workspace. That describes Fresha’s documented behavior, not the result of our test or a rule shared by every system. ([Fresha permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles), accessed August 27, 2026.)
+
+The useful result was not “permissions work.” It was more specific:
+
+- the front-desk role could see the appointment;
+- it could complete the ordinary correction we expected;
+- it could not perform an owner-only action;
+- the denial was understandable and the escalation route was known.
+
+I repeated the scenario using the account, device, location, and timing that would exist after launch. A demonstration from an administrator account could no longer stand in for a staff test.
+
+## The client took a route the front desk never used
+
+I had assumed that creating a booking internally proved the calendar was ready.
+
+Then I tried to book as a client.
+
+The journey began earlier than the appointment record. Could the client find the right service? Did the intended team member appear? Was the duration correct? Did the available time reflect shifts, location, and any required resource? Was the displayed price the one the salon expected? What confirmation arrived, and what could the client change afterward?
+
+Fresha’s current booking guidance illustrates those separate conditions. Its documented client journey includes service selection, team member, real-time availability, date, time, price, and booking details. Another Fresha page says that online availability can depend on overlapping service limits, scheduled shifts, assigned locations, and required resources. These are examples of why a client-side test can reveal something a staff-created booking cannot; they are not claims that Fresha or any other system passes a particular salon’s journey. ([Client booking journey](https://www.fresha.com/help-center/knowledge-base/online-profile/101646-learn-how-clients-book-appointments-online); [service availability](https://www.fresha.com/help-center/knowledge-base/catalog/100643-limit-online-service-availability), accessed August 27, 2026.)
+
+<ArticleImage
+  src="/blog/before-your-salon-goes-live-test-a-real-working-day/the-salon-opened-at-nine.svg"
+  alt="An editorial salon daybook showing how a clean setup checklist is tested by five real moments after the salon opens at nine"
+  caption="The setup looked complete before opening. The working day revealed which parts were actually ready."
+/>
+
+The better model was end to end: what the client sees, what the salon receives, what the assigned staff member sees, and what record remains afterward.
+
+## The ordinary appointment hid the important failures
+
+The clean appointment had passed. I nearly recorded the workflow as ready.
+
+Then the client cancelled late.
+
+That one change touched policy, appointment state, client communication, payment handling, staff visibility, and reporting. A no-show raised a different route. A staff absence forced a reassignment. A service that ran longer than its default duration changed availability. A duplicate client made the history ambiguous. An unavailable room or resource made a time appear possible when the salon could not deliver it.
+
+Square’s current US documentation provides a narrow example of this complexity: cancellation, no-show protection, prepayment, appointment state, and refund behavior vary with configured policy and what happens to the appointment. Fresha separately documents full or partial refunds and warns that refunding an amount rather than an item can affect reporting differently. These pages do not prove that either product will behave correctly for a particular salon. They show why “cancel an appointment” and “correct a payment” are not footnotes to the happy path. ([Square cancellation and prepayment policies](https://squareup.com/help/us/en/article/5493-set-a-custom-cancellation-policy-with-square-appointments); [Fresha refunds](https://www.fresha.com/help-center/knowledge-base/sales/368-refund-a-sale), accessed August 27, 2026.)
+
+The acceptance set grew to include the exceptions the salon could reasonably expect:
+
+- no-show and late cancellation;
+- staff absence and reassignment;
+- a different service duration;
+- an incorrect booking and a duplicate client;
+- a refund or correction;
+- a permission denial;
+- unavailable staff, location, or resource.
+
+This was not an attempt to imagine every possible failure. It was a refusal to let one ideal appointment represent the working day.
+
+## Checkout was not finished until the money explained itself
+
+The next reassuring moment was a successful card payment.
+
+But the receipt was only one view of the result. I still needed to see the sale total, payment state, tip, discount, refund, and any package or gift-card redemption the salon actually used. If staff pay depended on the service or sale, that consequence also had to land with the right person. At the end of the day, the operational record and the money had to tell the same story.
+
+Fresha’s official reporting documentation shows why this needs more than one number. Its Payments Summary distinguishes payments and refunds and can group activity by method, client, location, and team member. Its Finance Summary separately describes sales, payments, deposits, liabilities, and gift-card redemption. Those are current Fresha report definitions, not a claim that every salon needs every category or that a real closeout balanced. ([Payments Summary](https://www.fresha.com/help-center/knowledge-base/reports/345-payments-summary-article-1); [Finance Summary](https://www.fresha.com/help-center/knowledge-base/reports/335-finance-summary-article-1), accessed August 27, 2026.)
+
+I changed the test from “Can we take a payment?” to “Can we trace this working-day event through checkout, correction, staff consequence, and closeout without an unexplained difference?”
+
+## A pass needed an observable result
+
+By then, “works” had become too vague to record.
+
+For each scenario I wrote down the role, account, permissions, device, location, starting data, and expected result before anyone ran it. Then I recorded what actually happened: the appointment state, client message, payment, report, denial, or correction that could be observed.
+
+The result had four possible states:
+
+- **PASS:** the expected result appeared under the stated conditions;
+- **CONDITIONAL:** the salon deliberately accepted a limitation with a compensating action, owner, deadline, and launch consequence;
+- **FAIL:** a material expected result did not occur;
+- **NOT TESTED:** there was no observed result.
+
+NOT TESTED was the most useful addition. Before, an unfinished check could quietly inherit the confidence of the rest of onboarding. Now it remained visibly unknown.
+
+Salesforce’s official testing guidance defines acceptance criteria as conditions software must meet to be accepted by a customer or user. I did not need its software-development vocabulary to use the central idea: decide what success looks like before the demonstration. ([Salesforce Trailhead](https://trailhead.salesforce.com/content/learn/modules/software-testing-fundamentals/follow-testing-best-practices), accessed August 27, 2026.)
+
+<ArticleImage
+  src="/blog/before-your-salon-goes-live-test-a-real-working-day/go-live-sign-off.svg"
+  alt="An editorial go-live acceptance sheet where passed, conditional, failed, and untested salon scenarios lead to a decision, while an untested item prevents signature"
+  caption="Go-live is a recorded decision. An unknown scenario cannot borrow a pass from the rest of the checklist."
+/>
+
+## The defect list did not have to be empty
+
+At first I thought acceptance meant removing every imperfection.
+
+That would have made the decision easy to postpone and easy to manipulate. A tiny wording issue and a failed refund route would both appear as “open.” Neither label explained the consequence.
+
+The better distinction was materiality and ownership. A cosmetic issue could be accepted with a date. A known training need could have a named person and a temporary operating instruction. A failed core task, unexplained financial difference, unsafe permission, or untested material exception could block launch.
+
+The evidence package stayed small:
+
+1. the scenario and expected result;
+2. who ran it, using which account, device, and conditions;
+3. the observed result;
+4. PASS, CONDITIONAL, FAIL, or NOT TESTED;
+5. the issue, owner, deadline, and retest where needed;
+6. the explicit go-live consequence.
+
+That record did not make the software perfect. It made the decision inspectable.
+
+## The signature came after the working day
+
+The onboarding checklist still mattered. It showed what had been set up and what the provider had delivered. It just could not make the salon’s acceptance decision for us.
+
+I would sign off only when the material role, client, exception, and money scenarios had observed results; conditions had owners and deadlines; failures had been retested or treated as blockers; and the person accepting the risk was named.
+
+Here is the question I would now copy into a search or AI tool:
+
+> My salon software onboarding is almost finished. What real front-desk, staff, client, payment, and exception tests should I run before I agree to go live?
+
+One uncertainty remained after the tests passed. A system could technically work, yet the team might still keep a spreadsheet beside it, write private notes, or return to the old calendar.
+
+So the next question was about behavior rather than configuration:
+
+> What if the system technically works, but staff still keep using spreadsheets, notes, or the old system?
+
+## Sources
+
+- GOV.UK Service Manual, [Using moderated usability testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing), accessed August 27, 2026.
+- GOV.UK Service Manual, [Quality assurance: testing your service regularly](https://www.gov.uk/service-manual/technology/quality-assurance-testing-your-service-regularly), updated June 28, 2017; accessed August 27, 2026.
+- Salesforce Trailhead, [Best Practices for Effective Software Testing](https://trailhead.salesforce.com/content/learn/modules/software-testing-fundamentals/follow-testing-best-practices), accessed August 27, 2026.
+- Fresha Help Center, [Manage permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles), accessed August 27, 2026.
+- Fresha Help Center, [Learn how clients book appointments online](https://www.fresha.com/help-center/knowledge-base/online-profile/101646-learn-how-clients-book-appointments-online), accessed August 27, 2026.
+- Fresha Help Center, [Limit online service availability](https://www.fresha.com/help-center/knowledge-base/catalog/100643-limit-online-service-availability), accessed August 27, 2026.
+- Square Support, [Manage booking cancellations and prepayment policies](https://squareup.com/help/us/en/article/5493-set-a-custom-cancellation-policy-with-square-appointments), accessed August 27, 2026.
+- Fresha Help Center, [Refund a sale](https://www.fresha.com/help-center/knowledge-base/sales/368-refund-a-sale), accessed August 27, 2026.
+- Fresha Help Center, [Payments summary report](https://www.fresha.com/help-center/knowledge-base/reports/345-payments-summary-article-1), accessed August 27, 2026.
+- Fresha Help Center, [Finance summary report](https://www.fresha.com/help-center/knowledge-base/reports/335-finance-summary-article-1), accessed August 27, 2026.
