@@ -23,11 +23,11 @@ A salon is ready to go live only when the people who will use the system can com
 
 ## The setup screen could not show me a working day
 
-My first test was reassuring. I signed in as the owner, created a client, booked an appointment, and checked it out.
+I began with the easiest scenario to approve on paper: the owner signs in, creates a client, books an appointment, and checks it out.
 
-Then I noticed how much help the test had received. I knew where every setting was. I had broad access. I chose the cleanest appointment. I used the laptop where the setup work had been done. Nothing interrupted me.
+Then I noticed how much help was built into that scenario. The owner would know where every setting was, have broad access, choose the cleanest appointment, and use the laptop where setup work had been done. Nothing in the scenario interrupted the route.
 
-That was evidence that the owner account could complete one prepared route. It was not evidence about reception, a service provider, a client booking online, or the device at the front desk.
+Even if that scenario passed, it would show only that the owner account could complete one prepared route. It would not establish what reception, a service provider, or a client could do—or what would happen on the device at the front desk.
 
 Official guidance on testing services gave me a better question. The GOV.UK Service Manual recommends watching actual or likely users attempt relevant, believable tasks, and testing normal as well as unusual conditions. It also notes that realistic data and personal devices can reveal contextual problems that dummy conditions miss. That guidance is not a certificate for salon software. It explained why my tidy owner test had been too easy. ([Moderated usability testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing); [quality assurance guidance](https://www.gov.uk/service-manual/technology/quality-assurance-testing-your-service-regularly), accessed August 27, 2026.)
 
@@ -35,28 +35,28 @@ I stopped asking, “Is it configured?” and started asking, “Can this person
 
 ## The same task changed when the login changed
 
-The receptionist signed in next.
+So the next scenario belonged to the receptionist. Using the actual front-desk login, could that person see the appointment, make the expected correction, and recognize when an owner-only action required escalation?
 
-The appointment was visible, but one correction route was not. That did not immediately mean the product was broken. It could have been the intended permission. It could have been the wrong role assignment. It could have exposed a responsibility nobody had decided.
+If one route were unavailable, that would not immediately mean the product was broken. It could be the intended permission, the wrong role assignment, or a responsibility nobody had decided.
 
-Fresha’s current help documentation makes the dependency concrete: access is assigned through permission roles, changes apply to the team members holding that role, and a team member with no access cannot enter the workspace. That describes Fresha’s documented behavior, not the result of our test or a rule shared by every system. ([Fresha permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles), accessed August 27, 2026.)
+Fresha’s current help documentation makes the dependency concrete: access is assigned through permission roles, changes apply to the team members holding that role, and a team member with no access cannot enter the workspace. That describes what Fresha currently documents, not an observed salon result or a rule shared by every system. ([Fresha permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles), accessed August 27, 2026.)
 
-The useful result was not “permissions work.” It was more specific:
+The useful acceptance record would not say “permissions work.” It would be more specific:
 
 - the front-desk role could see the appointment;
-- it could complete the ordinary correction we expected;
+- it could complete the ordinary correction the salon expected;
 - it could not perform an owner-only action;
 - the denial was understandable and the escalation route was known.
 
-I repeated the scenario using the account, device, location, and timing that would exist after launch. A demonstration from an administrator account could no longer stand in for a staff test.
+The scenario would have to use the account, device, location, and timing intended after launch. A demonstration from an administrator account could not stand in for a staff test.
 
 ## The client took a route the front desk never used
 
 I had assumed that creating a booking internally proved the calendar was ready.
 
-Then I tried to book as a client.
+Then I moved the scenario to the client side.
 
-The journey began earlier than the appointment record. Could the client find the right service? Did the intended team member appear? Was the duration correct? Did the available time reflect shifts, location, and any required resource? Was the displayed price the one the salon expected? What confirmation arrived, and what could the client change afterward?
+The journey would begin earlier than the appointment record. Could the client find the right service? Would the intended team member appear? Was the duration correct? Would the available time reflect shifts, location, and any required resource? Was the displayed price the one the salon expected? What confirmation should arrive, and what should the client be able to change afterward?
 
 Fresha’s current booking guidance illustrates those separate conditions. Its documented client journey includes service selection, team member, real-time availability, date, time, price, and booking details. Another Fresha page says that online availability can depend on overlapping service limits, scheduled shifts, assigned locations, and required resources. These are examples of why a client-side test can reveal something a staff-created booking cannot; they are not claims that Fresha or any other system passes a particular salon’s journey. ([Client booking journey](https://www.fresha.com/help-center/knowledge-base/online-profile/101646-learn-how-clients-book-appointments-online); [service availability](https://www.fresha.com/help-center/knowledge-base/catalog/100643-limit-online-service-availability), accessed August 27, 2026.)
 
@@ -70,9 +70,9 @@ The better model was end to end: what the client sees, what the salon receives, 
 
 ## The ordinary appointment hid the important failures
 
-The clean appointment had passed. I nearly recorded the workflow as ready.
+The clean appointment was still only the planned happy path. It would be easy to record the workflow as ready after that single pass.
 
-Then the client cancelled late.
+So I added a late-cancellation scenario.
 
 That one change touched policy, appointment state, client communication, payment handling, staff visibility, and reporting. A no-show raised a different route. A staff absence forced a reassignment. A service that ran longer than its default duration changed availability. A duplicate client made the history ambiguous. An unavailable room or resource made a time appear possible when the salon could not deliver it.
 
@@ -92,7 +92,7 @@ This was not an attempt to imagine every possible failure. It was a refusal to l
 
 ## Checkout was not finished until the money explained itself
 
-The next reassuring moment was a successful card payment.
+The next reassuring scenario was a successful card payment.
 
 But the receipt was only one view of the result. I still needed to see the sale total, payment state, tip, discount, refund, and any package or gift-card redemption the salon actually used. If staff pay depended on the service or sale, that consequence also had to land with the right person. At the end of the day, the operational record and the money had to tell the same story.
 
@@ -104,7 +104,7 @@ I changed the test from “Can we take a payment?” to “Can we trace this wor
 
 By then, “works” had become too vague to record.
 
-For each scenario I wrote down the role, account, permissions, device, location, starting data, and expected result before anyone ran it. Then I recorded what actually happened: the appointment state, client message, payment, report, denial, or correction that could be observed.
+For each scenario, the acceptance record would state the role, account, permissions, device, location, starting data, and expected result before anyone ran it. The actual result would then be recorded: the appointment state, client message, payment, report, denial, or correction that could be observed.
 
 The result had four possible states:
 

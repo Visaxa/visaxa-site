@@ -7,13 +7,13 @@ tags: ["Salon Software", "CRM Migration", "Data Migration", "Data Integrity"]
 draft: false
 ---
 
-The message said the import was successful.
+I began with the most reassuring migration scenario: the import message says “successful.”
 
-That was the moment I expected to relax. We had already done the difficult work of deciding what the salon required and [narrowing the software field to candidates that could pass those requirements](/blog/which-salon-software-should-you-compare). The files had been prepared. The progress bar had reached the end. The new system had accepted them.
+That is the moment a salon owner would expect to relax. The difficult work of deciding what the salon required and [narrowing the software field to candidates that could pass those requirements](/blog/which-salon-software-should-you-compare) is already done. The files are prepared. The progress bar reaches the end. The new system accepts them.
 
-Then I searched for one regular client.
+So I wrote down the first check I would run: search for one regular client whose complete history is already familiar.
 
-Her profile was there twice. One copy held the phone number. The other held the appointment history. Neither looked obviously wrong until I knew what the complete client should have looked like.
+Suppose her profile appears twice—one copy with the phone number and another with the appointment history. Neither record is obviously wrong on its own. The problem becomes visible only when both are compared with what the complete client should look like.
 
 <KeyTakeaway>
 An import succeeds when a destination accepts data. A migration succeeds only when the salon can reconcile the expected records, identities, relationships, meanings, and money—and explain every exception. A completion message is evidence about the import process, not proof of business continuity.
@@ -31,9 +31,9 @@ My first question changed from “Did the import run?” to “What exactly happ
 
 ## The same total could hide a different client list
 
-The obvious check was a count. If the old system held 1,000 clients and the new one held 1,000, I thought the client migration had balanced.
+The obvious check was a count. If the old system held 1,000 clients and the new one held 1,000, it would be tempting to call the client migration balanced.
 
-Then the duplicate made the weakness visible. One missing client and one duplicate still produced 1,000 rows.
+A simple counterexample made the weakness visible: one missing client and one duplicate still produce 1,000 rows.
 
 <ArticleImage
   src="/blog/salon-data-imported-how-to-check-nothing-was-lost/same-count-different-list.svg"
@@ -47,9 +47,9 @@ I needed to compare stable identifiers where they existed, then review the ambig
 
 ## A row could arrive without the relationship that made it useful
 
-Once the client list looked plausible, I opened appointments, notes, staff assignments, and services.
+Once the client list looked plausible, the next check would open appointments, notes, staff assignments, and services.
 
-That exposed a second assumption: if all the pieces were present, the business had survived.
+That exposes a second assumption: if all the pieces are present, the business has survived.
 
 But an appointment is not just a date and time. It belongs to a client, a service, a staff member, often a location, and sometimes a deposit or payment. A note matters because it belongs to the right client or visit. A package balance matters because its owner and redemption history remain understandable.
 
@@ -71,7 +71,7 @@ A status labelled “cancelled” might include or exclude late cancellations. A
 
 Official import documentation provides concrete warnings about transformation. Fresha says unmatched columns are ignored during its client import. Square warns that spreadsheet software can remove leading zeroes or convert identifiers into scientific notation, and its item-import documentation notes that some relationships and reporting settings require separate configuration. These are examples from specific workflows, not evidence that every migration behaves this way. They show why values must be checked for meaning as well as presence. ([Fresha client import](https://www.fresha.com/help-center/knowledge-base/clients/51-import-your-existing-client-list); [Square import troubleshooting](https://squareup.com/help/us/en/article/6172-import-item-library-troubleshooting); [Square bulk item import](https://squareup.com/help/us/en/article/5153-import-items-online), accessed August 13, 2026.)
 
-I began writing each important source state beside its target state. If one became another, the mapping needed an explanation. If no target state existed, the difference needed a disposition—not a guess.
+The safer record would place each important source state beside its target state. If one became another, the mapping would need an explanation. If no target state existed, the difference would need a disposition—not a guess.
 
 ## Money refused to accept an approximate answer
 
@@ -140,4 +140,3 @@ So the next question was no longer about the files:
 - Square Support, [Troubleshoot item library importing](https://squareup.com/help/us/en/article/6172-import-item-library-troubleshooting), accessed August 13, 2026.
 - Square Support, [Bulk import items](https://squareup.com/help/us/en/article/5153-import-items-online), accessed August 13, 2026.
 - Square Support, [Edit, merge, or delete customer profiles](https://squareup.com/help/us/en/article/8401-edit-merge-or-delete-customer-profiles), accessed August 13, 2026.
-
