@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" role="img" aria-labelledby="title desc">
+  <title id="title">One appointment, two records of the experience</title>
+  <desc id="desc">Two paper appointment records compare what a client saw with what the salon recorded for the same Thursday appointment, change, message, and payment.</desc>
+  <rect width="640" height="560" fill="#f4efe7"/>
+
+  <text x="30" y="48" fill="#292825" font-family="Georgia,serif" font-size="29" font-weight="700">One appointment, two records</text>
+  <text x="30" y="79" fill="#675f57" font-family="Arial,sans-serif" font-size="20">Both sides need to describe the same result.</text>
+
+  <g transform="translate(30 118) rotate(-1 138 154)">
+    <rect x="6" y="8" width="276" height="316" rx="4" fill="#cfc5b8" opacity=".48"/>
+    <rect width="276" height="316" rx="4" fill="#fffdf8" stroke="#bdb2a5" stroke-width="1.5"/>
+    <text x="20" y="37" fill="#9a4f3f" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing=".8">CLIENT RECEIPT</text>
+    <text x="20" y="76" fill="#292825" font-family="Georgia,serif" font-size="25" font-weight="700">Thursday · 2 PM</text>
+    <line x1="20" y1="94" x2="256" y2="94" stroke="#ded6cc"/>
+    <g fill="#675f57" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing=".6">
+      <text x="20" y="124">BOOKING</text>
+      <text x="20" y="184">CHANGE</text>
+      <text x="20" y="244">PAYMENT</text>
+    </g>
+    <g fill="#292825" font-family="Arial,sans-serif" font-size="21">
+      <text x="20" y="151">Colour visit confirmed</text>
+      <text x="20" y="211">New time shown</text>
+      <text x="20" y="271">$40 deposit shown</text>
+    </g>
+    <text x="20" y="299" fill="#8d4436" font-family="Georgia,serif" font-size="18" font-style="italic">Message received</text>
+  </g>
+
+  <g transform="translate(334 118) rotate(1 138 154)">
+    <rect x="6" y="8" width="276" height="316" rx="4" fill="#cfc5b8" opacity=".48"/>
+    <rect width="276" height="316" rx="4" fill="#fffdf8" stroke="#bdb2a5" stroke-width="1.5"/>
+    <text x="20" y="37" fill="#9a4f3f" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing=".8">SALON RECORD</text>
+    <text x="20" y="76" fill="#292825" font-family="Georgia,serif" font-size="25" font-weight="700">Thursday · 2 PM</text>
+    <line x1="20" y1="94" x2="256" y2="94" stroke="#ded6cc"/>
+    <g fill="#675f57" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing=".6">
+      <text x="20" y="124">APPOINTMENT</text>
+      <text x="20" y="184">STATE</text>
+      <text x="20" y="244">PAYMENT</text>
+    </g>
+    <g fill="#292825" font-family="Arial,sans-serif" font-size="21">
+      <text x="20" y="151">Colour visit recorded</text>
+      <text x="20" y="211">Rescheduled</text>
+      <text x="20" y="271">$40 deposit recorded</text>
+    </g>
+    <text x="20" y="299" fill="#8d4436" font-family="Georgia,serif" font-size="18" font-style="italic">Update logged</text>
+  </g>
+
+  <g transform="translate(30 469)">
+    <line x1="0" y1="0" x2="580" y2="0" stroke="#c9bfb3"/>
+    <text x="0" y="34" fill="#292825" font-family="Georgia,serif" font-size="22" font-style="italic">A pass needs the client result</text>
+    <text x="0" y="61" fill="#292825" font-family="Georgia,serif" font-size="22" font-style="italic">and the operating record.</text>
+    <circle cx="566" cy="39" r="14" fill="#efe1d8" stroke="#c89585"/>
+    <path d="M559 39l5 5 10-12" fill="none" stroke="#8d4436" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

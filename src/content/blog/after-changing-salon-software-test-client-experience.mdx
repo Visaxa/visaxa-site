@@ -1,0 +1,171 @@
+---
+title: "After Changing Salon Software, Test What Your Clients Actually Experience"
+subtitle: "A correct calendar entry does not prove that clients can still book, understand changes, receive the right message, or complete payment."
+description: "A salon-owner method for testing client booking, appointment changes, reminders, payments, and accessibility after changing salon software."
+date: "2026-09-05"
+tags: ["Salon Software", "Client Experience", "Software Migration", "Online Booking"]
+draft: false
+---
+
+The new calendar looked settled. Appointments appeared under the right staff members. Reception could move a booking, and the payment test had produced the expected closeout record.
+
+It was tempting to conclude that the clients had made the transition too.
+
+But the calendar showed only what the salon could see. It did not show whether a client had found the right service, understood the duration and price, recognized that a change had succeeded, received the updated message, or known what to do when something went wrong.
+
+Consider a constructed salon scenario used to examine that gap. It is not a Visaxa customer story, a migration we performed, or a test of any named product.
+
+The owner had already investigated [what the staff’s remaining spreadsheets and notes were trying to say](/blog/why-staff-still-use-spreadsheets-after-salon-software-goes-live). Now the unresolved risk sat outside the front desk.
+
+<KeyTakeaway>
+Client continuity is proved only when a real client can complete the intended journey, understands the result, and the salon’s corresponding appointment and payment records agree with that result. Test booking, changes, messages, payment, and access separately. A correct calendar entry by itself is not enough.
+</KeyTakeaway>
+
+## The appointment in the calendar was the end of only one story
+
+The owner began with the strongest-looking evidence: a new appointment had appeared at 2:00 on Thursday.
+
+Then she reconstructed what would have happened before that row existed.
+
+The client would have needed to reach the correct booking page, recognize the service, understand which staff or “any available” choice she was making, see the intended duration and price, select an actually deliverable time, enter her details, and recognize that the booking was complete.
+
+The calendar row did not answer any of those questions by itself. It could have been created by reception. It could have contained a corrected time the client had never seen. It could have looked complete while the confirmation went to an old email address.
+
+The useful question changed from “Did an appointment appear?” to “Can the client and the salon tell the same story about how it appeared?”
+
+## A staff booking was too easy
+
+The owner first tried the online route herself.
+
+That test felt convincing until she noticed how much she already knew. She knew the salon’s service names, which employee could perform each service, how long the appointment should take, what the cancellation policy meant, and whom to call if the page behaved unexpectedly.
+
+A client would not arrive with that private map.
+
+GOV.UK’s Service Manual recommends watching actual or likely users attempt relevant, believable tasks and notes that usability evidence can reveal whether they understand what to do and complete the task. Its benchmarking guidance similarly emphasizes tasks with a clear correct outcome. This guidance concerns public services, not salon software, and it does not prescribe a universal test size for a salon. It explains why the owner’s knowledgeable self-test could not represent the client. ([Moderated usability testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing); [usability benchmarking](https://www.gov.uk/service-manual/measuring-success/usability-benchmarking-a-website-or-whole-service), accessed September 5, 2026.)
+
+The next test therefore needed a believable intention rather than a tour of features:
+
+> Book this service with an appropriate team member next Thursday afternoon. Use the device and contact details you would normally use. Stop when you believe the appointment is confirmed.
+
+The owner would watch where the client hesitated, what the client believed the price and time meant, and what evidence made the client think the task had finished. Help from salon staff would change the scenario and had to be recorded, not quietly edited out.
+
+## Booking success needed two receipts
+
+At the end of the route, the client saw a confirmation. The salon saw an appointment.
+
+The owner had originally treated either one as proof. Now she compared them.
+
+Did both sides show the same service, staff choice, time, duration, location, price or deposit condition, and next action? Did the client know whether the request was accepted or still waiting for approval? If a message was promised, did the client receive the message that corresponded to the record the salon now held?
+
+Fresha’s current help documentation provides a narrow example of why these are distinct surfaces. It describes a client booking route, client account management, booking-channel records, and a message history where appointment updates can be reviewed. That is documented Fresha behavior, not a Visaxa test or proof that a particular salon journey succeeded. It shows that the client action, internal record, and message history can be inspected separately. ([Fresha client booking guidance](https://www.fresha.com/help-center/knowledge-base/online-profile/101646-learn-how-clients-book-appointments-online), accessed September 5, 2026.)
+
+The owner’s evidence now had two receipts: what the client saw and what the salon recorded.
+
+<ArticleImage
+  src="/blog/after-changing-salon-software-test-client-experience/one-appointment-two-records.svg"
+  alt="Two editorial appointment papers comparing what a client saw with what the salon recorded across service, time, change, message, and payment"
+  caption="A client journey is continuous only when the client-facing result and the salon’s operating record describe the same appointment."
+/>
+
+## A change created a second journey
+
+The original booking passed. Then the owner asked the client to move it.
+
+This looked like a minor extension of the same test. It was not.
+
+The client had to find the appointment, understand whether self-service change was allowed, choose another valid time, recognize the result, and receive an updated message. The salon had to release the old capacity, reserve the new capacity, retain the correct service and staff conditions, and show the new state to whoever handled the next contact.
+
+Cancellation produced another route. A policy could affect what the client was allowed to do, what message appeared, and what happened to a deposit or fee. A failed change needed a recovery path that did not leave the client unsure which time was real.
+
+Square’s current US documentation describes separate settings for online booking, client rescheduling, appointment changes, cancellations, confirmations, and reminders, with some notification behavior depending on plan and configuration. These are current documented conditions, not evidence that Square or any other system passed this scenario. Their value here is methodological: “change the appointment” is not one indivisible event. ([Square appointment notifications](https://squareup.com/help/us/en/article/6729-customer-confirmations-with-square-appointments); [appointment settings](https://squareup.com/help/us/en/article/5351-manage-your-square-appointments-account-settings), accessed September 5, 2026.)
+
+The owner added separate scenarios for booking, rescheduling, cancellation, and failed recovery instead of allowing one successful booking to lend them its pass.
+
+## “Sent” was not the same as received or understood
+
+The reminder setting was enabled. That answered what the system had been instructed to attempt.
+
+It did not establish which appointment triggered the message, where it was addressed, whether an event or status was recorded, what the client received, or whether the wording still described the current time and policy.
+
+Fresha and Square both document configurable appointment reminders and multiple communication conditions. Fresha describes automatic reminder channels and management; Square describes confirmations, reminders, changes, cancellations, and client confirmation status under specified settings. Documentation establishes intended behavior within those products. It does not prove delivery, reading, or comprehension in a particular case. ([Fresha reminders](https://www.fresha.com/help-center/knowledge-base/calendar/167-send-appointment-reminders); [Square notifications](https://squareup.com/help/us/en/article/6729-customer-confirmations-with-square-appointments), accessed September 5, 2026.)
+
+The owner separated four observations:
+
+- the configured trigger and destination;
+- the event or status the system recorded;
+- the message the client actually received;
+- what the client believed the message required.
+
+If one of those was unavailable, the result stayed unknown rather than inheriting a pass from the reminder setting.
+
+## Payment had its own state
+
+The appointment could be confirmed while the payment was only requested. A card could be authorized, charged, declined, refunded, or disputed without those words meaning the same thing as booked, cancelled, completed, or no-show.
+
+The owner did not need to teach the client payment architecture. She needed to compare the visible promise with the underlying records relevant to the test.
+
+What amount did the client expect? What amount was requested or charged? What did the client see after success or failure? What appointment state did the salon hold? If a cancellation or change affected money, did the client-facing result and transaction record agree?
+
+Square’s appointment-settings documentation lists booking, communications, history, cancellation/no-show actions, and taking payment as separate controls. That does not prove a transaction reconciled. It supports the narrower reason to inspect appointment and payment evidence separately. ([Square appointment settings](https://squareup.com/help/us/en/article/5351-manage-your-square-appointments-account-settings), accessed September 5, 2026.)
+
+No business-outcome claim followed. A passed test would show only that the defined client and record states agreed under those conditions.
+
+## One successful client was still a narrow result
+
+The first participant used a familiar phone, read the page at its default size, and corrected one input error without difficulty.
+
+That result said little about a client using keyboard navigation, screen magnification, a screen reader, a smaller device, or a different level of digital confidence. It also did not show whether an error was described clearly enough to recover from it.
+
+GOV.UK accessibility guidance says automated checks should be combined with manual and assistive-technology testing and relevant disabled users. W3C’s explanations of WCAG 2.2 address two concrete parts of a booking journey: detected input errors should be identified and described in text, and important status messages should be available to assistive technologies. These sources do not establish that a salon is legally subject to a particular rule in every jurisdiction, or that any named booking product conforms. They identify conditions a continuity test can include. ([GOV.UK accessibility testing](https://www.gov.uk/service-manual/helping-people-to-use-your-service/testing-for-accessibility); [W3C error identification](https://www.w3.org/WAI/WCAG22/Understanding/error-identification); [W3C status messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages), accessed September 5, 2026.)
+
+The owner widened the evidence carefully: relevant devices, zoom and keyboard use, and clients who use the assistive technology being evaluated. She did not turn one accessibility check into a universal claim.
+
+## The continuity record became explicit
+
+“No one complained” had seemed like a reasonable early signal.
+
+Now it looked incomplete. A client who abandoned the page might never become a client whose complaint the salon could hear.
+
+For each material journey, the owner recorded:
+
+1. **Intent and channel:** what the client was trying to do and where the journey began.
+2. **Client conditions:** device and any relevant access condition.
+3. **Expected result:** visible service, staff choice, time, price or payment condition, policy, message, and next action.
+4. **Observed result:** completion, error, confirmation, received message, and client understanding.
+5. **Salon record:** corresponding appointment, payment, message, or event evidence.
+6. **Status:** PASS, CONDITIONAL, FAIL, or NOT TESTED.
+7. **Consequence and owner:** what must happen before the result can be accepted or retested.
+
+This is a practical decision aid, not a validated scoring instrument. It does not prescribe a universal number of clients or scenarios. Material journeys and access conditions depend on how the salon actually operates.
+
+The rule was simple enough to quote without losing its boundary:
+
+> A client journey passes only when the client completes it, understands the result, and the salon’s corresponding records agree. Configuration alone proves none of those three outcomes.
+
+Here is the question worth copying into a search or AI tool:
+
+> What would a client experience if they booked, changed, and paid for an appointment today without anyone from the salon helping them?
+
+## A clean test was still only a point in time
+
+The owner now had evidence for booking, change, message, payment, and access under defined conditions. She could distinguish a pass from an unknown and a configured feature from an observed client result.
+
+But the evidence belonged to that test date.
+
+A message template could change. A service duration or cancellation policy could drift. Staff and location rules could be edited. An integration could stop writing the same state. Duplicate client records or delayed corrections could slowly make reports disagree with the day the owner had just observed.
+
+The next question was no longer whether the client journey passed once:
+
+> After go-live, how do I know whether the salon’s operational truth is still stable over time?
+
+## Sources
+
+- GOV.UK Service Manual, [Using moderated usability testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing), updated October 3, 2017; accessed September 5, 2026.
+- GOV.UK Service Manual, [Usability benchmarking a website or whole service](https://www.gov.uk/service-manual/measuring-success/usability-benchmarking-a-website-or-whole-service), published August 6, 2018; accessed September 5, 2026.
+- GOV.UK Service Manual, [Testing for accessibility](https://www.gov.uk/service-manual/helping-people-to-use-your-service/testing-for-accessibility), updated October 29, 2024; accessed September 5, 2026.
+- W3C WAI, [Understanding Error Identification](https://www.w3.org/WAI/WCAG22/Understanding/error-identification), accessed September 5, 2026.
+- W3C WAI, [Understanding Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages), accessed September 5, 2026.
+- Fresha Help Center, [Learn how clients book appointments online](https://www.fresha.com/help-center/knowledge-base/online-profile/101646-learn-how-clients-book-appointments-online), accessed September 5, 2026.
+- Fresha Help Center, [Send appointment reminders](https://www.fresha.com/help-center/knowledge-base/calendar/167-send-appointment-reminders), accessed September 5, 2026.
+- Square Support, [Manage appointment booking notifications and reminders](https://squareup.com/help/us/en/article/6729-customer-confirmations-with-square-appointments), accessed September 5, 2026.
+- Square Support, [Adjust your appointment settings](https://squareup.com/help/us/en/article/5351-manage-your-square-appointments-account-settings), accessed September 5, 2026.
