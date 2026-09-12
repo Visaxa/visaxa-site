@@ -1,0 +1,183 @@
+---
+title: "Your Salon Software Worked at Go-Live. How Do You Know It Still Does?"
+subtitle: "A successful launch proves one moment. Continued trust comes from tracing real appointments, payments, balances, and reports as the salon keeps changing."
+description: "A salon-owner method for checking whether client records, appointments, payments, balances, and reports still match real business events after go-live."
+date: "2026-09-12"
+tags: ["Salon Software", "Operations", "Data Integrity", "Reporting"]
+draft: false
+---
+
+The salon software had worked when the team launched it.
+
+Reception had moved an appointment. A payment had closed correctly. Staff could find the client record, and the owner had watched a real booking journey reach the expected result.
+
+Weeks later, none of that evidence was false. It was simply old.
+
+Since then, appointments had been changed and cancelled. Client profiles had been merged. Refunds had been issued. Services, prices, permissions, and staff responsibilities had moved. Each change was ordinary. Together, they made the launch test a record of what worked then—not proof of what remained true now.
+
+<KeyTakeaway>
+A successful go-live proves a point in time. To know whether salon software still represents the business, periodically trace a small sample of material real events from what happened, to the authoritative record for that question, to the operational or financial consequence. Compare like with like. Record explained differences separately from unresolved exceptions.
+</KeyTakeaway>
+
+## The launch test had an expiry date
+
+The owner’s first instinct was to repeat the launch checklist.
+
+That would confirm that familiar buttons and routes still worked. But it would not necessarily reveal whether months of real activity had left the salon’s records telling different stories.
+
+The earlier [client-continuity test](/blog/after-changing-salon-software-test-client-experience) had asked whether a client could complete a journey, understand the result, and agree with the salon’s corresponding records. It was deliberately tied to a particular journey, configuration, device, role, and date.
+
+The next question was different: had that agreement survived ordinary operation?
+
+General government service guidance recommends testing services regularly and under normal and unusual conditions. It does not prescribe a salon schedule, but it helped expose the weakness in treating a launch result as permanent assurance. ([GOV.UK Service Manual](https://www.gov.uk/service-manual/technology/quality-assurance-testing-your-service-regularly), updated June 28, 2017; accessed September 12, 2026.)
+
+Repeating every possible test would have been unrealistic. Waiting for a complaint would have been weaker. The owner needed a smaller way to renew confidence.
+
+## One real event was more useful than a wall of totals
+
+The obvious place to begin seemed to be the reporting screen. If the totals looked plausible, perhaps the system was still healthy.
+
+But a plausible total could not explain one specific appointment, client, refund, or balance. The owner reversed the direction of the check.
+
+Suppose a client completed a $120 service on Friday. A $30 deposit had been collected earlier, and $90 was collected after the appointment. This is a constructed example, not a Visaxa test or an observed vendor failure.
+
+The owner could write down what should now be true:
+
+- the appointment should carry the intended completed state;
+- the client history should show the correct service and staff relationship;
+- the payment records should account for the deposit and the amount collected that day;
+- the relevant sales and liability reports should represent the event according to their own definitions.
+
+The event gave every later screen something concrete to explain.
+
+<ArticleImage
+  src="/blog/your-salon-software-worked-at-go-live-does-it-still/one-real-event-three-records.svg"
+  alt="Editorial arrangement of salon papers tracing one completed appointment through an appointment record, a payment receipt, a sales report, and an unresolved status note"
+  caption="Different records can show different values and still be correct. Each value has to be explainable by the question that record answers."
+/>
+
+## “The system” did not contain one truth for every question
+
+At first, the owner wanted to choose one screen as the truth and compare everything else with it.
+
+That worked only until the questions changed.
+
+The appointment record might be authoritative for whether the visit was booked, changed, cancelled, missed, or completed. The transaction record might be authoritative for what was charged or refunded. A liability report might answer what the salon still owes through deposits or gift cards. A processor or bank record might answer what moved into an account.
+
+Official product documentation makes these distinctions visible. Fresha documents separate appointment statuses and separately defines sales, payments, refunds, deposits, gift cards, and liabilities in its reporting material. Square’s transfer documentation explains that timing, location, destination account, and permissions affect how payments are traced into transfers. These sources describe current documented behavior in those products; they do not prove that any salon’s records are correct. ([Fresha appointment statuses](https://www.fresha.com/help-center/knowledge-base/calendar/600-update-appointment-statuses); [Fresha Finance Summary](https://www.fresha.com/help-center/knowledge-base/reports/335-finance-summary-article-1); [Square transfers and sales](https://squareup.com/help/us/en/article/3813-match-deposits-to-sales), accessed September 12, 2026.)
+
+The owner stopped asking which screen was universally authoritative. She began naming the authoritative record for the particular question she was trying to answer.
+
+## Different was not the same as wrong
+
+The Friday example produced $120 in the service context and $90 in the amount collected that day.
+
+Those numbers looked inconsistent until the earlier $30 deposit was included. Then the difference became explainable: the records were describing different parts of the same business event.
+
+The same caution applies more broadly. Sales, payments, liabilities, appointments, and payouts need not be identical because they can use different definitions, dates, states, locations, filters, exclusions, and update times.
+
+Square’s current US documentation provides a particularly narrow example: its future-bookings report distinguishes collected, uncollected, and projected values, and states that refunding a collected payment without cancelling the appointment is not reflected in that report. That does not make either state automatically wrong. It means the appointment and the refund answer different questions and must be interpreted within the documented scope. ([Square Future Bookings Report](https://squareup.com/help/us/en/article/8115-access-your-square-appointments-future-booking-report), accessed September 12, 2026.)
+
+Before calling two values contradictory, the owner now checked whether they covered the same:
+
+- business meaning;
+- date basis and refresh point;
+- location;
+- appointment or payment state;
+- filters and exclusions.
+
+An explained difference could be correct. A difference became an exception only when it remained unexplained after like-for-like comparison.
+
+## The record was only half the test
+
+Next, the owner found an appointment whose status looked right and nearly marked the check complete.
+
+Then she asked what that status was supposed to cause.
+
+Had the client history changed? Had the right message or follow-up event been recorded? Had the deposit moved into the appropriate financial state? Had the transaction reached the relevant report or transfer record? If an integration carried the event elsewhere, had the downstream surface received a usable result?
+
+This did not mean every event needed every check. The consequence depended on why the event mattered. A merged client profile raised an identity question. A refund raised a transaction question. A permission change raised an access question.
+
+Official documentation shows why downstream checks sometimes matter. Fresha describes client-profile merges as combining details, sales, and appointments, while Square’s developer documentation says webhook deliveries can be retried or duplicated and may eventually be discarded if not acknowledged. Neither statement establishes that a particular salon experienced a bad merge or missed event. They identify places where local evidence would be needed. ([Fresha client-profile merges](https://www.fresha.com/help-center/knowledge-base/clients/57-merge-client-profiles); [Square Webhooks](https://developer.squareup.com/docs/webhooks/overview), accessed September 12, 2026.)
+
+The useful check therefore followed the selected event far enough to reach the consequence the owner actually relied on.
+
+## Logs helped without becoming reality
+
+An audit or event log could show that a recorded action occurred. That felt like the strongest possible answer.
+
+It was strong evidence about what the system captured. It was not a complete account of the salon.
+
+NIST’s log-management guidance describes logs as useful for auditing, investigations, identifying policy violations, and analysing operational problems. It also treats log sources, retention, handling, and analysis as matters that must be managed. In practical terms, a log cannot establish an action that was never logged, explain a person’s intention, or prove what a client experienced outside the recorded surface. ([NIST SP 800-92](https://csrc.nist.gov/pubs/sp/800/92/final), published September 13, 2006; NIST page updated October 12, 2021; accessed September 12, 2026.)
+
+The owner combined evidence instead:
+
+- the real business event;
+- the raw appointment, client, or transaction record;
+- the financial record where money was involved;
+- the relevant log or incident context where available;
+- the downstream result.
+
+No single source had to pretend to know everything.
+
+## The exception became the useful output
+
+The owner had expected the exercise to produce a health score. Instead, the useful output was a small record of what had actually been checked.
+
+For each sampled event, she preserved:
+
+- what happened and when;
+- what should have been true;
+- which record controlled the question;
+- what she observed downstream;
+- which definitions, dates, locations, states, filters, and refresh points were used;
+- who owned the next investigation.
+
+The result then received one of four plain labels:
+
+**PASS** meant the expected record and consequence agreed within the declared scope.
+
+**EXPLAINED DIFFERENCE** meant the values differed for a documented reason, such as timing, state, or definition.
+
+**UNRESOLVED EXCEPTION** meant a material difference remained after a like-for-like comparison.
+
+**NOT CHECKED** meant the evidence did not exist or the relevant surface had not been inspected.
+
+That last label mattered. An unavailable log, inaccessible report, or missing export could not quietly become a pass.
+
+## The calendar was the wrong place to choose the frequency
+
+The owner’s final temptation was to turn the method into “check everything monthly.”
+
+The evidence did not support a universal interval, and the salon’s risks did not arrive on a calendar.
+
+A price or service change could justify a targeted check immediately. So could a bulk client merge, permission change, integration change, significant refund, incident, or revised booking rule. Outside those moments, the owner could select a recurring sample proportionate to transaction volume and consequence.
+
+The higher the cost of an unnoticed error, the stronger the reason to check sooner or sample more deliberately. Applicable accounting, contractual, privacy, or regulatory obligations may impose their own requirements; this article does not define them.
+
+The question worth copying into an AI or search tool became:
+
+> How can I tell whether my salon software still matches how my salon actually operates?
+
+## Finding the disagreement did not explain it
+
+The owner now had something more defensible than confidence based on a successful launch. She had current, bounded evidence tied to real events—and a record of the places where the evidence stopped.
+
+But an unresolved exception still did not say why it existed.
+
+The cause could sit in the definition being used, the salon’s workflow, staff training, a policy, permissions, configuration, an integration, a plan limit, or the platform itself. Replacing software before separating those possibilities would turn a useful signal into a premature remedy.
+
+That left the next question:
+
+> Once a material disagreement is documented, what should change: the workflow, policy, training, configuration, plan, or platform?
+
+## Sources
+
+- GOV.UK Service Manual, [Quality assurance: testing your service regularly](https://www.gov.uk/service-manual/technology/quality-assurance-testing-your-service-regularly), published May 23, 2016; updated June 28, 2017; accessed September 12, 2026.
+- Fresha Help Center, [Update appointment statuses](https://www.fresha.com/help-center/knowledge-base/calendar/600-update-appointment-statuses), accessed September 12, 2026.
+- Fresha Help Center, [Finance Summary report](https://www.fresha.com/help-center/knowledge-base/reports/335-finance-summary-article-1), accessed September 12, 2026.
+- Fresha Help Center, [Merge client profiles](https://www.fresha.com/help-center/knowledge-base/clients/57-merge-client-profiles), accessed September 12, 2026.
+- Square Support, [View the future bookings report](https://squareup.com/help/us/en/article/8115-access-your-square-appointments-future-booking-report), accessed September 12, 2026.
+- Square Support, [Match transfers to sales](https://squareup.com/help/us/en/article/3813-match-deposits-to-sales), accessed September 12, 2026.
+- Square Developer Documentation, [Square Webhooks](https://developer.squareup.com/docs/webhooks/overview), accessed September 12, 2026.
+- NIST, [Guide to Computer Security Log Management, SP 800-92](https://csrc.nist.gov/pubs/sp/800/92/final), published September 13, 2006; NIST page updated October 12, 2021; accessed September 12, 2026.
