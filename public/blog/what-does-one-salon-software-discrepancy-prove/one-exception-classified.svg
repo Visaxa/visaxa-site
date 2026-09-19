@@ -8,21 +8,21 @@
   </defs>
   <rect width="560" height="500" fill="#e8e1d5"/><rect width="560" height="500" fill="url(#grain)"/>
 
-  <g transform="translate(24 27) rotate(-2.1 135 99)" filter="url(#lift)">
-    <path d="M0 0H270V194L257 207H0Z" fill="#f8e9e1" stroke="#b98072" stroke-width="1.5"/>
-    <path d="M257 194H270L257 207Z" fill="#dec0b7"/>
-    <rect width="270" height="37" fill="#754438"/>
+  <g transform="translate(24 27) rotate(-2.1 142.5 99)" filter="url(#lift)">
+    <path d="M0 0H285V194L272 207H0Z" fill="#f8e9e1" stroke="#b98072" stroke-width="1.5"/>
+    <path d="M272 194H285L272 207Z" fill="#dec0b7"/>
+    <rect width="285" height="37" fill="#754438"/>
     <text x="17" y="25" fill="#fffaf3" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1.1">ONE VERIFIED EXCEPTION</text>
     <g fill="#754438" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing=".7"><text x="17" y="70">EVENT</text><text x="17" y="104">OBSERVED</text><text x="17" y="143">EXPECTED</text></g>
-    <g fill="#292621" font-family="Arial,sans-serif" font-size="17"><text x="109" y="70">Service complete</text><text x="109" y="104">Still BOOKED</text><text x="109" y="143">Complete</text></g>
-    <line x1="96" y1="48" x2="96" y2="159" stroke="#cfaaa0"/>
-    <ellipse cx="164" cy="99" rx="65" ry="22" fill="none" stroke="#a64d3e" stroke-width="2.3" transform="rotate(-4 164 99)"/>
+    <g fill="#292621" font-family="Arial,sans-serif" font-size="17"><text x="124" y="70">Service complete</text><text x="124" y="104">Still BOOKED</text><text x="124" y="143">Complete</text></g>
+    <line x1="106" y1="48" x2="106" y2="159" stroke="#cfaaa0"/>
+    <ellipse cx="179" cy="99" rx="65" ry="22" fill="none" stroke="#a64d3e" stroke-width="2.3" transform="rotate(-4 179 99)"/>
     <text x="17" y="183" fill="#755f58" font-family="Georgia,serif" font-size="15" font-style="italic">Records already reconciled</text>
   </g>
 
-  <g transform="translate(320 24) rotate(2.7 102 83)" filter="url(#paper)">
-    <path d="M0 0H204V166H0Z" fill="#fffdf7" stroke="#aaa095" stroke-width="1.4"/>
-    <path d="M16 0v166M0 35h204" stroke="#d5cdc2"/>
+  <g transform="translate(318 24) rotate(2.7 111 83)" filter="url(#paper)">
+    <path d="M0 0H222V166H0Z" fill="#fffdf7" stroke="#aaa095" stroke-width="1.4"/>
+    <path d="M16 0v166M0 35h222" stroke="#d5cdc2"/>
     <text x="31" y="24" fill="#5e574f" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">DOCUMENTED RULE</text>
     <text x="31" y="68" fill="#2b2824" font-family="Georgia,serif" font-size="19" font-weight="700">Checkout does not</text>
     <text x="31" y="98" fill="#2b2824" font-family="Georgia,serif" font-size="19">change the status.</text>
