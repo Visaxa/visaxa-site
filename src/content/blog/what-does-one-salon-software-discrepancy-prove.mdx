@@ -1,0 +1,195 @@
+---
+title: "One Salon Software Discrepancy Remains. What Does It Actually Prove?"
+subtitle: "A verified exception can reveal a plan boundary, a poor product fit, or behavior worth escalating—but only if the evidence keeps those conclusions separate."
+description: "How a salon owner can classify one unresolved software discrepancy as a local condition, entitlement boundary, product-fit limitation, possible defect, or explicit unknown."
+date: "2026-09-19"
+tags: ["Salon Software", "Operations", "Product Fit", "Troubleshooting"]
+draft: false
+---
+
+This was no longer the first sign that something felt wrong.
+
+The salon had already separated broad process, training, access, and configuration problems from genuine software limits—the earlier question, [“Is the CRM actually the problem?”](/blog/is-your-salon-crm-actually-the-problem), had been answered as far as the available evidence allowed.
+
+Then one material exception survived.
+
+The service was complete. Checkout was complete. Yet the appointment still said **BOOKED**. The owner had compared the relevant records, aligned their dates and definitions, and followed the [operational-truth check](/blog/your-salon-software-worked-at-go-live-does-it-still). The difference remained unexplained.
+
+This is a constructed example, not a Visaxa test or an observed failure in any named product. Its purpose is narrower: to ask what one surviving discrepancy actually permits an owner to conclude.
+
+<KeyTakeaway>
+A verified discrepancy is evidence of an exception, not evidence of a defect. Preserve one bounded case, capture the conditions that could distinguish it, compare the observed result with current documented behavior, and repeat one privacy-safe equivalent where possible. Then classify the evidence as a local condition, entitlement boundary, designed-fit boundary, possible defect, or explicit unknown.
+</KeyTakeaway>
+
+## The case needed edges before it needed a label
+
+The owner’s notes initially said, “Completed appointment still booked.” That described the surprise but left several different events hiding inside it.
+
+She reduced the exception to a case packet:
+
+- **event:** one service completed and checked out;
+- **expected result:** the appointment becomes complete;
+- **observed result:** it remains booked;
+- **time and consequence:** when it was observed and which operational record remained wrong or unusable;
+- **scope:** account, location, role, device, relevant data, connected systems, and current plan;
+- **reference:** the current documentation supporting the expected behavior;
+- **repeat result:** what happened when a safe equivalent was tried again.
+
+Official Microsoft support guidance similarly asks for steps to reproduce, expected outcome, and actual outcome, while warning that the expectation itself may be wrong. That is Microsoft’s support scope, not a universal salon standard. It nevertheless shows why the expected and observed results must remain separate claims. ([Microsoft Dynamics 365 support guidance](https://learn.microsoft.com/en-us/dynamics365/get-started/support/support-scope), accessed September 19, 2026.)
+
+The packet did not diagnose the exception. It prevented each new theory from quietly changing the case.
+
+## Four exclusions were prerequisites, not the investigation
+
+Before classifying the remaining evidence, the owner confirmed four things already examined during the broader diagnosis:
+
+- the salon had an agreed business rule;
+- the ordinary task and responsibility were understood and practised;
+- basic configuration had been checked against current documentation;
+- the person acting had the expected access.
+
+If any of those remained unresolved, the case returned to the earlier operational diagnosis. A30 could not turn missing prerequisite work into a product conclusion.
+
+In this case, the exclusions held. The question was no longer whether the salon had a general process problem. It was why one apparently valid event still produced the disputed result.
+
+## “The same event” changed when its conditions were written down
+
+The owner found another completed appointment whose status had changed correctly. For a moment, that made the exception look random.
+
+Then she placed the two events side by side. The service label differed. One employee acted under another role. The appointments belonged to different locations. One action came from a phone and the other from a desktop. An integration had processed one event several minutes later.
+
+Those differences did not prove a cause. They showed why “the same thing worked yesterday” was not yet a controlled comparison.
+
+Official documentation provides examples of conditions that can change behavior. Fresha documents permission roles and appointment-assignment settings. Square documents bookable-team conditions involving services, hours, permissions, and dashboard access. Square’s developer documentation also states that webhook delivery may be retried or duplicated. These sources do not establish what happened in this fictional case; they show that role, data, configuration, and integration timing can be material conditions rather than background detail. ([Fresha permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles); [Fresha appointment assignment](https://www.fresha.com/help-center/knowledge-base/calendar/102178-set-up-new-appointment-assignment); [Square bookable team members](https://squareup.com/help/us/en/article/5350-create-staff-member-profiles-for-square-appointments); [Square webhooks](https://developer.squareup.com/docs/webhooks/overview), accessed September 19, 2026.)
+
+The owner therefore preserved the conditions instead of collapsing them into “configuration”:
+
+- record values and state;
+- user and permission role;
+- account, location, and region;
+- device or channel where relevant;
+- connected system and delivery timing;
+- plan and commercial conditions;
+- versioned documentation used for comparison.
+
+When one material condition explained why the events differed, the conclusion was a **local-condition mismatch**. It could be repaired or escalated by naming that condition. There was no need to make a claim about the whole product.
+
+## Existing capability did not mean current entitlement
+
+Suppose the product’s official documentation described the required capability, but the account could not use it.
+
+The owner still could not call that a defect. The capability might depend on the current plan, region, account type, location, add-on, or another documented commercial condition.
+
+Official pricing pages can make some of those boundaries visible. Square’s current US Appointments pricing, for example, distributes listed capabilities across plans. That source is time-sensitive and applies only within its published scope. It does not prove that an upgrade solves any particular salon problem. ([Square Appointments pricing](https://squareup.com/us/en/appointments/pricing), accessed September 19, 2026.)
+
+If the required capability existed but not under the salon’s documented conditions, the evidence supported an **entitlement boundary**.
+
+That classification mattered because “buy access to an existing capability” and “replace a product that cannot do the work” are different decisions. Whether paying for different conditions was worthwhile belonged to the next decision, not this diagnosis.
+
+## “Works as designed” did not mean “fits this business”
+
+The owner then found the rule she had been missing: under the documented setup, checkout and appointment status were separate actions. The record had remained booked because that was the documented behavior.
+
+That removed one explanation. The system had not necessarily behaved incorrectly.
+
+It did not settle whether the behavior was acceptable.
+
+If the salon’s required operating model depended on checkout reliably producing a completed appointment—and the documented product model kept those actions separate—the evidence could support a **designed-fit boundary**.
+
+This distinction became the centre of the decision:
+
+> Works as designed does not mean fits this business.
+
+And the inverse mattered just as much:
+
+> Does not fit this business does not mean the software is defective.
+
+The first statement protects the salon from accepting impractical work merely because it is documented. The second protects the diagnosis from turning a fit judgment into an unsupported engineering claim.
+
+<ArticleImage
+  src="/blog/what-does-one-salon-software-discrepancy-prove/one-exception-classified.svg"
+  alt="Editorial arrangement of physical salon records classifying one completed appointment that remained booked as documented behavior that does not fit the salon, rather than a proven software defect"
+  caption="The record can be wrong for the salon’s operating model while the software still behaves as documented. That is a fit conclusion, not defect proof."
+/>
+
+## Incorrect behavior required a different comparison
+
+Now suppose the documentation said the status should change under the captured conditions. The role was eligible, the relevant data and settings matched the prerequisites, and the observed result still differed.
+
+That evidence supported a **possible defect or incident**.
+
+It did not reveal the internal root cause. A service incident, delayed processing, undocumented dependency, integration behavior, account-specific state, or product defect could still produce the same surface result. Public incident histories can add context, but they cannot establish an account-specific cause or prove that every incident was disclosed. ([Square status history](https://square2.statuspage.io/history), accessed September 19, 2026.)
+
+The useful claim therefore remained bounded:
+
+> Under these recorded conditions, the observed result appears inconsistent with the current documented behavior.
+
+That was strong enough to escalate. It was not strong enough to describe what happened inside the vendor’s system.
+
+## Reproducibility strengthened the packet without proving root cause
+
+The owner repeated a privacy-safe equivalent of the event while holding the recorded conditions steady. The disputed result appeared again.
+
+Reproduction made the case easier for another person to inspect. It reduced the chance that the evidence depended on a forgotten difference. It also gave support a defined starting point.
+
+But two matching outcomes could still share an unobserved condition. A successful repeat after one condition changed could make that condition more credible without proving it was the sole cause.
+
+Government test-and-learn guidance recommends defining the challenge and critical assumptions, selecting a focused test, and deciding what evidence will inform the decision. It does not prescribe salon-software troubleshooting. Its relevant lesson is narrower: a small test becomes useful when it distinguishes claims instead of changing several things at once. ([GOV.UK, Test and Learn](https://www.gov.uk/government/publications/the-magenta-book/test-and-learn-html), updated May 15, 2026; accessed September 19, 2026.)
+
+A reproducible divergence therefore strengthened **escalation evidence**. It did not become proof of an internal root cause.
+
+## Unknown was a valid classification
+
+Some cases would not separate cleanly.
+
+The salon might lack a relevant log. Documentation might not define the edge case. The support team might confirm neither expected behavior nor account conditions. A safe repeat might be impossible without affecting a client or financial record.
+
+In those circumstances, choosing “plan limit,” “poor fit,” or “defect” would add confidence without adding evidence.
+
+The owner kept a seventh result available: **UNKNOWN — evidence does not yet distinguish the remaining explanations.**
+
+Unknown was not a failure to investigate. It identified exactly what the next useful evidence had to resolve.
+
+## The finished packet could travel without the accusation
+
+The owner’s final record fit on one page:
+
+- event identifier and material consequence;
+- expected result and the business requirement behind it;
+- observed result, timestamp, and authoritative record;
+- account, plan, region, location, user/role, device, relevant data, settings, and integrations;
+- current official documentation and access date;
+- prerequisites checked;
+- repeat steps and result;
+- local conditions changed or held constant;
+- classification: local condition, entitlement, designed fit, possible defect, or unknown;
+- unresolved evidence and owner of the next action.
+
+For support, this was more useful than “the software did something weird.” For the salon, it prevented a support response from quietly deciding whether the documented behavior was operationally acceptable.
+
+Most importantly, the packet separated three claims that had initially sounded alike:
+
+1. the salon cannot currently use the capability;
+2. the documented capability does not fit the salon’s required work;
+3. the observed behavior appears inconsistent with the documented capability.
+
+The question worth copying into an AI or search tool became:
+
+> One salon software discrepancy remains after we checked the workflow and records. How do I tell whether it is a plan limit, a poor product fit, a possible defect, or still unknown?
+
+The classification did not choose the commercial remedy. It made that choice possible.
+
+The next question was:
+
+> Now that I know what kind of problem this is, should we stay, supplement the system, renegotiate the conditions, or switch?
+
+## Sources
+
+- GOV.UK, [Test and Learn](https://www.gov.uk/government/publications/the-magenta-book/test-and-learn-html), updated May 15, 2026; accessed September 19, 2026.
+- Microsoft Learn, [Dynamics 365 support scope: Help us help you](https://learn.microsoft.com/en-us/dynamics365/get-started/support/support-scope), accessed September 19, 2026.
+- Fresha Help Center, [Manage permission roles](https://www.fresha.com/help-center/knowledge-base/team/100692-manage-permission-roles), accessed September 19, 2026.
+- Fresha Help Center, [Set up new appointment assignment](https://www.fresha.com/help-center/knowledge-base/calendar/102178-set-up-new-appointment-assignment), accessed September 19, 2026.
+- Square Support, [Add and manage bookable team members](https://squareup.com/help/us/en/article/5350-create-staff-member-profiles-for-square-appointments), accessed September 19, 2026.
+- Square, [Appointments pricing](https://squareup.com/us/en/appointments/pricing), accessed September 19, 2026.
+- Square Developer Documentation, [Webhooks overview](https://developer.squareup.com/docs/webhooks/overview), accessed September 19, 2026.
+- Square Status, [Incident history](https://square2.statuspage.io/history), accessed September 19, 2026.
