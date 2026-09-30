@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" role="img" aria-labelledby="title desc">
+  <title id="title">A salon owner compares repeating burden with one-time change</title>
+  <desc id="desc">Physical papers on a desk show the required outcome, an apparently small workaround accumulating weekly tally marks, a larger transition file, crossed-out inadequate responses, and a bounded trial note. The smallest-looking change can create the largest repeating burden.</desc>
+  <defs>
+    <filter id="paper" x="-25%" y="-25%" width="160%" height="170%"><feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#443f39" flood-opacity=".2"/></filter>
+    <filter id="lift" x="-25%" y="-25%" width="160%" height="175%"><feDropShadow dx="3" dy="8" stdDeviation="6" flood-color="#443f39" flood-opacity=".24"/></filter>
+    <pattern id="grain" width="19" height="19" patternUnits="userSpaceOnUse"><circle cx="4" cy="6" r=".55" fill="#625b53" opacity=".07"/><circle cx="15" cy="13" r=".45" fill="#625b53" opacity=".06"/></pattern>
+  </defs>
+  <rect width="560" height="500" fill="#e7e0d4"/><rect width="560" height="500" fill="url(#grain)"/>
+
+  <g transform="translate(41 26) rotate(-1.7 239 61)" filter="url(#lift)">
+    <path d="M0 0H478V118L462 132H0Z" fill="#fffdf8" stroke="#9b9287" stroke-width="1.5"/>
+    <path d="M462 118H478L462 132Z" fill="#d7cfc4"/>
+    <text x="22" y="29" fill="#6a6259" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">REQUIRED OUTCOME</text>
+    <text x="22" y="56" fill="#292621" font-family="Georgia,serif" font-size="20" font-weight="700">One ordinary closeout</text>
+    <text x="22" y="81" fill="#292621" font-family="Georgia,serif" font-size="20" font-weight="700">leaves the visit complete—</text>
+    <text x="22" y="106" fill="#292621" font-family="Georgia,serif" font-size="18">without a manager reconciling it later.</text>
+    <path d="M22 119C151 114 294 124 429 117" fill="none" stroke="#9b4a3d" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(25 178) rotate(-2.8 112 123)" filter="url(#paper)">
+    <path d="M0 0H224V246H0Z" fill="#f6eadf" stroke="#aa7d6d" stroke-width="1.5"/>
+    <rect width="224" height="38" fill="#75463b"/>
+    <text x="16" y="25" fill="#fffaf4" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.1">SMALL WORKAROUND</text>
+    <text x="17" y="70" fill="#292621" font-family="Georgia,serif" font-size="19" font-weight="700">One extra step</text>
+    <text x="17" y="96" fill="#292621" font-family="Georgia,serif" font-size="17">after every visit</text>
+    <line x1="17" y1="112" x2="207" y2="112" stroke="#c7a79b"/>
+    <text x="17" y="137" fill="#6e554d" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.1">WHAT REPEATS</text>
+    <g stroke="#8d493e" stroke-width="2.1" stroke-linecap="round">
+      <path d="M20 157v21M28 157v21M36 157v21M44 157v21M17 176l31-17"/>
+      <path d="M61 157v21M69 157v21M77 157v21M85 157v21M58 176l31-17"/>
+      <path d="M102 157v21M110 157v21M118 157v21M126 157v21M99 176l31-17"/>
+      <path d="M143 157v21M151 157v21M159 157v21M167 157v21M140 176l31-17"/>
+    </g>
+    <text x="17" y="205" fill="#4f4841" font-family="Arial,sans-serif" font-size="14">remember · check · correct</text>
+    <text x="17" y="227" fill="#4f4841" font-family="Arial,sans-serif" font-size="14">train · reconcile · repeat</text>
+  </g>
+
+  <g transform="translate(278 163) rotate(2.2 126 99)" filter="url(#paper)">
+    <path d="M0 0H252V198H0Z" fill="#f1eee6" stroke="#9d9489" stroke-width="1.5"/>
+    <path d="M19 0v198M0 37h252" stroke="#d0c8bc"/>
+    <text x="34" y="25" fill="#615a52" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">TRANSITION FILE</text>
+    <text x="34" y="70" fill="#2b2824" font-family="Georgia,serif" font-size="19" font-weight="700">Larger now.</text>
+    <text x="34" y="96" fill="#2b2824" font-family="Georgia,serif" font-size="18">Possibly paid once.</text>
+    <line x1="34" y1="112" x2="222" y2="112" stroke="#bcb3a7"/>
+    <text x="34" y="137" fill="#5d554d" font-family="Arial,sans-serif" font-size="13">prepare · train · verify</text>
+    <text x="34" y="160" fill="#5d554d" font-family="Arial,sans-serif" font-size="13">protect continuity · exit</text>
+    <text x="34" y="183" fill="#756d64" font-family="Arial,sans-serif" font-size="11" font-style="italic">Still needs evidence</text>
+  </g>
+
+  <g transform="translate(288 360) rotate(-1.4 119 48)" filter="url(#lift)">
+    <path d="M0 0H238V96H0Z" fill="#fffdf7" stroke="#9c9388" stroke-width="1.5"/>
+    <text x="17" y="25" fill="#625a52" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">DECISION NOTE</text>
+    <text x="17" y="51" fill="#292621" font-family="Georgia,serif" font-size="18" font-weight="700">Bound the uncertainty.</text>
+    <text x="17" y="75" fill="#514a43" font-family="Arial,sans-serif" font-size="13">Outcome · stop rule · review point</text>
+    <g transform="translate(164 -7) rotate(7)">
+      <rect width="71" height="26" fill="none" stroke="#98483c" stroke-width="2"/>
+      <text x="35.5" y="18" text-anchor="middle" fill="#98483c" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1">BOUNDED</text>
+    </g>
+  </g>
+
+  <g transform="translate(28 468)">
+    <path d="M0 0H214" stroke="#8e8479"/>
+    <text x="0" y="23" fill="#514a43" font-family="Georgia,serif" font-size="16" font-style="italic">Count what repeats—not just what changes.</text>
+  </g>
+</svg>
