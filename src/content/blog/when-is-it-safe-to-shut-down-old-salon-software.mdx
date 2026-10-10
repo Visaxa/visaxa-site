@@ -1,0 +1,173 @@
+---
+title: "Your New Salon Software Works. When Is It Safe to Shut Off the Old One?"
+subtitle: "A successful go-live is not the same as a safe shutdown. The old account can close only when no material record, obligation, or recovery path depends on it."
+description: "How a salon owner can decide when old salon software is safe to cancel by testing the archive, reconciling the cutover, assigning open obligations, and closing rollback and access in order."
+date: "2026-10-10"
+tags: ["Salon Software", "Migration", "Data Portability", "Operations"]
+draft: false
+---
+
+The new calendar was open. The team had completed real appointments in it. Payments and client records were appearing where they should.
+
+After the [decision to replace the old system](/blog/salon-software-problem-how-much-change-does-it-justify), the remaining duplicate subscription looked like the easiest cost to remove. Friday became the proposed cancellation date.
+
+At first, that felt like the end of the migration.
+
+Then one question made the date feel less useful: **what would the salon be unable to find, prove, or finish on Saturday if the old login stopped working?**
+
+This is a constructed salon case, not an observed migration or a test of any named product. It begins after the new system is already operating and asks only when the old dependency is safe to close.
+
+<KeyTakeaway>
+Do not shut down the old system while anything material exists only there. Closure is defensible when the migration is reconciled, the archive works without the old login, open obligations have owners and evidence locations, real work has passed acceptance, and the agreed rollback conditions have expired. Capture final references and close integrations and access before cancellation.
+</KeyTakeaway>
+
+## The cancellation date answered the wrong question
+
+The owner first looked for a period of stability: one week, one payroll cycle, perhaps one month. If nothing obvious failed, the old account could go.
+
+Time was reassuring because it was measurable. It was not proof.
+
+A quiet week could still contain no refund, disputed payment, membership correction, future recurring appointment, or request for an older client form. Waiting longer might expose more cases, but no number of days could prove that every important dependency had moved.
+
+The decision therefore changed from a date to a state:
+
+> **Nothing material exists only in the old system.**
+
+“Material” did not mean every old screen had to be recreated. It meant that losing access would not prevent the salon from serving a client, settling money, supporting its records, completing an obligation, or recovering from a failed cutover.
+
+## The last dependency was smaller than the migration
+
+The major records had already been checked. Client identities, appointments, balances, and relationships belonged to the [migration reconciliation](/blog/salon-data-imported-how-to-check-nothing-was-lost), not to this final decision.
+
+The owner instead searched for whatever still had only one home.
+
+In the constructed case, it was not the client database. It was an unresolved payment matter whose supporting evidence and activity history could still be reached only through the old account.
+
+That did not prove the whole migration had failed. It proved the old system was not yet disposable.
+
+Official Square documentation, for example, tells US users to export specified records before deactivation and states that an existing account cannot be reactivated afterward and that payment and account information becomes inaccessible. Separate Square documentation describes evidence, deadlines, permissions, and downloadable reporting around disputes. Those are current statements about Square's documented behavior, not universal rules and not evidence about this hypothetical salon. They show why the applicable product documentation and actual account state must be checked before an irreversible action. ([Deactivate your Square account](https://api.squareup.com/help/us/en/article/3819-deactivate-your-account); [View dispute reports](https://squareup.com/help/us/en/article/8361-view-dispute-reports), accessed October 10, 2026.)
+
+The new mental model was narrower:
+
+> A migration can be accepted while one old-system dependency still blocks shutdown.
+
+## A downloaded folder was not yet an archive
+
+The salon had exported files. The filenames looked familiar. That initially seemed enough.
+
+Then the owner tried to answer a client-history question without signing into the old application.
+
+Could the right file be found? Could a date, total, status, or identifier still be understood? Was the export filtered? Did it preserve the reference needed to connect one record with another? Who owned the files, where were they stored, and how would access be reviewed?
+
+Official Fresha documentation says reports can be exported in stated formats, with filters and permissions, one report at a time. That proves a documented report-export workflow in its stated scope. It does not prove that a set of reports is a complete, relationship-preserving business archive. ([Export reports](https://www.fresha.com/help-center/knowledge-base/reports/191-export-reports), accessed October 10, 2026.)
+
+US federal tax guidance supplies a more limited but useful test. IRS recordkeeping guidance says records should support income and expenses, while Revenue Procedure 97-22 addresses integrity, indexing, retrieval, reproduction, and source cross-reference for covered electronic records. That tax scope is not a universal archive standard. It still exposes the weakness in “we downloaded something”: a record that cannot be found or interpreted later may not do the job for which it was retained. ([IRS Recordkeeping](https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping); [Revenue Procedure 97-22](https://www.irs.gov/pub/irs-tege/rp-97-22.pdf).)
+
+The archive test became practical:
+
+- retrieve a sample without using the old login;
+- find it by the references the salon will actually know later;
+- confirm that dates, amounts, statuses, and relationships remain understandable;
+- record who owns access and recovery;
+- apply the retention rule appropriate to the record and jurisdiction.
+
+There is no single retention period for everything in a salon. IRS guidance itself varies by record and circumstance, and privacy or contractual duties can point in a different direction. “Keep it all forever” is no more defensible than deleting everything on cancellation day. ([How long should I keep records?](https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records), accessed October 10, 2026.)
+
+<ArticleImage
+  src="/blog/when-is-it-safe-to-shut-down-old-salon-software/old-system-closure-authorization.svg"
+  alt="Editorial paper closeout packet showing a crossed-out cancellation date beside an old-system closure authorization that requires a retrievable archive, final tie-out, owned open obligations, and an expired rollback window"
+  caption="The calendar date is not the gate. Closure becomes defensible only when every material dependency has evidence outside the old system."
+/>
+
+## Open obligations did not have to disappear
+
+The owner next tried to make every open item equal zero before shutdown.
+
+That sounded safest, but it confused completion with control. A future appointment might remain valid. A dispute might remain unresolved. A refund or credit might still require action. The real question was whether the old system remained the only place from which that action could be completed or supported.
+
+Each open item needed three things:
+
+1. a named owner;
+2. an accessible evidence location;
+3. a next action or review date outside the old system.
+
+Official Fresha documentation for permanent location deletion, for example, lists future appointments, pending product orders, and unpaid invoices among conditions that must be addressed. Location deletion is not the same as closing an account, and the page cannot be generalized to other products. It is narrow evidence that apparently administrative deletion can collide with live operational obligations. ([Manage business locations](https://www.fresha.com/help-center/knowledge-base/workspace-settings/100677-manage-business-locations-1), accessed October 10, 2026.)
+
+The owner's list expanded beyond appointments. It included deposits, refunds, disputes, gift or package balances, membership obligations, credits, tax and accounting references, future communications, and any client document still needed for an ordinary business purpose.
+
+The list was not proof that all those items existed. It was a prompt to find the ones that did.
+
+## The cutover needed a closing line
+
+The new and old systems had been compared during migration. But the owner still needed one final reference point: what did the old system say at the agreed closing boundary, and what did the new system say when responsibility moved?
+
+This was not an attempt to make unlike reports magically identical. Definitions, timing, filters, and accounting treatment could differ. The owner recorded those differences rather than forcing a false match.
+
+The closeout page contained:
+
+- the cutover date and time;
+- the final old-system report or extract used;
+- the corresponding new-system opening reference;
+- totals or counts that could be meaningfully reconciled;
+- explained differences;
+- unresolved exceptions, their owners, and due dates;
+- the person who reviewed the result.
+
+That created a closing line. If a question appeared later, the salon could identify whether it belonged before or after the boundary instead of reopening two systems and guessing.
+
+## The rollback window ended on evidence
+
+Keeping the old account active “just in case” felt cautious. Without a stopping rule, it could also become permanent.
+
+The owner wrote the rollback conditions that should have existed before go-live:
+
+- what failure would require a return or emergency recovery;
+- what success evidence would allow the window to close;
+- which data or transactions would make reversal harder;
+- the last point at which rollback remained technically and operationally credible;
+- who could authorize either decision.
+
+There was still no universal duration. A week might be enough for one bounded change and dangerously short for another. The window closed when the agreed evidence existed and the last credible recovery path had been deliberately released—not because the calendar reached a reassuring number.
+
+## Access closed before the account
+
+Cancellation was now the last action in a sequence.
+
+First, the owner captured final records and confirmations. Then booking links, integrations, automations, API credentials, user accounts, and service access were inventoried. Traffic was redirected where necessary. Privileges no longer required were removed. The salon retained evidence of what was closed and when.
+
+CISA identity and access guidance is written for a broader enterprise setting, not specifically for salons. Its useful principle is limited: accounts and privileges should be inventoried, reconciled, and terminated when no longer required. It does not tell a salon which vendor control to click or guarantee deletion from a cloud provider. ([Identity and Access Management Recommended Best Practices for Administrators](https://www.cisa.gov/sites/default/files/2023-12/ESF%20IDENTITY%20AND%20ACCESS%20MANAGEMENT%20RECOMMENDED%20BEST%20PRACTICES%20FOR%20ADMINISTRATORS%20PP-23-0248_508C.pdf), December 2023.)
+
+Contractual return, deletion, backups, owner access, and vendor retention were checked separately. They were not treated as synonyms. The applicable executed agreement and current official documentation mattered more than a remembered sales conversation or an old help-page screenshot.
+
+## The authorization became one sentence
+
+Friday could remain the cancellation date. It was no longer the reason.
+
+The final authorization read:
+
+> The old system may close because no material record, open obligation, required proof, or credible recovery path depends only on continued access to it.
+
+Behind that sentence sat the migration reconciliation, retrieval-tested archive, open-obligation register, real-work acceptance, closing references, expired rollback criteria, and access-closure record.
+
+The copyable question was now precise:
+
+> We switched salon software and the new system seems to work. When is it safe to cancel the old one?
+
+The concise answer was equally precise:
+
+> Cancel only after nothing material exists only in the old system. Prove that the migration is reconciled, the archive works independently, open obligations have owners and evidence, the new system has passed real work, and the rollback criteria have expired. Record the final boundary, then close integrations and access before cancellation.
+
+That closed the old dependency. It did not prove the new operational record would remain trustworthy forever.
+
+The next question is therefore: **after the old system is gone, how will we know the new system's records still reflect what actually happens in the salon?** The [ongoing evidence check](/blog/your-salon-software-worked-at-go-live-does-it-still) begins there.
+
+## Sources
+
+- Square, [Deactivate your Square account](https://api.squareup.com/help/us/en/article/3819-deactivate-your-account), accessed October 10, 2026.
+- Square, [View dispute reports](https://squareup.com/help/us/en/article/8361-view-dispute-reports), accessed October 10, 2026.
+- Fresha, [Export reports](https://www.fresha.com/help-center/knowledge-base/reports/191-export-reports), accessed October 10, 2026.
+- Fresha, [Manage business locations](https://www.fresha.com/help-center/knowledge-base/workspace-settings/100677-manage-business-locations-1), accessed October 10, 2026.
+- Internal Revenue Service, [Recordkeeping](https://www.irs.gov/businesses/small-businesses-self-employed/recordkeeping), accessed October 10, 2026.
+- Internal Revenue Service, [How long should I keep records?](https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records), accessed October 10, 2026.
+- Internal Revenue Service, [Revenue Procedure 97-22](https://www.irs.gov/pub/irs-tege/rp-97-22.pdf), 1997.
+- CISA, [Identity and Access Management Recommended Best Practices for Administrators](https://www.cisa.gov/sites/default/files/2023-12/ESF%20IDENTITY%20AND%20ACCESS%20MANAGEMENT%20RECOMMENDED%20BEST%20PRACTICES%20FOR%20ADMINISTRATORS%20PP-23-0248_508C.pdf), December 2023.
