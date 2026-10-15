@@ -1,0 +1,44 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Submit changed URLs or a one-time full baseline"
+        required: true
+        default: changed
+        type: choice
+        options: [changed, all]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Wait for production and notify changed URLs
+        if: github.event_name == 'push'
+        run: >-
+          node scripts/indexnow.mjs changed
+          --base "${{ github.event.before }}"
+          --head "${{ github.sha }}"
+          --wait-for-deployment "${{ github.sha }}"
+      - name: Manual retry or baseline
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ inputs.mode }}" = "all" ]; then
+            node scripts/indexnow.mjs all --wait-for-deployment "${{ github.sha }}"
+          else
+            node scripts/indexnow.mjs changed --base "${{ github.sha }}^" --head "${{ github.sha }}" --wait-for-deployment "${{ github.sha }}"
+          fi

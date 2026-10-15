@@ -10,6 +10,7 @@ export type BlogPostMeta = {
   subtitle?: string
   description: string
   date: string
+  updated?: string
   tags: string[]
   readingTimeText: string
 }
@@ -23,6 +24,7 @@ type FrontmatterShape = {
   subtitle?: unknown
   description?: unknown
   date?: unknown
+  updated?: unknown
   tags?: unknown
   draft?: unknown
 }
@@ -52,6 +54,7 @@ async function readMdxFile(slug: string) {
   const subtitle = normalizeString(fm.subtitle, "")
   const description = normalizeString(fm.description, "")
   const date = normalizeString(fm.date, "1970-01-01")
+  const updated = normalizeString(fm.updated, "")
   const tags = normalizeStringArray(fm.tags)
   const draft = isDraft(fm.draft)
 
@@ -63,6 +66,7 @@ async function readMdxFile(slug: string) {
     subtitle: subtitle.length > 0 ? subtitle : undefined,
     description,
     date,
+    updated: updated.length > 0 ? updated : undefined,
     tags,
     readingTimeText: rt.text,
   }
