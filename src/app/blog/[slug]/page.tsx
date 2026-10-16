@@ -42,8 +42,8 @@ export async function generateMetadata({
   }
 
   const o = overrides[slug]
-  const title = o?.title ?? post.title
-  const description = o?.description ?? post.description
+  const title = o?.title ?? post.seoTitle ?? post.title
+  const description = o?.description ?? post.seoDescription ?? post.description
 
   return {
     title: { absolute: title },

@@ -9,6 +9,8 @@ export type BlogPostMeta = {
   title: string
   subtitle?: string
   description: string
+  seoTitle?: string
+  seoDescription?: string
   date: string
   updated?: string
   tags: string[]
@@ -23,6 +25,8 @@ type FrontmatterShape = {
   title?: unknown
   subtitle?: unknown
   description?: unknown
+  seoTitle?: unknown
+  seoDescription?: unknown
   date?: unknown
   updated?: unknown
   tags?: unknown
@@ -53,6 +57,8 @@ async function readMdxFile(slug: string) {
   const title = normalizeString(fm.title, slug)
   const subtitle = normalizeString(fm.subtitle, "")
   const description = normalizeString(fm.description, "")
+  const seoTitle = normalizeString(fm.seoTitle, "")
+  const seoDescription = normalizeString(fm.seoDescription, "")
   const date = normalizeString(fm.date, "1970-01-01")
   const updated = normalizeString(fm.updated, "")
   const tags = normalizeStringArray(fm.tags)
@@ -65,6 +71,8 @@ async function readMdxFile(slug: string) {
     title,
     subtitle: subtitle.length > 0 ? subtitle : undefined,
     description,
+    seoTitle: seoTitle.length > 0 ? seoTitle : undefined,
+    seoDescription: seoDescription.length > 0 ? seoDescription : undefined,
     date,
     updated: updated.length > 0 ? updated : undefined,
     tags,
