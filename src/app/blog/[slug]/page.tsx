@@ -88,7 +88,7 @@ export default async function BlogPostPage({
       url: "https://www.visaxa.app",
     },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,
