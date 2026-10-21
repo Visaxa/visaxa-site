@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">What makes a salon software claim trustworthy</title>
+  <desc id="desc">A printed vendor claim lies on a desk beside official documentation, a sample output, a salon task scenario, and contract limits. A paper tag concludes that trust is conditional.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2f2923" flood-opacity=".16"/></filter>
+    <style>.sans{font-family:Inter,Arial,sans-serif}.ink{fill:#29231f}.muted{fill:#786f65}.body{fill:#514940}.kicker{font-size:14px;font-weight:700;letter-spacing:.06em}.heading{font-size:27px;font-weight:700}.note{font-size:15px}.mobile{display:none}@media(max-width:430px){.desktop{display:none}.mobile{display:inline}}</style>
+  </defs>
+  <rect width="1200" height="800" fill="#ede8de"/>
+  <g class="desktop">
+  <g transform="rotate(-1.2 600 245)" filter="url(#shadow)">
+    <rect x="300" y="62" width="600" height="366" rx="2" fill="#fffcf6" stroke="#bbb1a3"/>
+    <text x="350" y="121" class="sans muted kicker">VENDOR CLAIM</text>
+    <text x="350" y="194" class="sans ink" font-size="48" font-weight="700"><tspan x="350">“Everything you need</tspan><tspan x="350" dy="52">is included.”</tspan></text>
+    <line x1="348" y1="280" x2="806" y2="280" stroke="#a54a3e" stroke-width="3"/>
+    <text x="350" y="326" class="sans body" font-size="19"><tspan x="350">Included for whom, under which plan,</tspan><tspan x="350" dy="29">in which workflow—and proved by what?</tspan></text>
+  </g>
+  <g transform="rotate(2.1 190 206)" filter="url(#shadow)">
+    <rect x="35" y="104" width="310" height="204" rx="2" fill="#f8f3e9" stroke="#b7ac9d"/>
+    <text x="66" y="148" class="sans muted kicker">OFFICIAL DOCUMENTATION</text>
+    <text x="64" y="197" class="sans ink heading"><tspan x="64">What the product</tspan><tspan x="64" dy="31">documents today</tspan></text>
+    <text x="64" y="268" class="sans body note"><tspan x="64">Scope · plan · date</tspan><tspan x="64" dy="20">conditions</tspan></text>
+  </g>
+  <g transform="rotate(-2.4 1007 202)" filter="url(#shadow)">
+    <rect x="852" y="100" width="310" height="205" rx="2" fill="#fffdf8" stroke="#b7ac9d"/>
+    <text x="881" y="145" class="sans muted kicker">SAMPLE OUTPUT</text>
+    <text x="880" y="194" class="sans ink heading"><tspan x="880">What actually</tspan><tspan x="880" dy="31">comes out</tspan></text>
+    <g stroke="#d6cfc4"><line x1="879" y1="245" x2="1093" y2="245"/><line x1="879" y1="265" x2="1059" y2="265"/><line x1="879" y1="285" x2="1104" y2="285"/></g>
+  </g>
+  <g transform="rotate(-1.8 296 554)" filter="url(#shadow)">
+    <rect x="96" y="444" width="400" height="220" rx="2" fill="#f5e4d4" stroke="#b18473"/>
+    <text x="130" y="491" class="sans kicker" fill="#875a4b">SALON SCENARIO</text>
+    <text x="128" y="548" class="sans ink heading"><tspan x="128">Can reception complete</tspan><tspan x="128" dy="34">the exact task we need?</tspan></text>
+    <text x="128" y="618" class="sans body note"><tspan x="128">Expected result written</tspan><tspan x="128" dy="20">before the demo.</tspan></text>
+  </g>
+  <g transform="rotate(1.7 909 552)" filter="url(#shadow)">
+    <rect x="724" y="447" width="370" height="210" rx="2" fill="#fbf8f1" stroke="#b7ac9d"/>
+    <text x="758" y="494" class="sans muted kicker">TERMS &amp; LIMITS</text>
+    <text x="756" y="548" class="sans ink heading"><tspan x="756">What the promise</tspan><tspan x="756" dy="34">does not cover</tspan></text>
+    <text x="756" y="620" class="sans body note"><tspan x="756">Contract · retention</tspan><tspan x="756" dy="20">support · exclusions</tspan></text>
+  </g>
+  <g transform="rotate(-.5 608 695)" filter="url(#shadow)"><rect x="438" y="654" width="340" height="82" rx="2" fill="#9d473a"/><text x="608" y="704" text-anchor="middle" class="sans" fill="#fff9f1" font-size="18" font-weight="700" letter-spacing=".03em">TRUST, WITH CONDITIONS</text></g>
+  <text x="600" y="782" text-anchor="middle" class="sans body" font-size="16">A claim becomes useful only when the evidence matches the decision.</text>
+  </g>
+  <g class="mobile">
+    <g transform="rotate(-1 600 145)" filter="url(#shadow)">
+      <rect x="80" y="34" width="1040" height="228" rx="3" fill="#fffcf6" stroke="#bbb1a3"/>
+      <text x="130" y="88" class="sans muted" font-size="22" font-weight="700" letter-spacing=".06em">VENDOR CLAIM</text>
+      <text x="130" y="154" class="sans ink" font-size="48" font-weight="700">“Everything you need is included.”</text>
+      <line x1="130" y1="181" x2="1064" y2="181" stroke="#a54a3e" stroke-width="4"/>
+      <text x="130" y="224" class="sans body" font-size="25">Included for whom, under which conditions—and proved by what?</text>
+    </g>
+    <g transform="rotate(1.5 310 375)" filter="url(#shadow)">
+      <rect x="55" y="292" width="510" height="166" rx="3" fill="#f8f3e9" stroke="#b7ac9d"/>
+      <text x="91" y="342" class="sans muted" font-size="21" font-weight="700">OFFICIAL DOCUMENTATION</text>
+      <text x="91" y="399" class="sans ink" font-size="35" font-weight="700">What is documented?</text>
+      <text x="91" y="436" class="sans body" font-size="22">Plan · role · date · conditions</text>
+    </g>
+    <g transform="rotate(-1.8 895 375)" filter="url(#shadow)">
+      <rect x="635" y="292" width="510" height="166" rx="3" fill="#fffdf8" stroke="#b7ac9d"/>
+      <text x="674" y="342" class="sans muted" font-size="21" font-weight="700">SAMPLE OUTPUT</text>
+      <text x="674" y="399" class="sans ink" font-size="35" font-weight="700">What actually comes out?</text>
+      <text x="674" y="436" class="sans body" font-size="22">Fields · meaning · relationships</text>
+    </g>
+    <g transform="rotate(-1.2 310 570)" filter="url(#shadow)">
+      <rect x="55" y="487" width="510" height="166" rx="3" fill="#f5e4d4" stroke="#b18473"/>
+      <text x="91" y="537" class="sans" fill="#875a4b" font-size="21" font-weight="700">SALON SCENARIO</text>
+      <text x="91" y="594" class="sans ink" font-size="35" font-weight="700">Can our role do the task?</text>
+      <text x="91" y="631" class="sans body" font-size="22">Expected result written first</text>
+    </g>
+    <g transform="rotate(1.4 895 570)" filter="url(#shadow)">
+      <rect x="635" y="487" width="510" height="166" rx="3" fill="#fbf8f1" stroke="#b7ac9d"/>
+      <text x="674" y="537" class="sans muted" font-size="21" font-weight="700">TERMS &amp; LIMITS</text>
+      <text x="674" y="594" class="sans ink" font-size="35" font-weight="700">What is not promised?</text>
+      <text x="674" y="631" class="sans body" font-size="22">Contract · retention · exclusions</text>
+    </g>
+    <g transform="rotate(-.5 600 715)" filter="url(#shadow)"><rect x="338" y="675" width="524" height="82" rx="3" fill="#9d473a"/><text x="600" y="727" text-anchor="middle" class="sans" fill="#fff9f1" font-size="27" font-weight="700">TRUST, WITH CONDITIONS</text></g>
+    <text x="600" y="790" text-anchor="middle" class="sans body" font-size="22">Evidence must match the decision.</text>
+  </g>
+</svg>

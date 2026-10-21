@@ -43,7 +43,7 @@ Branch labels B1–B6 use the canonical branches in `human_decision_graph/06_NEX
 | A07 | D13, D25 | Financial Privacy / Safe Mode PIN — Why It Matters | B3/B5 — existing cross-branch draft | DRAFT | Evidence not started | HIGH |
 | A08 | D21 | Square vs Fresha vs Mindbody — Practical Trade-offs | B4 — existing comparison draft | DRAFT | Evidence not started | LOW |
 | A09 | D01, D02 | Is This a Software Problem or One Bad Incident? | B1 — Should I act, and what should change? | PLANNED | Evidence not started | LOW |
-| A10 | D03, D04 | Fix the Process or Replace the Software? | B1 — Should I act, and what should change? | PLANNED | Evidence not started | LOW |
+| A10 | D03, D04 | Fix the Process or Replace the Software? | B1 — Should I act, and what should change? | PUBLISHED | Evidence complete | LOW |
 | A11 | D05, D06 | Standardize Before You Configure | B2 — Are we ready to change how the business works? | PLANNED | Evidence not started | MEDIUM |
 | A12 | D07, D08 | Capture Operational Knowledge Before Automation | B2 — Are we ready to change how the business works? | PLANNED | Evidence not started | MEDIUM |
 | A13 | D09 | Are You Ready to Implement New Business Software? | B2 — Are we ready to change how the business works? | PLANNED | Evidence not started | MEDIUM |
@@ -51,21 +51,21 @@ Branch labels B1–B6 use the canonical branches in `human_decision_graph/06_NEX
 | A15 | D12 | What Can Your Business Actually Promise on the Calendar? | B3 — What must be true before I compare products? | PLANNED | Evidence not started | HIGH |
 | A16 | D13 | View, Edit, Export, API: Decide Access Before Choosing Software | B3 — What must be true before I compare products? | PLANNED | Evidence not started | HIGH |
 | A17 | D14 | Build the Exit Inventory Before You Buy | B3 — What must be true before I compare products? | OBSERVATION | Evidence complete | HIGH |
-| A18 | D15 | What Evidence Should Make You Trust Business Software? | B4 — What evidence earns commitment? | PLANNED | Evidence not started | MEDIUM |
+| A18 | D15 | What Evidence Should Make You Trust Business Software? | B4 — What evidence earns commitment? | PUBLISHED | Evidence complete | MEDIUM |
 | A19 | D16 | What Will This Software Cost at Your Next Threshold? | B4 — What evidence earns commitment? | PLANNED | Evidence not started | MEDIUM |
 | A20 | D17 | Test Adoption Before Contract Signature | B4 — What evidence earns commitment? | PLANNED | Evidence not started | MEDIUM |
 | A21 | D18 | Prove the Report Before You Trust the Dashboard | B4 — What evidence earns commitment? | PLANNED | Evidence not started | MEDIUM |
 | A22 | D19 | Make Vendors Demonstrate the Failure Cases | B4 — What evidence earns commitment? | PLANNED | Evidence not started | MEDIUM |
-| A23 | D20 | Can You Leave the Software Later? | B4 — What evidence earns commitment? | DESIGN | Evidence not started | HIGH |
-| A24 | D21 | Compare Products Only After the Decisions Are Clear | B4 — What evidence earns commitment? | REVIEW REQUIRED | Evidence not started | MEDIUM |
-| A25 | D22 | A Successful Import Is Not a Successful Migration | B5 — Did implementation actually work? | PLANNED | Evidence not started | HIGH |
-| A26 | D23 | Define Go-Live Acceptance Before Onboarding Ends | B5 — Did implementation actually work? | PLANNED | Evidence not started | HIGH |
-| A27 | D24 | What Staff Workarounds Are Trying to Tell You | B5 — Did implementation actually work? | PLANNED | Evidence not started | HIGH |
-| A28 | D25 | Test Client Continuity After a System Change | B5 — Did implementation actually work? | PLANNED | Evidence not started | HIGH |
-| A29 | D26 | Monitor Operational Truth After Go-Live | B5 — Did implementation actually work? | PLANNED | Evidence not started | HIGH |
-| A30 | D27, D28 | Change the Workflow, Configuration, Plan, or Platform? | B6 — Recover, scale or leave | PLANNED | Evidence not started | LOW |
-| A31 | D29 | Stay, Supplement, Renegotiate, or Switch? | B6 — Recover, scale or leave | PLANNED | Evidence not started | LOW |
-| A32 | D30 | When Is It Safe to Shut Down the Old System? | B6 — Recover, scale or leave | PLANNED | Evidence not started | LOW |
+| A23 | D20 | Can You Leave the Software Later? | B4 — What evidence earns commitment? | PUBLISHED | Evidence complete | HIGH |
+| A24 | D21 | Compare Products Only After the Decisions Are Clear | B4 — What evidence earns commitment? | PUBLISHED | Evidence complete | MEDIUM |
+| A25 | D22 | A Successful Import Is Not a Successful Migration | B5 — Did implementation actually work? | PUBLISHED | Evidence complete | HIGH |
+| A26 | D23 | Define Go-Live Acceptance Before Onboarding Ends | B5 — Did implementation actually work? | PUBLISHED | Evidence complete | HIGH |
+| A27 | D24 | What Staff Workarounds Are Trying to Tell You | B5 — Did implementation actually work? | PUBLISHED | Evidence complete | HIGH |
+| A28 | D25 | Test Client Continuity After a System Change | B5 — Did implementation actually work? | PUBLISHED | Evidence complete | HIGH |
+| A29 | D26 | Monitor Operational Truth After Go-Live | B5 — Did implementation actually work? | PUBLISHED | Evidence complete | HIGH |
+| A30 | D27, D28 | Change the Workflow, Configuration, Plan, or Platform? | B6 — Recover, scale or leave | PUBLISHED | Evidence complete | LOW |
+| A31 | D29 | Stay, Supplement, Renegotiate, or Switch? | B6 — Recover, scale or leave | PUBLISHED | Evidence complete | LOW |
+| A32 | D30 | When Is It Safe to Shut Down the Old System? | B6 — Recover, scale or leave | PUBLISHED | Evidence complete | LOW |
 
 ## Current known state
 
@@ -77,20 +77,18 @@ Branch labels B1–B6 use the canonical branches in `human_decision_graph/06_NEX
 - Observation: active in the canonical A17 Observation Log.
 - Current action: observe; do not alter the article from one isolated observation.
 
-### A23
+### A18
 
-- Design state: complete.
-- Editorial status: `DESIGN`.
-- Evidence: not started.
-- Drafting/publication: blocked by the exact evidence gaps recorded in the A23 Article Design Document.
-- Current action: the next permissible pipeline stage is evidence planning or evidence collection under a separate task; this roadmap does not begin it.
+- Publication state: published October 21, 2026.
+- Editorial status: `PUBLISHED`.
+- Evidence: complete, with the cross-domain limitations preserved in its Evidence Pack.
+- Decision ownership: D15 only; A19 remains the next unimplemented decision in the canonical B4 sequence.
 
 ### Remaining library
 
-- A01–A05 retain their current published state.
+- A01–A05, A10 and A23–A32 retain their current published state.
 - A06–A08 retain their current draft state.
-- A24 remains `REVIEW REQUIRED` because the SOT explicitly blocks product comparison until current product evidence, maintenance ownership and claim-refresh rules exist.
-- All other canonical articles remain `PLANNED`.
+- A09, A11–A16 and A19–A22 remain `PLANNED`.
 
 ## Canonical dependency graph
 
@@ -132,7 +130,7 @@ Only stage gates already established by the current project state are treated as
 | --- | --- | --- | --- |
 | A23 design | A17 published | MET | A17 is the published inventory consumed by A23; the current project brief explicitly established this gate. |
 | A24 design | A23 design complete | MET | A23 resolves D20 immediately before A24 resolves D21; the current project brief explicitly established this gate. |
-| A24 publication candidate | Current product evidence, maintenance ownership and claim-refresh rules complete | NOT MET | Explicit SOT gate for A24 and the existing A08 comparison draft. |
+| A24 publication candidate | Current product evidence, maintenance ownership and claim-refresh rules complete | MET | A24 is published with a durable Evidence Pack and bounded current-product claims. |
 
 No other hard editorial-stage threshold is currently canonical. The remaining Article Graph arrows establish decision order and content dependency, but they do not by themselves mean “the predecessor must be published before design can begin.” Adding such a rule would invent a dependency.
 
@@ -151,11 +149,11 @@ Before work begins on any downstream article, its design must still preserve the
 
 | Evidence state | Count | Articles |
 | --- | ---: | --- |
-| Evidence complete | 1 | A17 |
+| Evidence complete | 13 | A10, A17, A18 and A23–A32 |
 | Evidence in progress | 0 | None |
-| Evidence not started | 31 | A01–A16, A18–A32 |
+| Evidence not started | 19 | A01–A09, A11–A16 and A19–A22 |
 
-The 31 count refers to the formal canonical Evidence Pack workflow. Within it, 26 unpublished articles await evidence before future publication progression, while five legacy published articles require a separate retrospective evidence-state decision. This roadmap does not silently reopen those five articles.
+The 19 count refers to the formal canonical Evidence Pack workflow. Fourteen unpublished articles await evidence before future publication progression, while five legacy published articles require a separate retrospective evidence-state decision. This roadmap does not silently reopen those five articles.
 
 ## Publication priority
 
@@ -163,22 +161,19 @@ Priority describes editorial sequencing from the current roadmap. It does not ch
 
 ### HIGH
 
-- A23 because its design is complete and it is the direct continuation of the published A17 path.
 - A14–A16 because Branch 3 is the highest-ranked canonical branch and these are the missing upstream requirement articles around A17.
-- A25–A29 because Branch 5 is the second-ranked canonical branch and covers the highest-consequence implementation evidence gap.
 - A07 because its canonical decisions sit in the high-priority access and client-continuity path, although its existing draft still requires evidence review.
 - A17 observation because the first complete Research pipeline must be measured without speculative data.
 
 ### MEDIUM
 
-- A18–A22 and A24 because Branch 4 is the third-ranked canonical branch; A24 remains gated before publication-candidate work.
+- A19–A22 because they are the remaining unimplemented decisions in Branch 4 after A18.
 - A11–A13 because Branch 2 is the fourth-ranked canonical branch.
 - A01–A05 for maintenance and observation readiness of existing published coverage.
 - A06 because its existing draft overlaps the readiness and implementation-acceptance branches but has no formal evidence record.
 
 ### LOW
 
-- A30–A32 because Branch 6 follows the exit and acceptance methods that are not yet complete.
 - A09–A10 because Branch 1 is foundational but ranked sixth in the canonical branch priority and existing articles partially cover its diagnostic stance.
 - A08 because current product comparison is volatile and governed by the same explicit evidence and maintenance gate as A24.
 
@@ -261,23 +256,20 @@ One isolated query, ranking change, AI answer or referral does not automatically
 | Measure | Count | Interpretation |
 | --- | ---: | --- |
 | Total canonical articles | 32 | A01–A32 |
-| Published | 6 | A01–A05 plus A17; A17 is currently represented by the later `OBSERVATION` stage |
-| In design | 1 | A23 |
+| Published | 18 | A01–A05, A10, A17, A18 and A23–A32; A17 is represented by the later `OBSERVATION` stage |
+| In design | 0 | No article currently stops at design |
 | Draft | 3 | A06–A08 |
-| Planned | 21 | A09–A16, A18–A22 and A25–A32 |
-| Review required | 1 | A24 |
-| Awaiting evidence in the unpublished pipeline | 26 | A06–A16 and A18–A32 |
+| Planned | 11 | A09, A11–A16 and A19–A22 |
+| Review required | 0 | No article currently carries this status |
+| Awaiting evidence in the unpublished pipeline | 14 | A06–A09, A11–A16 and A19–A22 |
 | Evidence in progress | 0 | No active canonical Evidence Pack is recorded |
-| Evidence complete | 1 | A17 |
+| Evidence complete | 13 | A10, A17, A18 and A23–A32 |
 | Observation active | 1 | A17 |
-| Published but awaiting canonical observation setup | 5 | A01–A05 |
+| Published but awaiting canonical observation setup | 17 | A01–A05, A10, A18 and A23–A32 |
 | Stable | 0 | No article has a recorded stability decision |
 
 ## Immediate roadmap boundary
 
-The current next state is not another article draft. It is one of two separately authorized activities:
-
-1. continue truthful A17 observation under its existing log; or
-2. begin A23 evidence work against E07, E08, E09 and E15.
+The current next unimplemented canonical decision is A19 / D16. Any work on it remains a separately authorized activity. A17 observation continues under its existing log.
 
 This roadmap itself does not authorize evidence collection, article drafting, publication, deployment or changes to canonical architecture.
