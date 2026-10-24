@@ -6,6 +6,7 @@ import { AlertTriangle, CheckCircle2, Info, Quote } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Mermaid } from "@/components/mdx/Mermaid"
+import { ResearchQuestion } from "@/components/mdx/ResearchQuestion"
 
 /**
  * Use images from `public/blog/<slug>/...` and reference as:
@@ -267,6 +268,10 @@ function MdxLink({ href = "", className, ...props }: React.ComponentProps<"a">) 
   )
 }
 
+function ArticleNextLink({ href, id, children }: { href: string; id: string; children: ReactNode }) {
+  return <Link href={href} data-analytics-event="article_next_click" data-analytics-id={id} className="font-medium underline underline-offset-4">{children}</Link>
+}
+
 function H1({ className, ...props }: React.ComponentProps<"h1">) {
   return (
     <h1
@@ -394,4 +399,6 @@ export const mdxComponents: MDXComponents = {
   ComparisonTable,
   QuoteBlock,
   Mermaid,
+  ResearchQuestion,
+  ArticleNextLink,
 }

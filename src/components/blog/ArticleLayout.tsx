@@ -93,10 +93,10 @@ export default function ArticleLayout({
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button asChild>
-              <Link href="/compare">Follow the comparison path</Link>
+              <Link href="/compare" data-analytics-event="product_cta_click" data-analytics-id="article-footer-comparison-path">Follow the comparison path</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="/blog">Back to Research</Link>
+              <Link href="/blog" data-analytics-id="article-footer-research-index">Back to Research</Link>
             </Button>
           </div>
         </div>

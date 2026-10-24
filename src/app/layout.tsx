@@ -3,6 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google"
 
 import { SiteFooter } from "@/components/site/SiteFooter"
 import { SiteHeader } from "@/components/site/SiteHeader"
+import { SiteIntelligenceClient } from "@/components/site-intelligence/SiteIntelligenceClient"
 
 import "./globals.css"
 import "@/styles/globals.css"
@@ -77,6 +78,7 @@ export default function RootLayout({
           // Intentionally inline: stable entity signal for crawlers.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
+        <SiteIntelligenceClient />
         <div className="flex min-h-dvh flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
