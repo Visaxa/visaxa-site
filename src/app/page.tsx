@@ -53,13 +53,13 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <Link href="/contact">
+                  <Link href="/contact" data-analytics-event="product_cta_click" data-analytics-id="home-hero-walkthrough" data-analytics-category="product_cta">
                     Request a walkthrough
                     <ChevronRight className="size-4" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/features">See how Visaxa works</Link>
+                  <Link href="/features" data-analytics-id="home-hero-features" data-analytics-category="navigation">See how Visaxa works</Link>
                 </Button>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.05}>
             <Button asChild size="lg" variant="outline">
-              <Link href="/research">Explore Research</Link>
+              <Link href="/research" data-analytics-id="home-research-entry" data-analytics-category="editorial">Explore Research</Link>
             </Button>
           </Reveal>
         </section>

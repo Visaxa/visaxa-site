@@ -56,7 +56,7 @@ export default async function BlogIndexPage() {
                     key={p.slug}
                     className="group rounded-2xl border bg-background p-6 shadow-sm transition hover:bg-muted/10"
                   >
-                    <Link href={`/blog/${p.slug}`} className="block">
+                    <Link href={`/blog/${p.slug}`} data-analytics-id={`blog-featured-${p.slug}`} data-analytics-category="editorial" className="block">
                       <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                         <time dateTime={p.date}>{p.date}</time>
                         <span>•</span>
@@ -104,6 +104,8 @@ export default async function BlogIndexPage() {
                   <li key={p.slug}>
                     <Link
                       href={`/blog/${p.slug}`}
+                      data-analytics-id={`blog-list-${p.slug}`}
+                      data-analytics-category="editorial"
                       className="block py-4 text-sm text-muted-foreground transition hover:text-foreground"
                     >
                       {p.title}

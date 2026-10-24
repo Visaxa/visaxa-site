@@ -34,7 +34,7 @@ function LinkList({
       <ul className="space-y-2 text-sm text-muted-foreground">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="transition-colors hover:text-foreground">
+            <Link href={l.href} data-analytics-id={`footer-${title.toLowerCase()}-${l.href.slice(1).replaceAll("/", "-")}`} data-analytics-category="navigation" className="transition-colors hover:text-foreground">
               {l.label}
             </Link>
           </li>

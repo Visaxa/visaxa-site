@@ -47,6 +47,8 @@ export function SiteHeaderMobile() {
                   <Link
                     key={i.href}
                     href={i.href}
+                    data-analytics-id={`mobile-menu-${i.href.slice(1)}`}
+                    data-analytics-category="navigation"
                     className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                     onClick={() => setOpen(false)}
                   >
@@ -59,7 +61,7 @@ export function SiteHeaderMobile() {
 
               <div>
                 <Button asChild className="w-full">
-                  <Link href="/contact" onClick={() => setOpen(false)}>
+                  <Link href="/contact" data-analytics-event="product_cta_click" data-analytics-id="mobile-menu-walkthrough" data-analytics-category="product_cta" onClick={() => setOpen(false)}>
                     Request a walkthrough
                   </Link>
                 </Button>

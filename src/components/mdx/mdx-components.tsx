@@ -269,7 +269,7 @@ function MdxLink({ href = "", className, ...props }: React.ComponentProps<"a">) 
 }
 
 function ArticleNextLink({ href, id, children }: { href: string; id: string; children: ReactNode }) {
-  return <Link href={href} data-analytics-event="article_next_click" data-analytics-id={id} className="font-medium underline underline-offset-4">{children}</Link>
+  return <Link href={href} data-analytics-event="article_next_click" data-analytics-id={id} data-analytics-category="next_article" className="font-medium underline underline-offset-4">{children}</Link>
 }
 
 function H1({ className, ...props }: React.ComponentProps<"h1">) {

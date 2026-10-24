@@ -10,22 +10,25 @@ function top(entries, prefix, count = 10) { return Object.entries(entries).filte
 const human = {}
 const crawler = {}
 const daily = []
-let available = true
+let humanAvailable = true
+let crawlerAvailable = true
 for (const day of dates(days)) {
   const [h, c] = await Promise.all([readDaily("human", day), readDaily("crawler", day)])
-  if (h === null || c === null) available = false
-  daily.push({ day, pageViews: h?.["event|page_view"] ?? null, crawlerRequests: c ? Object.entries(c).filter(([key]) => key.startsWith("request|")).reduce((sum, [, value]) => sum + value, 0) : null })
+  if (h === null) humanAvailable = false
+  if (c === null) crawlerAvailable = false
+  daily.push({ day, pageViews: h ? (h["event|page_view"] ?? 0) : null, crawlerRequests: c ? Object.entries(c).filter(([key]) => key.startsWith("request|")).reduce((sum, [, value]) => sum + value, 0) : null })
   merge(human, h); merge(crawler, c)
 }
 
 console.log(`# Visaxa Site Intelligence — ${days} days`)
-console.log(`\nStorage: ${available ? "Available" : "Not available"}`)
+console.log(`\nHuman dataset: ${humanAvailable ? "Available" : "Not available"}`)
+console.log(`Crawler dataset: ${crawlerAvailable ? "Available" : "Not available"}`)
 console.log("\n## Traffic")
-console.log(available ? JSON.stringify({ byDay: daily, topPages: top(human, "path|").filter(([key]) => key.endsWith("|page_view")), trafficSeparation: "Human interactions are browser events; crawler requests are reported separately; unknown non-JavaScript traffic is Not available." }, null, 2) : "Not available")
+console.log(humanAvailable ? JSON.stringify({ byDay: daily.map(({ day, pageViews }) => ({ day, pageViews })), topViewedPages: top(human, "path|").filter(([key]) => key.endsWith("|page_view")), note: "Page views are events, not unique visitors." }, null, 2) : "Not available")
 console.log("\n## Editorial engagement")
-console.log(available ? JSON.stringify(top(human, "event|"), null, 2) : "Not available")
+console.log(humanAvailable ? JSON.stringify({ eventTotals: top(human, "event|"), topInternalLinks: top(human, "link|").filter(([key]) => key.includes("|internal_link_click")), nextArticleTransitions: top(human, "link|").filter(([key]) => key.includes("|article_next_click")), topCopiedQuestions: top(human, "question|"), productCtas: top(human, "link|").filter(([key]) => key.includes("|product_cta_click")) }, null, 2) : "Not available")
 console.log("\n## AI referrals")
-console.log(available ? JSON.stringify(top(human, "ai_referral|"), null, 2) : "Not available")
+console.log(humanAvailable ? JSON.stringify(top(human, "ai_referral|"), null, 2) : "Not available")
 console.log("\n## AI and search crawlers")
-console.log(available ? JSON.stringify(top(crawler, "request|"), null, 2) : "Not available")
+console.log(crawlerAvailable ? JSON.stringify({ requests: top(crawler, "request|"), successfulDocuments: top(crawler, "document|") }, null, 2) : "Not available")
 console.log("\nInterpretation: human events, crawler requests, AI-associated referrals, and externally reported citations are separate datasets.")

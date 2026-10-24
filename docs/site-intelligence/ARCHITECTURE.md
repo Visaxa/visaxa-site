@@ -15,13 +15,13 @@ Architecture audit: 2026-10-24.
 
 Human interactions are sent to a first-party endpoint only when both public and server feature flags are enabled. The browser sets no analytics cookie, has no persistent visitor identifier, and sends no form values, copied text, full referrer, IP address, or arbitrary query parameters. The endpoint writes daily aggregate counters only. Raw browser events are not retained.
 
-The aggregate store uses the Vercel/Upstash Redis REST contract already available through common Vercel integrations. No client dependency is added. Keys expire after `SITE_INTELLIGENCE_AGGREGATE_DAYS` (default 365, bounded to 7–366 days).
+The aggregate store uses the Vercel/Upstash Redis REST contract already available through common Vercel integrations. Direct Upstash `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` and Vercel integration `KV_REST_API_URL` / `KV_REST_API_TOKEN` pairs are supported. No client dependency is added. Keys expire after `SITE_INTELLIGENCE_AGGREGATE_DAYS` (default 365, bounded to 7–366 days).
 
 Crawler observation is a separate offline import of Vercel Log Drain JSON/NDJSON. It never shares a metric with human events or AI referrals. User-Agent matches remain `claimed_*`. A record becomes `verified_*` only when an independent upstream process adds a matching `verifiedProvider` after CDN verification, official IP-range validation, or provider-supported forward/reverse DNS validation.
 
 ## Collected human fields
 
-Event type, normalized source path, normalized destination path or external host, stable link ID, article slug, question ID, referrer category, coarse device category, and allowlisted `utm_source`, `utm_medium`, and `utm_campaign` values. Campaign values must match a bounded non-free-text syntax.
+Event type, normalized source path, normalized destination path or external host, stable link ID, link category, article slug, question ID, referrer category, coarse device category, and allowlisted `utm_source`, `utm_medium`, and `utm_campaign` values. Campaign values must match a bounded non-free-text syntax. Repeated links to one destination receive distinct occurrence-based IDs unless an explicit editorial ID is supplied.
 
 Supported events: `page_view`, `internal_link_click`, `external_link_click`, `research_question_copy`, `article_next_click`, and `product_cta_click`. The last two require `data-analytics-event` on a designated link. Link text is never an identifier. The A18 copy control demonstrates the supported question-copy path; an event is emitted only after Clipboard API success.
 

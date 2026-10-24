@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
 
 import { referrerCategory, safeCampaign } from "@/lib/site-intelligence/core.mjs"
-import { classifyLink, shouldEmitPageView } from "@/lib/site-intelligence/client.mjs"
+import { classifyLink, shouldEmitPageView, stableLinkId } from "@/lib/site-intelligence/client.mjs"
 
 type EventType = "page_view" | "internal_link_click" | "external_link_click" | "article_next_click" | "product_cta_click"
 
@@ -26,17 +26,20 @@ export function SiteIntelligenceClient() {
   useEffect(() => { if (shouldEmitPageView(lastPath.current, pathname)) { lastPath.current = pathname; emitSiteEvent("page_view") } }, [pathname])
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
-      if (event.button !== 0) return
+      if (event.button !== 0 && event.button !== 1) return
       const link = (event.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null
       if (!link || link.hasAttribute("download")) return
       const explicit = link.dataset.analyticsEvent as EventType | undefined
       const classified = classifyLink(link.href, window.location.origin, explicit)
       if (!classified) return
-      const linkId = link.dataset.analyticsId || `destination:${classified.destinationPath ?? classified.destinationHost}`
-      emitSiteEvent(classified.type, { destinationPath: classified.destinationPath, destinationHost: classified.destinationHost, linkId })
+      const matches = [...document.querySelectorAll<HTMLAnchorElement>("a[href]")].filter((candidate) => candidate.href === link.href)
+      const occurrence = Math.max(1, matches.indexOf(link) + 1)
+      const linkId = stableLinkId({ sourcePath: window.location.pathname, destination: classified.destinationPath ?? classified.destinationHost ?? "unknown", occurrence, explicitId: link.dataset.analyticsId })
+      emitSiteEvent(classified.type, { destinationPath: classified.destinationPath, destinationHost: classified.destinationHost, linkId, linkCategory: link.dataset.analyticsCategory ?? classified.linkCategory })
     }
     document.addEventListener("click", onClick, true)
-    return () => document.removeEventListener("click", onClick, true)
+    document.addEventListener("auxclick", onClick, true)
+    return () => { document.removeEventListener("click", onClick, true); document.removeEventListener("auxclick", onClick, true) }
   }, [])
   return null
 }

@@ -9,6 +9,7 @@ export const EVENT_TYPES = new Set([
 
 const SAFE_CAMPAIGN_KEYS = new Set(["utm_source", "utm_medium", "utm_campaign"])
 const VALUE = /^[a-zA-Z0-9._:-]{1,120}$/
+const LINK_CATEGORIES = new Set(["editorial", "navigation", "next_article", "product_cta", "external_reference"])
 
 export function normalizePath(value) {
   if (typeof value !== "string") return null
@@ -55,6 +56,7 @@ export function validateEvent(input) {
     destinationPath: input.destinationPath ? normalizePath(input.destinationPath) : null,
     destinationHost: typeof input.destinationHost === "string" && /^(?:[a-z0-9-]+\.)+[a-z]{2,}$/i.test(input.destinationHost) ? input.destinationHost.toLowerCase().slice(0, 160) : null,
     linkId: typeof input.linkId === "string" && VALUE.test(input.linkId) ? input.linkId : null,
+    linkCategory: LINK_CATEGORIES.has(input.linkCategory) ? input.linkCategory : null,
     articleSlug: typeof input.articleSlug === "string" && VALUE.test(input.articleSlug) ? input.articleSlug : null,
     questionId: typeof input.questionId === "string" && VALUE.test(input.questionId) ? input.questionId : null,
     referrerCategory: typeof input.referrerCategory === "string" && VALUE.test(input.referrerCategory) ? input.referrerCategory : "unknown_direct",
@@ -63,6 +65,7 @@ export function validateEvent(input) {
   }
   if (clean.type === "external_link_click" && !clean.destinationHost) return null
   if (["internal_link_click", "article_next_click", "product_cta_click"].includes(clean.type) && !clean.destinationPath) return null
+  if (["internal_link_click", "external_link_click", "article_next_click", "product_cta_click"].includes(clean.type) && (!clean.linkId || !clean.linkCategory)) return null
   if (clean.type === "research_question_copy" && !clean.questionId) return null
   return clean
 }
@@ -73,6 +76,7 @@ export function aggregateFields(event) {
   if (event.destinationHost) fields.push(`external|${event.destinationHost}|${event.type}`)
   if (event.articleSlug) fields.push(`article|${event.articleSlug}|${event.type}`)
   if (event.questionId) fields.push(`question|${event.questionId}|${event.type}`)
+  if (event.linkId) fields.push(`link|${event.sourcePath}|${event.linkId}|${event.destinationPath ?? event.destinationHost}|${event.linkCategory}|${event.type}`)
   if (event.referrerCategory.startsWith("ai_")) fields.push(`ai_referral|${event.referrerCategory}|${event.sourcePath}`)
   return fields
 }

@@ -26,6 +26,10 @@ const sections = [
     body: "The services that deliver and protect this website may process technical request data such as an IP address, browser information, requested URL, timestamps, and security events. Retention depends on the hosting and security services involved and any applicable obligations.",
   },
   {
+    title: "Anonymous editorial measurement",
+    body: "When Site Intelligence is enabled, Visaxa measures page views and selected interactions such as internal or external link clicks, use of a supported research-question copy button, and product-oriented links. The application records normalized page paths, stable editorial identifiers, external destination domains, coarse device category, limited campaign labels, and a category for the referring service. It does not set an analytics cookie, create a persistent visitor identifier, retain copied question text, or store form contents. Counts are stored as daily aggregates for up to 365 days using private Redis infrastructure provided through Upstash. The application does not retain visitor IP addresses in those aggregates. Vercel and Upstash may independently process network and request information to deliver, secure, and operate their services under their own terms and retention practices.",
+  },
+  {
     title: "External sources",
     body: "Research articles link to third-party documentation and government sources. Those sites operate under their own privacy practices. Following a link leaves the Visaxa website.",
   },
@@ -43,7 +47,7 @@ export default function PrivacyPage() {
         <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
           Privacy notice
         </h1>
-        <p className="mt-4 text-sm text-muted-foreground">Effective August 26, 2026</p>
+        <p className="mt-4 text-sm text-muted-foreground">Effective October 24, 2026</p>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
           This notice covers information handled through the current public
           website. Any future product service offered under a separate agreement

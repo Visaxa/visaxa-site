@@ -20,6 +20,8 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/"
+            data-analytics-id="header-home"
+            data-analytics-category="navigation"
             className="inline-flex items-center gap-2 font-semibold tracking-tight"
             aria-label="Visaxa home"
           >
@@ -39,6 +41,8 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
+              data-analytics-id={`header-${item.href.slice(1)}`}
+              data-analytics-category="navigation"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
@@ -48,7 +52,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Request a walkthrough</Link>
+            <Link href="/contact" data-analytics-event="product_cta_click" data-analytics-id="header-walkthrough" data-analytics-category="product_cta">Request a walkthrough</Link>
           </Button>
           <SiteHeaderMobile />
         </div>
