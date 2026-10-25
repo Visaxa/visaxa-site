@@ -12,19 +12,23 @@ const crawler = {}
 const daily = []
 let humanAvailable = true
 let crawlerAvailable = true
+let humanObserved = false
+let crawlerObserved = false
 for (const day of dates(days)) {
   const [h, c] = await Promise.all([readDaily("human", day), readDaily("crawler", day)])
-  if (h === null) humanAvailable = false
-  if (c === null) crawlerAvailable = false
+  if (h !== null) humanObserved = true
+  if (c !== null) crawlerObserved = true
   daily.push({ day, pageViews: h ? (h["event|page_view"] ?? 0) : null, crawlerRequests: c ? Object.entries(c).filter(([key]) => key.startsWith("request|")).reduce((sum, [, value]) => sum + value, 0) : null })
   merge(human, h); merge(crawler, c)
 }
+humanAvailable = humanAvailable && humanObserved
+crawlerAvailable = crawlerAvailable && crawlerObserved
 
 console.log(`# Visaxa Site Intelligence — ${days} days`)
 console.log(`\nHuman dataset: ${humanAvailable ? "Available" : "Not available"}`)
 console.log(`Crawler dataset: ${crawlerAvailable ? "Available" : "Not available"}`)
 console.log("\n## Traffic")
-console.log(humanAvailable ? JSON.stringify({ byDay: daily.map(({ day, pageViews }) => ({ day, pageViews })), topViewedPages: top(human, "path|").filter(([key]) => key.endsWith("|page_view")), note: "Page views are events, not unique visitors." }, null, 2) : "Not available")
+console.log(humanAvailable ? JSON.stringify({ byDay: daily.map(({ day, pageViews }) => ({ day, pageViews: pageViews ?? 0 })), topViewedPages: top(human, "path|").filter(([key]) => key.endsWith("|page_view")), note: "Page views are events, not unique visitors." }, null, 2) : "Not available")
 console.log("\n## Editorial engagement")
 console.log(humanAvailable ? JSON.stringify({ eventTotals: top(human, "event|"), topInternalLinks: top(human, "link|").filter(([key]) => key.includes("|internal_link_click")), nextArticleTransitions: top(human, "link|").filter(([key]) => key.includes("|article_next_click")), topCopiedQuestions: top(human, "question|"), productCtas: top(human, "link|").filter(([key]) => key.includes("|product_cta_click")) }, null, 2) : "Not available")
 console.log("\n## AI referrals")

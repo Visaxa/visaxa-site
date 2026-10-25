@@ -85,6 +85,12 @@ The repository test suite contains a provider-compatible isolated Redis REST har
 
 Run privately from an environment containing server-only Redis credentials:
 
+- `UPSTASH_REDIS_REST_URL`
+- `UPSTASH_REDIS_REST_READONLY_TOKEN`
+- `SITE_INTELLIGENCE_NAMESPACE`
+
+The reporting token is separate from the application writer token. Reporting issues only `EXISTS` and `HGETALL` for date-bounded keys inside the configured Site Intelligence namespace; it does not enumerate keys, write counters, refresh expiry, or delete data. Keep the token in a secure untracked local environment and never expose it through a browser-accessible variable.
+
 ```text
 npm run intelligence:report -- 7
 npm run intelligence:report -- 28

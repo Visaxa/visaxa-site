@@ -61,6 +61,7 @@ test("Redis REST pipeline atomically increments bounded aggregate fields and app
     const result = commands.map(([name, key, field, amount]) => {
       if (name === "HINCRBY") { const hash = hashes.get(key) ?? new Map(); hash.set(field, (hash.get(field) ?? 0) + Number(amount)); hashes.set(key, hash); return { result: hash.get(field) } }
       if (name === "EXPIRE") return { result: 1 }
+      if (name === "EXISTS") return { result: hashes.has(key) ? 1 : 0 }
       if (name === "HGETALL") { const hash = hashes.get(key) ?? new Map(); return { result: [...hash].flat() } }
       return { error: "unsupported" }
     })
@@ -70,6 +71,7 @@ test("Redis REST pipeline atomically increments bounded aggregate fields and app
   const address = server.address()
   process.env.UPSTASH_REDIS_REST_URL = `http://127.0.0.1:${address.port}`
   process.env.UPSTASH_REDIS_REST_TOKEN = "test-only"
+  process.env.UPSTASH_REDIS_REST_READONLY_TOKEN = "test-read-only"
   process.env.SITE_INTELLIGENCE_NAMESPACE = "qa-isolated"
   try {
     const event = validateEvent({ type: "internal_link_click", sourcePath: "/blog/a", destinationPath: "/blog/b", articleSlug: "a", linkId: "a-to-b-1", linkCategory: "editorial" })
@@ -79,7 +81,33 @@ test("Redis REST pipeline atomically increments bounded aggregate fields and app
     assert.equal(daily["link|/blog/a|a-to-b-1|/blog/b|editorial|internal_link_click"], 2)
     assert.ok(commandsSeen.some(([name, key]) => name === "EXPIRE" && key === "qa-isolated:human:2026-10-24"))
   } finally {
-    delete process.env.UPSTASH_REDIS_REST_URL; delete process.env.UPSTASH_REDIS_REST_TOKEN; delete process.env.SITE_INTELLIGENCE_NAMESPACE
+    delete process.env.UPSTASH_REDIS_REST_URL; delete process.env.UPSTASH_REDIS_REST_TOKEN; delete process.env.UPSTASH_REDIS_REST_READONLY_TOKEN; delete process.env.SITE_INTELLIGENCE_NAMESPACE
+    await new Promise((resolve) => server.close(resolve))
+  }
+})
+
+test("reporting uses the dedicated read-only token and read commands only", { concurrency: false }, async () => {
+  const requests = []
+  const server = http.createServer(async (request, response) => {
+    let body = ""
+    for await (const chunk of request) body += chunk
+    requests.push({ authorization: request.headers.authorization, commands: JSON.parse(body) })
+    response.writeHead(200, { "Content-Type": "application/json" })
+    response.end(JSON.stringify([{ result: 1 }, { result: ["event|page_view", "11"] }]))
+  })
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve))
+  const address = server.address()
+  process.env.UPSTASH_REDIS_REST_URL = `http://127.0.0.1:${address.port}`
+  process.env.UPSTASH_REDIS_REST_TOKEN = "writer-token"
+  process.env.UPSTASH_REDIS_REST_READONLY_TOKEN = "reader-token"
+  process.env.SITE_INTELLIGENCE_NAMESPACE = "qa-isolated"
+  try {
+    const daily = await readDaily("human", "2026-10-24")
+    assert.equal(daily["event|page_view"], 11)
+    assert.equal(requests[0].authorization, "Bearer reader-token")
+    assert.deepEqual(requests[0].commands.map(([name]) => name), ["EXISTS", "HGETALL"])
+  } finally {
+    delete process.env.UPSTASH_REDIS_REST_URL; delete process.env.UPSTASH_REDIS_REST_TOKEN; delete process.env.UPSTASH_REDIS_REST_READONLY_TOKEN; delete process.env.SITE_INTELLIGENCE_NAMESPACE
     await new Promise((resolve) => server.close(resolve))
   }
 })

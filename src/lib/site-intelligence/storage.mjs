@@ -1,8 +1,14 @@
 import { aggregateFields } from "./core.mjs"
 
-function config() {
+function writerConfig() {
   const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL
   const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN
+  return url && token ? { url: url.replace(/\/$/, ""), token } : null
+}
+
+function reportingConfig() {
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_READONLY_TOKEN
   return url && token ? { url: url.replace(/\/$/, ""), token } : null
 }
 
@@ -11,8 +17,8 @@ function namespace() {
   return /^[a-zA-Z0-9:_-]{1,48}$/.test(value) ? value : "site-intelligence"
 }
 
-async function command(command) {
-  const cfg = config()
+async function command(command, access = "write") {
+  const cfg = access === "read" ? reportingConfig() : writerConfig()
   if (!cfg) return { available: false }
   const response = await fetch(`${cfg.url}/pipeline`, {
     method: "POST",
@@ -36,9 +42,11 @@ export async function incrementEvent(event, now = new Date()) {
 
 export async function readDaily(kind, day) {
   if (!new Set(["human", "crawler"]).has(kind)) throw new Error("Unsupported analytics dataset")
-  const result = await command([["HGETALL", `${namespace()}:${kind}:${day}`]])
+  const key = `${namespace()}:${kind}:${day}`
+  const result = await command([["EXISTS", key], ["HGETALL", key]], "read")
   if (!result.available) return null
-  const raw = result.body?.[0]?.result ?? []
+  if (result.body?.[0]?.result !== 1) return null
+  const raw = result.body?.[1]?.result ?? []
   return Object.fromEntries(Array.from({ length: Math.floor(raw.length / 2) }, (_, i) => [raw[i * 2], Number(raw[i * 2 + 1])]))
 }
 
