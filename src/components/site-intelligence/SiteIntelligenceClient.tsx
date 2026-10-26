@@ -1,10 +1,11 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { referrerCategory, safeCampaign } from "@/lib/site-intelligence/core.mjs"
 import { classifyLink, shouldEmitPageView, stableLinkId } from "@/lib/site-intelligence/client.mjs"
+import { ANALYTICS_CONSENT, ANALYTICS_CONSENT_EVENT, ANALYTICS_CONSENT_KEY, analyticsTransmissionAllowed, readAnalyticsConsent } from "@/lib/site-intelligence/consent.mjs"
 
 type EventType = "page_view" | "internal_link_click" | "external_link_click" | "article_next_click" | "product_cta_click"
 
@@ -12,7 +13,8 @@ function articleSlug(path: string) { return path.startsWith("/blog/") ? path.sli
 function deviceCategory() { const width = window.innerWidth; return width < 640 ? "mobile" : width < 1024 ? "tablet" : "desktop" }
 
 export function emitSiteEvent(type: string, details: Record<string, unknown> = {}) {
-  if (process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED !== "true") return
+  const enabled = process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED === "true"
+  if (!analyticsTransmissionAllowed(enabled, readAnalyticsConsent(window.localStorage))) return
   const body = JSON.stringify({ type, sourcePath: window.location.pathname, articleSlug: articleSlug(window.location.pathname), referrerCategory: referrerCategory(document.referrer), deviceCategory: deviceCategory(), campaign: safeCampaign(window.location.search), ...details })
   try {
     if (navigator.sendBeacon) navigator.sendBeacon("/api/site-intelligence/events", new Blob([body], { type: "application/json" }))
@@ -23,7 +25,28 @@ export function emitSiteEvent(type: string, details: Record<string, unknown> = {
 export function SiteIntelligenceClient() {
   const pathname = usePathname()
   const lastPath = useRef<string | null>(null)
-  useEffect(() => { if (shouldEmitPageView(lastPath.current, pathname)) { lastPath.current = pathname; emitSiteEvent("page_view") } }, [pathname])
+  const [consent, setConsent] = useState<"granted" | "denied" | "unset">(ANALYTICS_CONSENT.UNSET)
+  useEffect(() => {
+    const refresh = () => setConsent(readAnalyticsConsent(window.localStorage))
+    const onStorage = (event: StorageEvent) => { if (event.key === ANALYTICS_CONSENT_KEY) refresh() }
+    refresh()
+    window.addEventListener(ANALYTICS_CONSENT_EVENT, refresh)
+    window.addEventListener("storage", onStorage)
+    return () => {
+      window.removeEventListener(ANALYTICS_CONSENT_EVENT, refresh)
+      window.removeEventListener("storage", onStorage)
+    }
+  }, [])
+  useEffect(() => {
+    if (consent !== ANALYTICS_CONSENT.GRANTED) {
+      lastPath.current = null
+      return
+    }
+    if (shouldEmitPageView(lastPath.current, pathname)) {
+      lastPath.current = pathname
+      emitSiteEvent("page_view")
+    }
+  }, [consent, pathname])
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (event.button !== 0 && event.button !== 1) return

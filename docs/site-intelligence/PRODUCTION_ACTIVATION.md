@@ -1,6 +1,6 @@
 # Site Intelligence production activation
 
-Status: READY FOR OPERATOR CONFIGURATION. Production collection remains disabled.
+Status: READY FOR OPERATOR CONFIGURATION. Production collection remains disabled. Browser analytics now requires an affirmative saved choice.
 
 ## What is being activated
 
@@ -34,9 +34,16 @@ Both flags are required for collection. Set them only in Preview until acceptanc
 
 ## Privacy gate
 
-The public privacy notice describes the event categories, absence of analytics cookies and persistent identifiers, aggregate retention, Upstash storage, and the separate request-level processing performed by Vercel and Upstash.
+The public privacy notice describes the event categories, absence of analytics cookies and persistent identifiers, aggregate retention, Upstash storage, and the separate request-level processing performed by Vercel and Upstash. The implementation and jurisdiction analysis are recorded in `PRIVACY_BASIS.md`.
 
-Before production enablement, the operator must decide, with advice appropriate to the actual jurisdictions and audience, whether this cookieless aggregate measurement can operate without prior consent. This document does not make that legal determination. If consent is required, do not enable the public flag until a real consent control gates `SiteIntelligenceClient`; a decorative banner is insufficient.
+The operating model is worldwide opt-in: `SiteIntelligenceClient` sends nothing until the browser's `visaxa:analytics-consent:v1` local-storage value is `granted`. `unset`, `denied`, invalid values, and unavailable storage all fail closed. The Privacy page and footer expose equivalent allow/reject controls; choosing reject after a grant withdraws permission and blocks subsequent optional events. The stored choice contains no visitor identifier and is not transmitted as an event.
+
+Remaining production requirements:
+
+1. Obtain operator acceptance of the conservative worldwide opt-in model and the updated public notice.
+2. Reconfirm that Preview tests show zero endpoint calls before consent, after rejection, and after withdrawal, including refresh and client-side navigation.
+3. Do not replace opt-in with jurisdiction detection or opt-out without a documented legal review for the real audience and operating entity.
+4. Re-review the control and obtain fresh consent where required before adding new analytics purposes, identifiers, processors, or event categories.
 
 ## Abuse protection
 
@@ -105,7 +112,7 @@ Crawler logs remain separate from browser analytics and AI referrals. User-Agent
 
 ## Production activation
 
-After Preview acceptance and privacy approval:
+After Preview acceptance, operator acceptance of the privacy model, and all other activation gates:
 
 1. Connect the production Redis resource or namespace.
 2. Configure the server credentials and retention in Production.

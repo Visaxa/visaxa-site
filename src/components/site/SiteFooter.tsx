@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Container } from "@/components/site/Container"
 import { Separator } from "@/components/ui/separator"
 import { ShieldCheck } from "lucide-react"
+import { AnalyticsSettings } from "@/components/site-intelligence/AnalyticsSettings"
 
 const productLinks = [
   { href: "/features", label: "Features" },
@@ -71,9 +72,12 @@ export function SiteFooter() {
 
         <Separator className="my-10" />
 
-        <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <div>© {new Date().getFullYear()} Visaxa. All rights reserved.</div>
-          <div className="text-xs">For the work between booking and closing the day.</div>
+        <div className="flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-start sm:justify-between">
+          <div className="space-y-2">
+            <div>© {new Date().getFullYear()} Visaxa. All rights reserved.</div>
+            <AnalyticsSettings compact />
+          </div>
+          <div className="text-xs sm:text-right">For the work between booking and closing the day.</div>
         </div>
       </Container>
     </footer>

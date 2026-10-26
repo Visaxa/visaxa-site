@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import { Container } from "@/components/site/Container"
 import { Badge } from "@/components/ui/badge"
+import { AnalyticsSettings } from "@/components/site-intelligence/AnalyticsSettings"
 
 const pageUrl = "https://www.visaxa.app/privacy"
 
@@ -27,7 +28,11 @@ const sections = [
   },
   {
     title: "Anonymous editorial measurement",
-    body: "When Site Intelligence is enabled, Visaxa measures page views and selected interactions such as internal or external link clicks, use of a supported research-question copy button, and product-oriented links. The application records normalized page paths, stable editorial identifiers, external destination domains, coarse device category, limited campaign labels, and a category for the referring service. It does not set an analytics cookie, create a persistent visitor identifier, retain copied question text, or store form contents. Counts are stored as daily aggregates for up to 365 days using private Redis infrastructure provided through Upstash. The application does not retain visitor IP addresses in those aggregates. Vercel and Upstash may independently process network and request information to deliver, secure, and operate their services under their own terms and retention practices.",
+    body: "Optional Site Intelligence remains off unless you choose to allow it. If allowed, Visaxa measures page views and selected interactions such as internal or external link clicks, use of a supported research-question copy button, and product-oriented links. The application records normalized page paths, stable editorial identifiers, external destination domains, coarse device category, limited campaign labels, and a category for the referring service. It does not set an analytics cookie, create a persistent visitor identifier, retain copied question text, or store form contents. Counts are stored as daily aggregates for up to 365 days using private Redis infrastructure provided through Upstash. The application does not retain visitor IP addresses in those aggregates. Vercel and Upstash may independently process network and request information to deliver, secure, and operate their services under their own terms and retention practices.",
+  },
+  {
+    title: "Your analytics choice",
+    body: "Your browser stores only the value granted or denied under the local-storage key visaxa:analytics-consent:v1 so the site can remember and respect your choice. The value is not a visitor identifier and is not sent as an analytics event. Choosing Keep analytics off, or later choosing it after allowing analytics, prevents subsequent optional events from being sent. Clearing site storage removes the saved choice and returns analytics to the off-by-default state. Essential hosting and security request processing by Vercel is separate from this optional setting.",
   },
   {
     title: "External sources",
@@ -47,7 +52,7 @@ export default function PrivacyPage() {
         <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
           Privacy notice
         </h1>
-        <p className="mt-4 text-sm text-muted-foreground">Effective October 24, 2026</p>
+        <p className="mt-4 text-sm text-muted-foreground">Effective October 25, 2026</p>
         <p className="mt-6 text-lg leading-8 text-muted-foreground">
           This notice covers information handled through the current public
           website. Any future product service offered under a separate agreement
@@ -61,6 +66,7 @@ export default function PrivacyPage() {
               <p className="mt-3 leading-7 text-muted-foreground">{section.body}</p>
             </section>
           ))}
+          <AnalyticsSettings />
         </div>
       </article>
     </Container>
