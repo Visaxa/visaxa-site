@@ -6,11 +6,14 @@ import {
   ANALYTICS_CONSENT,
   ANALYTICS_CONSENT_EVENT,
   ANALYTICS_CONSENT_KEY,
+  ANALYTICS_POLICY,
+  normalizeAnalyticsPolicy,
   readAnalyticsConsent,
   writeAnalyticsConsent,
 } from "@/lib/site-intelligence/consent.mjs"
 
 type Consent = (typeof ANALYTICS_CONSENT)[keyof typeof ANALYTICS_CONSENT]
+const analyticsPolicy = normalizeAnalyticsPolicy(process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_POLICY)
 
 function useAnalyticsConsent() {
   const [consent, setConsent] = useState<Consent>(ANALYTICS_CONSENT.UNSET)
@@ -44,7 +47,9 @@ function Controls({ compact = false }: { compact?: boolean }) {
     ? "Optional analytics are on."
     : consent === ANALYTICS_CONSENT.DENIED
       ? "Optional analytics are off."
-      : "Optional analytics are off until you choose to allow them."
+      : analyticsPolicy === ANALYTICS_POLICY.OPT_OUT
+        ? "Minimal aggregate analytics are on. You can turn them off."
+        : "Optional analytics are off until you choose to allow them."
 
   return (
     <div className={compact ? "space-y-3" : "mt-4 space-y-4"}>
@@ -66,7 +71,7 @@ function Controls({ compact = false }: { compact?: boolean }) {
           aria-pressed={consent === ANALYTICS_CONSENT.DENIED}
           className="rounded-md border px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          Keep analytics off
+          Turn analytics off
         </button>
       </div>
     </div>
@@ -89,7 +94,9 @@ export function AnalyticsSettings({ compact = false }: { compact?: boolean }) {
     <section className="py-7" aria-labelledby="analytics-settings-heading">
       <h2 id="analytics-settings-heading" className="text-xl font-semibold">Analytics settings</h2>
       <p className="mt-3 leading-7 text-muted-foreground">
-        Optional editorial analytics remain off unless you allow them. You can change or withdraw your choice here at any time.
+        {analyticsPolicy === ANALYTICS_POLICY.OPT_OUT
+          ? "Minimal aggregate analytics are used unless you turn them off. You can change your choice here at any time."
+          : "Optional editorial analytics remain off unless you allow them. You can change or withdraw your choice here at any time."}
       </p>
       <Controls />
     </section>

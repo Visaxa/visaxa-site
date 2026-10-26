@@ -3,19 +3,19 @@
 import { usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 
-import { referrerCategory, safeCampaign } from "@/lib/site-intelligence/core.mjs"
+import { referrerCategory } from "@/lib/site-intelligence/core.mjs"
 import { classifyLink, shouldEmitPageView, stableLinkId } from "@/lib/site-intelligence/client.mjs"
-import { ANALYTICS_CONSENT, ANALYTICS_CONSENT_EVENT, ANALYTICS_CONSENT_KEY, analyticsTransmissionAllowed, readAnalyticsConsent } from "@/lib/site-intelligence/consent.mjs"
+import { ANALYTICS_CONSENT, ANALYTICS_CONSENT_EVENT, ANALYTICS_CONSENT_KEY, analyticsTransmissionAllowed, normalizeAnalyticsPolicy, resolveAnalyticsConsent } from "@/lib/site-intelligence/consent.mjs"
 
 type EventType = "page_view" | "internal_link_click" | "external_link_click" | "article_next_click" | "product_cta_click"
 
 function articleSlug(path: string) { return path.startsWith("/blog/") ? path.slice(6).split("/")[0] : null }
-function deviceCategory() { const width = window.innerWidth; return width < 640 ? "mobile" : width < 1024 ? "tablet" : "desktop" }
-
+const analyticsPolicy = normalizeAnalyticsPolicy(process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_POLICY)
 export function emitSiteEvent(type: string, details: Record<string, unknown> = {}) {
   const enabled = process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED === "true"
-  if (!analyticsTransmissionAllowed(enabled, readAnalyticsConsent(window.localStorage))) return
-  const body = JSON.stringify({ type, sourcePath: window.location.pathname, articleSlug: articleSlug(window.location.pathname), referrerCategory: referrerCategory(document.referrer), deviceCategory: deviceCategory(), campaign: safeCampaign(window.location.search), ...details })
+  const preference = resolveAnalyticsConsent(window.localStorage)
+  if (!analyticsTransmissionAllowed(enabled, preference.consent, analyticsPolicy, preference.available)) return
+  const body = JSON.stringify({ type, sourcePath: window.location.pathname, articleSlug: articleSlug(window.location.pathname), referrerCategory: referrerCategory(document.referrer), ...details })
   try {
     if (navigator.sendBeacon) navigator.sendBeacon("/api/site-intelligence/events", new Blob([body], { type: "application/json" }))
     else void fetch("/api/site-intelligence/events", { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {})
@@ -26,8 +26,13 @@ export function SiteIntelligenceClient() {
   const pathname = usePathname()
   const lastPath = useRef<string | null>(null)
   const [consent, setConsent] = useState<"granted" | "denied" | "unset">(ANALYTICS_CONSENT.UNSET)
+  const [storageAvailable, setStorageAvailable] = useState(false)
   useEffect(() => {
-    const refresh = () => setConsent(readAnalyticsConsent(window.localStorage))
+    const refresh = () => {
+      const preference = resolveAnalyticsConsent(window.localStorage)
+      setConsent(preference.consent)
+      setStorageAvailable(preference.available)
+    }
     const onStorage = (event: StorageEvent) => { if (event.key === ANALYTICS_CONSENT_KEY) refresh() }
     refresh()
     window.addEventListener(ANALYTICS_CONSENT_EVENT, refresh)
@@ -38,7 +43,8 @@ export function SiteIntelligenceClient() {
     }
   }, [])
   useEffect(() => {
-    if (consent !== ANALYTICS_CONSENT.GRANTED) {
+    const enabled = process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED === "true"
+    if (!analyticsTransmissionAllowed(enabled, consent, analyticsPolicy, storageAvailable)) {
       lastPath.current = null
       return
     }
@@ -46,7 +52,7 @@ export function SiteIntelligenceClient() {
       lastPath.current = pathname
       emitSiteEvent("page_view")
     }
-  }, [consent, pathname])
+  }, [consent, pathname, storageAvailable])
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (event.button !== 0 && event.button !== 1) return

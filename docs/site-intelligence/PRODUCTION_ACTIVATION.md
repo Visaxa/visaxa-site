@@ -1,10 +1,10 @@
 # Site Intelligence production activation
 
-Status: READY FOR OPERATOR CONFIGURATION. Production collection remains disabled. Browser analytics now requires an affirmative saved choice.
+Status: READY FOR OPERATOR PRIVACY DECISION. Production collection remains disabled. The code supports a conservative `opt-in` default and a separately authorized `opt-out` mode; no policy activation is authorized by this document.
 
 ## What is being activated
 
-The browser sends anonymous editorial interaction events to `/api/site-intelligence/events`. The endpoint validates and reduces each event to daily aggregate Redis counters. It does not store raw events, cookies, persistent visitor IDs, IP addresses, form values, copied text, or arbitrary query strings.
+The browser can send aggregate-only editorial interaction events to `/api/site-intelligence/events` after the current consent gate permits them. The endpoint validates and reduces each event to daily aggregate Redis counters. It does not store raw events, cookies, persistent visitor IDs, IP addresses, form values, copied text, device categories, campaign parameters, or arbitrary query strings.
 
 Event categories are exclusive. An ordinary internal link emits `internal_link_click`; a designated continuation emits `article_next_click`; a product-oriented link emits `product_cta_click`; an external reference emits `external_link_click`. One interaction does not also emit the generic category. Page views come from completed client rendering and route changes, not link inference or prefetching.
 
@@ -28,6 +28,7 @@ Do not paste credentials into source, build logs, browser settings, or CLI outpu
 
 - `SITE_INTELLIGENCE_ENABLED=true` enables accepted server writes.
 - `NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED=true` includes browser delivery in the deployed client bundle.
+- `NEXT_PUBLIC_SITE_INTELLIGENCE_POLICY=opt-in|opt-out` selects the browser policy. Omitted or invalid values resolve to `opt-in`.
 - `SITE_INTELLIGENCE_AGGREGATE_DAYS=365` controls aggregate retention and is bounded by code to 7–366 days.
 
 Both flags are required for collection. Set them only in Preview until acceptance passes. Raw browser events are not retained. Each daily aggregate key receives an expiration.
@@ -36,14 +37,18 @@ Both flags are required for collection. Set them only in Preview until acceptanc
 
 The public privacy notice describes the event categories, absence of analytics cookies and persistent identifiers, aggregate retention, Upstash storage, and the separate request-level processing performed by Vercel and Upstash. The implementation and jurisdiction analysis are recorded in `PRIVACY_BASIS.md`.
 
-The operating model is worldwide opt-in: `SiteIntelligenceClient` sends nothing until the browser's `visaxa:analytics-consent:v1` local-storage value is `granted`. `unset`, `denied`, invalid values, and unavailable storage all fail closed. The Privacy page and footer expose equivalent allow/reject controls; choosing reject after a grant withdraws permission and blocks subsequent optional events. The stored choice contains no visitor identifier and is not transmitted as an event.
+The safe default is worldwide opt-in: `SiteIntelligenceClient` sends nothing until the browser's `visaxa:analytics-consent:v1` local-storage value is `granted`. The optional `opt-out` mode sends minimized aggregate events when the preference is unset, but never after a saved `denied` value. Unavailable preference storage fails closed in both modes. The Privacy page and footer expose equivalent allow/disable controls; disabling after an earlier grant stops subsequent optional events. The stored choice contains no visitor identifier and is not transmitted as an event.
+
+No first-visit banner is included in this branch. That is intentional for the proposed US-focused opt-out model, not a claim that a banner is never required. If the operator cannot confirm the scope conditions below, keep `NEXT_PUBLIC_SITE_INTELLIGENCE_POLICY=opt-in`; a usable first-visit consent mechanism would then be a separate deployment decision.
 
 Remaining production requirements:
 
-1. Obtain operator acceptance of the conservative worldwide opt-in model and the updated public notice.
-2. Reconfirm that Preview tests show zero endpoint calls before consent, after rejection, and after withdrawal, including refresh and client-side navigation.
-3. Do not replace opt-in with jurisdiction detection or opt-out without a documented legal review for the real audience and operating entity.
-4. Re-review the control and obtain fresh consent where required before adding new analytics purposes, identifiers, processors, or event categories.
+1. Record the operator entity, establishment, intentionally directed markets, and the selected model from `PRIVACY_BASIS.md`.
+2. Obtain qualified review before relying on a UK or member-state statistical exception; do not generalize it worldwide.
+3. Select `opt-out` only after confirming the operator facts listed in `PRIVACY_BASIS.md`: US establishment and direction, no intentional EU/UK offering or behavioral monitoring, applicable US state-law thresholds and sector/children constraints, and accurate processor disclosures.
+4. If those facts cannot be confirmed, keep `opt-in` and make a separate operator decision on whether and how to expose a first-visit choice. No prompt is authorized by this audit.
+5. Reconfirm in Preview that opt-in emits zero calls before consent and both policies emit zero calls after rejection/withdrawal, including refresh and client-side navigation.
+6. Re-review the control and obtain fresh consent where required before adding new analytics purposes, identifiers, processors, or event categories.
 
 ## Abuse protection
 

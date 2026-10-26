@@ -2,10 +2,32 @@ import assert from "node:assert/strict"
 import test from "node:test"
 import http from "node:http"
 
-import { aggregateFields, normalizePath, referrerCategory, safeCampaign, validateEvent } from "../src/lib/site-intelligence/core.mjs"
+import { aggregateFields, normalizePath, referrerCategory, validateEvent } from "../src/lib/site-intelligence/core.mjs"
 import { classifyCrawler, normalizeCrawlerRecord } from "../src/lib/site-intelligence/crawlers.mjs"
 import { classifyLink, shouldEmitPageView, stableLinkId } from "../src/lib/site-intelligence/client.mjs"
 import { incrementEvent, readDaily } from "../src/lib/site-intelligence/storage.mjs"
+import { ANALYTICS_CONSENT, ANALYTICS_POLICY, analyticsTransmissionAllowed, normalizeAnalyticsPolicy, resolveAnalyticsConsent } from "../src/lib/site-intelligence/consent.mjs"
+
+test("analytics policy defaults to opt-in and requires an affirmative choice", () => {
+  assert.equal(normalizeAnalyticsPolicy(undefined), ANALYTICS_POLICY.OPT_IN)
+  assert.equal(normalizeAnalyticsPolicy("invented"), ANALYTICS_POLICY.OPT_IN)
+  assert.equal(analyticsTransmissionAllowed(true, ANALYTICS_CONSENT.UNSET), false)
+  assert.equal(analyticsTransmissionAllowed(true, ANALYTICS_CONSENT.GRANTED), true)
+})
+
+test("approved opt-out mode permits unset but always respects rejection and withdrawal", () => {
+  assert.equal(analyticsTransmissionAllowed(true, ANALYTICS_CONSENT.UNSET, ANALYTICS_POLICY.OPT_OUT), true)
+  assert.equal(analyticsTransmissionAllowed(true, ANALYTICS_CONSENT.GRANTED, ANALYTICS_POLICY.OPT_OUT), true)
+  assert.equal(analyticsTransmissionAllowed(true, ANALYTICS_CONSENT.DENIED, ANALYTICS_POLICY.OPT_OUT), false)
+  assert.equal(analyticsTransmissionAllowed(false, ANALYTICS_CONSENT.UNSET, ANALYTICS_POLICY.OPT_OUT), false)
+})
+
+test("unavailable preference storage fails closed in every policy mode", () => {
+  const preference = resolveAnalyticsConsent({ getItem() { throw new Error("blocked") } })
+  assert.deepEqual(preference, { available: false, consent: ANALYTICS_CONSENT.UNSET })
+  assert.equal(analyticsTransmissionAllowed(true, preference.consent, ANALYTICS_POLICY.OPT_OUT, preference.available), false)
+  assert.equal(analyticsTransmissionAllowed(true, preference.consent, ANALYTICS_POLICY.OPT_IN, preference.available), false)
+})
 
 test("emits one page view for each genuine pathname transition", () => {
   assert.equal(shouldEmitPageView(null, "/blog/a"), true)
@@ -27,14 +49,14 @@ test("distinguishes repeated links to the same destination without using visible
   assert.equal(stableLinkId({ sourcePath: "/blog/a", destination: "/blog/b", occurrence: 9, explicitId: "canonical-next" }), "canonical-next")
 })
 
-test("normalizes paths and retains only bounded campaign fields", () => {
+test("normalizes paths without retaining query strings", () => {
   assert.equal(normalizePath("https://www.visaxa.app/blog/example/?email=private"), "/blog/example")
-  assert.deepEqual(safeCampaign("?utm_source=chatgpt.com&utm_campaign=launch&email=a@b.com"), { utm_source: "chatgpt.com", utm_campaign: "launch" })
 })
 
-test("categorizes AI referrals without retaining full referrer URLs", () => {
+test("categorizes only AI referrals without retaining full referrer URLs", () => {
   assert.equal(referrerCategory("https://chatgpt.com/c/secret?query=value"), "ai_chatgpt")
-  assert.equal(referrerCategory(""), "unknown_direct")
+  assert.equal(referrerCategory("https://www.google.com/search?q=salon"), "non_ai_or_direct")
+  assert.equal(referrerCategory(""), "non_ai_or_direct")
 })
 
 test("rejects malformed events and arbitrary records", () => {
@@ -43,6 +65,10 @@ test("rejects malformed events and arbitrary records", () => {
   assert.ok(validateEvent({ type: "research_question_copy", sourcePath: "/blog/a", questionId: "a18-question" }))
   assert.equal(validateEvent({ type: "internal_link_click", sourcePath: "/", destinationPath: "/blog/a", linkId: "x" }), null)
   assert.ok(validateEvent({ type: "internal_link_click", sourcePath: "/", destinationPath: "/blog/a", linkId: "x", linkCategory: "editorial" }))
+  const minimized = validateEvent({ type: "page_view", sourcePath: "/blog/a", deviceCategory: "mobile", campaign: { utm_source: "private" }, referrerCategory: "ai_invented" })
+  assert.equal(minimized.deviceCategory, undefined)
+  assert.equal(minimized.campaign, undefined)
+  assert.equal(minimized.referrerCategory, "non_ai_or_direct")
 })
 
 test("creates aggregate dimensions without raw question or query data", () => {

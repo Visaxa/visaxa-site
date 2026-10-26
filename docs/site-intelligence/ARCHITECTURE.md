@@ -21,13 +21,15 @@ Crawler observation is a separate offline import of Vercel Log Drain JSON/NDJSON
 
 ## Collected human fields
 
-Event type, normalized source path, normalized destination path or external host, stable link ID, link category, article slug, question ID, referrer category, coarse device category, and allowlisted `utm_source`, `utm_medium`, and `utm_campaign` values. Campaign values must match a bounded non-free-text syntax. Repeated links to one destination receive distinct occurrence-based IDs unless an explicit editorial ID is supplied.
+Event type, normalized source path, normalized destination path or external host, stable link ID, link category, article slug, question ID, and an allowlisted AI-referrer category. Full referrer URLs, device categories, query strings, and campaign parameters are not retained. Repeated links to one destination receive distinct occurrence-based IDs unless an explicit editorial ID is supplied.
 
 Supported events: `page_view`, `internal_link_click`, `external_link_click`, `research_question_copy`, `article_next_click`, and `product_cta_click`. The last two require `data-analytics-event` on a designated link. Link text is never an identifier. The A18 copy control demonstrates the supported question-copy path; an event is emitted only after Clipboard API success.
 
 ## Safety boundaries
 
 - Collection is off unless `NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED=true` and `SITE_INTELLIGENCE_ENABLED=true`.
+- `NEXT_PUBLIC_SITE_INTELLIGENCE_POLICY` selects `opt-in` or `opt-out`. Missing, invalid, or unknown values fail to `opt-in`. Production must not use `opt-out` until the operator approves the documented territorial and legal prerequisites.
+- A saved `denied` preference blocks transmission in either policy. Unavailable browser preference storage fails closed in either policy.
 - Same-origin POST only; 4 KB body limit; strict event allowlist; bounded values; no public GET endpoint.
 - A small in-process flood guard limits accidental bursts. It is not a distributed abuse control; production should also use Vercel Firewall rate limiting.
 - Storage failure returns 204 and never affects rendering, navigation, or copying.

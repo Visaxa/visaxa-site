@@ -30,7 +30,7 @@ console.log(`Crawler dataset: ${crawlerAvailable ? "Available" : "Not available"
 console.log("\n## Traffic")
 console.log(humanAvailable ? JSON.stringify({ byDay: daily.map(({ day, pageViews }) => ({ day, pageViews: pageViews ?? 0 })), topViewedPages: top(human, "path|").filter(([key]) => key.endsWith("|page_view")), note: "Page views are events, not unique visitors." }, null, 2) : "Not available")
 console.log("\n## Editorial engagement")
-console.log(humanAvailable ? JSON.stringify({ eventTotals: top(human, "event|"), topInternalLinks: top(human, "link|").filter(([key]) => key.includes("|internal_link_click")), nextArticleTransitions: top(human, "link|").filter(([key]) => key.includes("|article_next_click")), topCopiedQuestions: top(human, "question|"), productCtas: top(human, "link|").filter(([key]) => key.includes("|product_cta_click")) }, null, 2) : "Not available")
+console.log(humanAvailable ? JSON.stringify({ eventTotals: top(human, "event|"), topInternalLinks: top(human, "link|").filter(([key]) => key.includes("|internal_link_click")), nextArticleTransitions: top(human, "link|").filter(([key]) => key.includes("|article_next_click")), topCopiedQuestions: top(human, "question|"), productCtas: top(human, "link|").filter(([key]) => key.includes("|product_cta_click")), externalReferenceClicks: top(human, "link|").filter(([key]) => key.includes("|external_link_click")) }, null, 2) : "Not available")
 console.log("\n## AI referrals")
 console.log(humanAvailable ? JSON.stringify(top(human, "ai_referral|"), null, 2) : "Not available")
 console.log("\n## AI and search crawlers")

@@ -7,9 +7,9 @@ export const EVENT_TYPES = new Set([
   "product_cta_click",
 ])
 
-const SAFE_CAMPAIGN_KEYS = new Set(["utm_source", "utm_medium", "utm_campaign"])
 const VALUE = /^[a-zA-Z0-9._:-]{1,120}$/
 const LINK_CATEGORIES = new Set(["editorial", "navigation", "next_article", "product_cta", "external_reference"])
+const AI_REFERRER_CATEGORIES = new Set(["ai_chatgpt", "ai_perplexity", "ai_copilot", "ai_claude", "ai_gemini"])
 
 export function normalizePath(value) {
   if (typeof value !== "string") return null
@@ -22,27 +22,16 @@ export function normalizePath(value) {
   }
 }
 
-export function safeCampaign(search = "") {
-  const params = new URLSearchParams(search)
-  return Object.fromEntries(
-    [...SAFE_CAMPAIGN_KEYS]
-      .map((key) => [key, params.get(key)])
-      .filter(([, value]) => value && VALUE.test(value)),
-  )
-}
-
 export function referrerCategory(referrer) {
-  if (!referrer) return "unknown_direct"
+  if (!referrer) return "non_ai_or_direct"
   let host
-  try { host = new URL(referrer).hostname.toLowerCase().replace(/^www\./, "") } catch { return "unknown_direct" }
-  if (host === "visaxa.app" || host.endsWith(".visaxa.app")) return "internal"
+  try { host = new URL(referrer).hostname.toLowerCase().replace(/^www\./, "") } catch { return "non_ai_or_direct" }
   if (host === "chatgpt.com" || host.endsWith(".chatgpt.com")) return "ai_chatgpt"
   if (host === "perplexity.ai" || host.endsWith(".perplexity.ai")) return "ai_perplexity"
   if (host === "copilot.microsoft.com") return "ai_copilot"
   if (host === "claude.ai" || host.endsWith(".claude.ai")) return "ai_claude"
   if (host === "gemini.google.com") return "ai_gemini"
-  if (/^(google|bing|duckduckgo|yahoo)\./.test(host)) return "search"
-  return "external_other"
+  return "non_ai_or_direct"
 }
 
 export function validateEvent(input) {
@@ -59,9 +48,7 @@ export function validateEvent(input) {
     linkCategory: LINK_CATEGORIES.has(input.linkCategory) ? input.linkCategory : null,
     articleSlug: typeof input.articleSlug === "string" && VALUE.test(input.articleSlug) ? input.articleSlug : null,
     questionId: typeof input.questionId === "string" && VALUE.test(input.questionId) ? input.questionId : null,
-    referrerCategory: typeof input.referrerCategory === "string" && VALUE.test(input.referrerCategory) ? input.referrerCategory : "unknown_direct",
-    deviceCategory: ["mobile", "tablet", "desktop", "unknown"].includes(input.deviceCategory) ? input.deviceCategory : "unknown",
-    campaign: input.campaign && typeof input.campaign === "object" ? Object.fromEntries(Object.entries(input.campaign).filter(([k, v]) => SAFE_CAMPAIGN_KEYS.has(k) && typeof v === "string" && VALUE.test(v))) : {},
+    referrerCategory: AI_REFERRER_CATEGORIES.has(input.referrerCategory) ? input.referrerCategory : "non_ai_or_direct",
   }
   if (clean.type === "external_link_click" && !clean.destinationHost) return null
   if (["internal_link_click", "article_next_click", "product_cta_click"].includes(clean.type) && !clean.destinationPath) return null
