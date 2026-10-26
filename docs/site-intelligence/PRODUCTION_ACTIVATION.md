@@ -1,6 +1,17 @@
 # Site Intelligence production activation
 
-Status: READY FOR OPERATOR PRIVACY DECISION. Production collection remains disabled. The code supports a conservative `opt-in` default and a separately authorized `opt-out` mode; no policy activation is authorized by this document.
+Status: PREVIEW VERIFIED; HOSTING DECISION REQUIRED. Production collection remains disabled. See `HOSTING_DECISION.md`.
+
+## Verified Preview candidate
+
+- Commit: `5dce3f2d501e8320134ca732be1d91ee494c1673`
+- Branch: `audit/site-intelligence-privacy-model`
+- Preview: `https://visaxa-site-nhxdeuaie-visaxas-projects.vercel.app`
+- QA policy: `opt-out`
+- QA namespace: `visaxa-site-intelligence-qa`
+- Production flags and namespace were not changed.
+
+Actual Upstash acceptance began from an absent QA daily key. The allowed sequence produced five page views, one internal link click, one next-article click, one successful research-question copy, and one external-reference click. After disabling analytics, navigation, copy and refresh produced zero additional counters. Re-enabling added only two new page views and one new successful copy; suppressed actions were not replayed. The browser-side collection-failure injection could not be completed through the available automation channel; fail-silent delivery remains covered by implementation and automated tests rather than a completed remote failure-injection run.
 
 ## What is being activated
 
@@ -64,6 +75,18 @@ In the Vercel project dashboard:
 Do not claim that these controls make analytics immune to fabricated events.
 
 ## Storage operations and cost model
+
+The authenticated Upstash database was on Free at review time: 1.2K/500K monthly commands, 108 KB/10 GB bandwidth, 4 KB/250 MB storage, and $0.00 cost. The application retention is 365 days for aggregate keys.
+
+For planning, assume per page view: one page-view event (4 Redis commands), 0.4 link/next/CTA events (6 commands each), 0.1 external click (6), and 0.05 question copy (5). That is approximately 7.25 commands per view, excluding reports, crawler imports and retries:
+
+| Traffic | Estimated commands/month | Free-tier position |
+|---|---:|---|
+| 100 views/day | 21,750 | Within 500K |
+| 1,000 views/day | 217,500 | Within 500K with limited headroom |
+| 10,000 views/day | 2,175,000 | Exceeds Free materially |
+
+At this interaction mix the practical Free constraint begins around 2,300 views/day before crawler imports and reporting. Do not enable an automatic paid upgrade; provider behavior at the limit must be confirmed before launch.
 
 Each event is one HTTPS pipeline request, but Upstash meters the Redis commands inside it:
 
