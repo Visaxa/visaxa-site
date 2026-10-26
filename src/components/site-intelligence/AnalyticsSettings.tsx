@@ -6,17 +6,29 @@ import {
   ANALYTICS_CONSENT,
   ANALYTICS_CONSENT_EVENT,
   ANALYTICS_CONSENT_KEY,
-  readAnalyticsConsent,
+  resolveAnalyticsPreference,
   writeAnalyticsConsent,
 } from "@/lib/site-intelligence/consent.mjs"
 
 type Consent = (typeof ANALYTICS_CONSENT)[keyof typeof ANALYTICS_CONSENT]
 
-function useAnalyticsConsent() {
+export function useAnalyticsConsent() {
   const [consent, setConsent] = useState<Consent>(ANALYTICS_CONSENT.UNSET)
+  const [resolved, setResolved] = useState(false)
+  const [storageAvailable, setStorageAvailable] = useState(false)
 
   useEffect(() => {
-    const refresh = () => setConsent(readAnalyticsConsent(window.localStorage))
+    const refresh = () => {
+      let preference = { available: false, consent: ANALYTICS_CONSENT.UNSET as Consent }
+      try {
+        preference = resolveAnalyticsPreference(window.localStorage)
+      } catch {
+        // Accessing window.localStorage itself may throw in restricted contexts.
+      }
+      setConsent(preference.consent)
+      setStorageAvailable(preference.available)
+      setResolved(true)
+    }
     const onStorage = (event: StorageEvent) => {
       if (event.key === ANALYTICS_CONSENT_KEY) refresh()
     }
@@ -30,12 +42,19 @@ function useAnalyticsConsent() {
   }, [])
 
   const choose = (value: "granted" | "denied") => {
-    writeAnalyticsConsent(window.localStorage, value)
-    setConsent(value)
-    window.dispatchEvent(new Event(ANALYTICS_CONSENT_EVENT))
+    try {
+      writeAnalyticsConsent(window.localStorage, value)
+      setConsent(value)
+      window.dispatchEvent(new Event(ANALYTICS_CONSENT_EVENT))
+      return true
+    } catch {
+      setConsent(ANALYTICS_CONSENT.UNSET)
+      setStorageAvailable(false)
+      return false
+    }
   }
 
-  return { consent, choose }
+  return { consent, choose, resolved, storageAvailable }
 }
 
 function Controls({ compact = false }: { compact?: boolean }) {

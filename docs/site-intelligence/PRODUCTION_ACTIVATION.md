@@ -38,6 +38,8 @@ The public privacy notice describes the event categories, absence of analytics c
 
 The operating model is worldwide opt-in: `SiteIntelligenceClient` sends nothing until the browser's `visaxa:analytics-consent:v1` local-storage value is `granted`. `unset`, `denied`, invalid values, and unavailable storage all fail closed. The Privacy page and footer expose equivalent allow/reject controls; choosing reject after a grant withdraws permission and blocks subsequent optional events. The stored choice contains no visitor identifier and is not transmitted as an event.
 
+When the client feature flag is enabled and storage is available, a compact first-visit prompt appears only for `unset`. It offers **Allow analytics** and **Decline** with equal prominence, does not block reading or scrolling, and links to Privacy & Analytics Settings. It remains absent when client analytics is disabled, after either valid choice, and when preference storage cannot be accessed. Prompt actions themselves are not tracked.
+
 Remaining production requirements:
 
 1. Obtain operator acceptance of the conservative worldwide opt-in model and the updated public notice.

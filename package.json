@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
     "indexnow": "node scripts/indexnow.mjs",
     "intelligence:report": "node scripts/site-intelligence-report.mjs",
     "intelligence:import-crawlers": "node scripts/site-intelligence-import-crawlers.mjs"
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "^3.1.1",
+    "@playwright/test": "1.51.1",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",

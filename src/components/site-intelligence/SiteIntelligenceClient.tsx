@@ -14,7 +14,9 @@ function deviceCategory() { const width = window.innerWidth; return width < 640 
 
 export function emitSiteEvent(type: string, details: Record<string, unknown> = {}) {
   const enabled = process.env.NEXT_PUBLIC_SITE_INTELLIGENCE_ENABLED === "true"
-  if (!analyticsTransmissionAllowed(enabled, readAnalyticsConsent(window.localStorage))) return
+  let consent = ANALYTICS_CONSENT.UNSET
+  try { consent = readAnalyticsConsent(window.localStorage) } catch { return }
+  if (!analyticsTransmissionAllowed(enabled, consent)) return
   const body = JSON.stringify({ type, sourcePath: window.location.pathname, articleSlug: articleSlug(window.location.pathname), referrerCategory: referrerCategory(document.referrer), deviceCategory: deviceCategory(), campaign: safeCampaign(window.location.search), ...details })
   try {
     if (navigator.sendBeacon) navigator.sendBeacon("/api/site-intelligence/events", new Blob([body], { type: "application/json" }))
@@ -27,7 +29,9 @@ export function SiteIntelligenceClient() {
   const lastPath = useRef<string | null>(null)
   const [consent, setConsent] = useState<"granted" | "denied" | "unset">(ANALYTICS_CONSENT.UNSET)
   useEffect(() => {
-    const refresh = () => setConsent(readAnalyticsConsent(window.localStorage))
+    const refresh = () => {
+      try { setConsent(readAnalyticsConsent(window.localStorage)) } catch { setConsent(ANALYTICS_CONSENT.UNSET) }
+    }
     const onStorage = (event: StorageEvent) => { if (event.key === ANALYTICS_CONSENT_KEY) refresh() }
     refresh()
     window.addEventListener(ANALYTICS_CONSENT_EVENT, refresh)

@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: "Your analytics choice",
-    body: "Your browser stores only the value granted or denied under the local-storage key visaxa:analytics-consent:v1 so the site can remember and respect your choice. The value is not a visitor identifier and is not sent as an analytics event. Choosing Keep analytics off, or later choosing it after allowing analytics, prevents subsequent optional events from being sent. Clearing site storage removes the saved choice and returns analytics to the off-by-default state. Essential hosting and security request processing by Vercel is separate from this optional setting.",
+    body: "When optional analytics are available and no choice has been saved, a compact first-visit panel offers Allow analytics and Decline with equal prominence. Your browser stores only the value granted or denied under the local-storage key visaxa:analytics-consent:v1 so the site can remember and respect your choice. The value is not a visitor identifier and is not sent as an analytics event. Choosing Decline or Keep analytics off, including after previously allowing analytics, prevents subsequent optional events from being sent. Clearing site storage removes the saved choice and returns analytics to the off-by-default state. Essential hosting and security request processing by Vercel is separate from this optional setting. Deployment feature flags can keep collection disabled regardless of the saved choice.",
   },
   {
     title: "External sources",

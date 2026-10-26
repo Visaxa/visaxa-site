@@ -4,6 +4,7 @@ import { Geist_Mono, Inter } from "next/font/google"
 import { SiteFooter } from "@/components/site/SiteFooter"
 import { SiteHeader } from "@/components/site/SiteHeader"
 import { SiteIntelligenceClient } from "@/components/site-intelligence/SiteIntelligenceClient"
+import { AnalyticsConsentPrompt } from "@/components/site-intelligence/AnalyticsConsentPrompt"
 
 import "./globals.css"
 import "@/styles/globals.css"
@@ -79,6 +80,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
         <SiteIntelligenceClient />
+        <AnalyticsConsentPrompt />
         <div className="flex min-h-dvh flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

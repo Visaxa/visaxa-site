@@ -6,6 +6,8 @@ import {
   ANALYTICS_CONSENT_KEY,
   analyticsTransmissionAllowed,
   readAnalyticsConsent,
+  resolveAnalyticsPreference,
+  shouldShowConsentPrompt,
   writeAnalyticsConsent,
 } from "../src/lib/site-intelligence/consent.mjs"
 import { shouldEmitPageView } from "../src/lib/site-intelligence/client.mjs"
@@ -15,6 +17,7 @@ function storage(seed = {}) {
   return {
     getItem: (key) => values.get(key) ?? null,
     setItem: (key, value) => values.set(key, String(value)),
+    removeItem: (key) => values.delete(key),
     snapshot: () => Object.fromEntries(values),
   }
 }
@@ -66,4 +69,26 @@ test("invalid or inaccessible storage fails closed", () => {
   const broken = { getItem() { throw new Error("blocked") } }
   assert.equal(readAnalyticsConsent(broken), ANALYTICS_CONSENT.UNSET)
   assert.equal(readAnalyticsConsent(storage({ [ANALYTICS_CONSENT_KEY]: "yes" })), ANALYTICS_CONSENT.UNSET)
+})
+
+test("first visit resolves as available and unset without writing a preference", () => {
+  const local = storage()
+  assert.deepEqual(resolveAnalyticsPreference(local), { available: true, consent: ANALYTICS_CONSENT.UNSET })
+  assert.deepEqual(local.snapshot(), {})
+})
+
+test("unavailable storage suppresses the prompt and analytics", () => {
+  const blocked = { getItem() { throw new Error("blocked") }, setItem() { throw new Error("blocked") }, removeItem() {} }
+  assert.deepEqual(resolveAnalyticsPreference(blocked), { available: false, consent: ANALYTICS_CONSENT.UNSET })
+  assert.equal(analyticsTransmissionAllowed(true, resolveAnalyticsPreference(blocked).consent), false)
+})
+
+test("prompt appears only for a resolved first visit with the client feature enabled", () => {
+  const baseline = { featureEnabled: true, resolved: true, storageAvailable: true, consent: ANALYTICS_CONSENT.UNSET }
+  assert.equal(shouldShowConsentPrompt(baseline), true)
+  assert.equal(shouldShowConsentPrompt({ ...baseline, featureEnabled: false }), false)
+  assert.equal(shouldShowConsentPrompt({ ...baseline, resolved: false }), false)
+  assert.equal(shouldShowConsentPrompt({ ...baseline, storageAvailable: false }), false)
+  assert.equal(shouldShowConsentPrompt({ ...baseline, consent: ANALYTICS_CONSENT.GRANTED }), false)
+  assert.equal(shouldShowConsentPrompt({ ...baseline, consent: ANALYTICS_CONSENT.DENIED }), false)
 })
