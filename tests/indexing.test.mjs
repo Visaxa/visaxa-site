@@ -63,8 +63,8 @@ test("draft and cosmetic illustration changes do not trigger IndexNow", async ()
   assert.deepEqual(urls, [])
 })
 
-test("current repository exposes exactly 29 published canonical URLs", async () => {
+test("current repository exposes exactly 30 published canonical URLs", async () => {
   const urls = await allPublishedUrls()
-  assert.equal(urls.length, 29)
-  assert.equal(new Set(urls).size, 29)
+  assert.equal(urls.length, 30)
+  assert.equal(new Set(urls).size, 30)
 })

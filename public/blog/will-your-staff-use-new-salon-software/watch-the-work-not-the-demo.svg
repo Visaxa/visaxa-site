@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Watch the people do the work, not the presenter do the demo</title>
+  <desc id="desc">A polished demo card sits above a large paper test sheet titled Ordinary Tuesday. Role notes for reception, professional, and client surround observations for outcome, errors, help, time, and workarounds.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="150%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#2d2823" flood-opacity=".16"/></filter>
+    <style>.sans{font-family:Inter,Arial,sans-serif}.serif{font-family:Georgia,serif}.ink{fill:#2d2823}.body{fill:#575047}.muted{fill:#71695f}.rule{stroke:#d6cec2}.kicker{font-size:14px;font-weight:700;letter-spacing:.1em}.mobile{display:none}@media(max-width:430px){.desktop{display:none}.mobile{display:inline}}</style>
+  </defs>
+  <rect width="1200" height="760" fill="#ece7dd"/>
+  <g class="desktop">
+    <text x="64" y="54" class="sans muted kicker">PRE-CONTRACT EVIDENCE</text>
+    <text x="64" y="98" class="serif ink" font-size="34" font-weight="700">The demo showed the product. The test showed the work.</text>
+
+    <g transform="rotate(-1.5 265 238)" filter="url(#shadow)">
+      <rect x="64" y="136" width="404" height="206" rx="2" fill="#fffdf8" stroke="#b9afa1"/>
+      <text x="94" y="178" class="sans muted kicker">VENDOR DEMO</text>
+      <text x="94" y="226" class="serif ink" font-size="28" font-weight="700">Perfect data.</text>
+      <text x="94" y="260" class="serif ink" font-size="28" font-weight="700">Known route.</text>
+      <text x="94" y="294" class="serif ink" font-size="28" font-weight="700">No interruption.</text>
+      <path d="M93 316 C190 309 304 318 428 307" fill="none" stroke="#a34d40" stroke-width="3"/>
+      <text x="292" y="188" class="sans" fill="#9a4d42" font-size="15" font-weight="700" transform="rotate(7 292 188)">GUIDED</text>
+    </g>
+
+    <g transform="rotate(.8 752 411)" filter="url(#shadow)">
+      <rect x="398" y="152" width="716" height="500" rx="2" fill="#fffaf2" stroke="#b6ab9c"/>
+      <text x="438" y="197" class="sans muted kicker">ORDINARY TUESDAY · TEST SHEET</text>
+      <text x="438" y="246" class="serif ink" font-size="31" font-weight="700">Move Maria's colour appointment</text>
+      <text x="438" y="280" class="sans body" font-size="17">Keep the professional · preserve the deposit · explain the result</text>
+      <line x1="438" y1="306" x2="1072" y2="306" class="rule"/>
+      <text x="438" y="345" class="sans muted kicker">WATCH FOR</text>
+
+      <text x="438" y="392" class="serif ink" font-size="23" font-weight="700">Correct outcome</text>
+      <text x="740" y="392" class="sans body" font-size="18">yes / no / uncertain</text>
+      <line x1="438" y1="414" x2="1072" y2="414" class="rule"/>
+
+      <text x="438" y="455" class="serif ink" font-size="23" font-weight="700">Errors + wrong states</text>
+      <path d="M741 450 C812 441 875 459 947 447" fill="none" stroke="#a34d40" stroke-width="3"/>
+      <text x="963" y="456" class="sans body" font-size="17">record each</text>
+      <line x1="438" y1="477" x2="1072" y2="477" class="rule"/>
+
+      <text x="438" y="518" class="serif ink" font-size="23" font-weight="700">Help required</text>
+      <text x="740" y="518" class="sans body" font-size="18">prompt / instruction / takeover</text>
+      <line x1="438" y1="540" x2="1072" y2="540" class="rule"/>
+
+      <text x="438" y="581" class="serif ink" font-size="23" font-weight="700">Time + workaround</text>
+      <text x="740" y="581" class="sans body" font-size="18">what moved outside the system?</text>
+      <path d="M438 610 C620 619 836 607 1068 615" fill="none" stroke="#a34d40" stroke-width="3"/>
+    </g>
+
+    <g transform="rotate(-4 198 472)" filter="url(#shadow)">
+      <rect x="55" y="389" width="286" height="164" fill="#f2ddcd" stroke="#b88978"/>
+      <text x="83" y="429" class="sans" fill="#875647" font-size="13" font-weight="700" letter-spacing=".09em">RECEPTION</text>
+      <text x="83" y="471" class="serif ink" font-size="21" font-weight="700">Phone ringing.</text>
+      <text x="83" y="501" class="serif ink" font-size="21" font-weight="700">Another client waits.</text>
+      <text x="83" y="532" class="sans body" font-size="16">Can the handoff survive?</text>
+    </g>
+
+    <g transform="rotate(3.2 225 623)" filter="url(#shadow)">
+      <rect x="78" y="573" width="294" height="116" fill="#f8f5ee" stroke="#b9afa1"/>
+      <text x="105" y="611" class="sans muted kicker">REAL DEVICES</text>
+      <text x="105" y="650" class="serif ink" font-size="21" font-weight="700">Staff phone · client phone</text>
+      <text x="105" y="676" class="sans body" font-size="15">Not only the office screen.</text>
+    </g>
+
+    <text x="64" y="734" class="serif body" font-size="20" font-style="italic">Do not score the confidence of the presenter. Record the independence of the user.</text>
+  </g>
+
+  <g class="mobile">
+    <text x="54" y="54" class="sans muted" font-size="34" font-weight="700" letter-spacing=".07em">PRE-CONTRACT EVIDENCE</text>
+    <text x="54" y="109" class="serif ink" font-size="46" font-weight="700">Watch the work—not the demo.</text>
+    <g transform="rotate(-.8 600 214)" filter="url(#shadow)">
+      <rect x="54" y="135" width="1092" height="164" fill="#fffdf8" stroke="#b9afa1"/>
+      <text x="94" y="184" class="sans muted" font-size="34" font-weight="700">VENDOR DEMO</text>
+      <text x="94" y="244" class="serif ink" font-size="40" font-weight="700">Perfect data · known route · no interruption</text>
+      <path d="M94 266 C400 256 751 273 1098 258" fill="none" stroke="#a34d40" stroke-width="4"/>
+    </g>
+    <g transform="rotate(.3 600 484)" filter="url(#shadow)">
+      <rect x="54" y="326" width="1092" height="320" fill="#fffaf2" stroke="#b6ab9c"/>
+      <text x="94" y="377" class="sans muted" font-size="34" font-weight="700">ORDINARY TUESDAY · TEST SHEET</text>
+      <text x="94" y="434" class="serif ink" font-size="42" font-weight="700">Move the booking. Keep the deposit.</text>
+      <text x="94" y="480" class="sans body" font-size="32">Reception is interrupted. The client is waiting.</text>
+      <line x1="94" y1="500" x2="1102" y2="500" class="rule"/>
+      <text x="94" y="552" class="serif ink" font-size="37" font-weight="700">Outcome · errors · help · time · workaround</text>
+      <text x="94" y="602" class="sans body" font-size="32">Real role. Real device. No guided clicks.</text>
+      <path d="M94 620 C411 631 755 615 1102 625" fill="none" stroke="#a34d40" stroke-width="4"/>
+    </g>
+    <text x="600" y="711" text-anchor="middle" class="serif body" font-size="31" font-style="italic">Record the user's independence—not the presenter's confidence.</text>
+  </g>
+</svg>
