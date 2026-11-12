@@ -54,8 +54,8 @@
       <text x="83" y="532" class="sans body" font-size="16">Can the handoff survive?</text>
     </g>
 
-    <g transform="rotate(3.2 225 623)" filter="url(#shadow)">
-      <rect x="78" y="573" width="294" height="116" fill="#f8f5ee" stroke="#b9afa1"/>
+    <g transform="rotate(3.2 241 623)" filter="url(#shadow)">
+      <rect x="78" y="573" width="326" height="116" fill="#f8f5ee" stroke="#b9afa1"/>
       <text x="105" y="611" class="sans muted kicker">REAL DEVICES</text>
       <text x="105" y="650" class="serif ink" font-size="21" font-weight="700">Staff phone · client phone</text>
       <text x="105" y="676" class="sans body" font-size="15">Not only the office screen.</text>
